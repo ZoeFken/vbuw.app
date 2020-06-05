@@ -1,0 +1,3 @@
+db name : vbuw
+db user : vbuw
+db psw : 6tqbFQsSaL6p
