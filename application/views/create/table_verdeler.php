@@ -91,7 +91,7 @@
                 <td class="center">Verdeler</td>
                 <td>
 					<p>De buitenspanning is effectief, de werken voorzien in BNX nr <?php echo $verdeler_bnx ?> en in overeenstemming met <?php echo $verdeler_tpo ?> kunnen aangevangen worden op de lijn (station) <?php echo $verdeler_lijn ?>, spoor <?php echo $verdeler_spoor ?>. Tussen de geplaatste ssv's.
-                    <br><br><?php echo $verdeler_geplaatstePalen ?></p>
+                    <br><br><?php echo $verdeler_geplaatstePalen ?><br><br></p>
 				</td>
                 <td></td>
                 <td class="center">Bediende</td>
