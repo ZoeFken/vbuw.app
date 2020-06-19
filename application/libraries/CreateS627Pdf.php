@@ -98,6 +98,7 @@ class CreateS627Pdf
 		 * D = Download file
 		 * S = Return PDF as a string */
 		
-		$pdf->Output(date("Y-m-d_H-i-s") . $name . '.' . $docName . '.pdf', 'D');		 
+		$pdf->Output(date("Y-m-d_H-i-s") . $name . '.' . $docName . '.pdf', 'D');
+		return true;
 	} 
 }

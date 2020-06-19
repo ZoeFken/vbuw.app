@@ -63,8 +63,9 @@ class Downloads extends MY_Controller
 		$data['opgemaaktDoor'] = $opgemaaktDoor;
 
 		$this->load->library('CreateS627Pdf');
-		$this->creates627pdf->create($data, $sourceFile);
-		$this->logging->Log($this->session->userdata('user_id'), '501', 'S627 ' . $document_id . ' gedownload');
+		($this->creates627pdf->create($data, $sourceFile)) ?
+			$this->logging->Log($this->session->userdata('user_id'), '501', 'S627 ' . $document_id . ' gedownload') :
+			$this->logging->Log($this->session->userdata('user_id'), '511', 'S627 ' . $document_id . ' kon niet gedownload worden');
 	}
 
 	/**
@@ -144,8 +145,9 @@ class Downloads extends MY_Controller
 
 		$sourceFile = './assets/base/S460.pdf';
 		$this->load->library('CreateS460Pdf');
-		$this->creates460pdf->create($data, $sourceFile);
-		$this->logging->Log($this->session->userdata('user_id'), '503', 'S460 ' . $document_id . ' gedownload');
+		($this->creates460pdf->create($data, $sourceFile)) ?
+			$this->logging->Log($this->session->userdata('user_id'), '503', 'S460 ' . $document_id . ' gedownload') :
+			$this->logging->Log($this->session->userdata('user_id'), '513', 'S460 ' . $document_id . ' kon niet gedownload worden');
 	}
 
 	/**
