@@ -21,4 +21,4 @@ $lang["geplaatstePalen"] = "Locatie geplaatste SSV";
 // Uitleg
 $lang["documentNaam"] = "voor document naam";
 $lang["uurNotatie"] = "uur notatie 12:30";
-$lang["datumNotatie"] = "datum notatie 25/01/2020";
+$lang["datumNotatie"] = "datum notatie 25-01-2020";
