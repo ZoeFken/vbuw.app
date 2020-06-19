@@ -119,6 +119,7 @@ class Documents extends MY_Controller
 		}
 
 		$this->document_model->deleteDocument($document_id);
+		$this->logging->Log($this->session->userdata('user_id'), '401', 'Document ' . $document['document_type'] .' ' . $document_id . ' verwijderd');
 		if($redirect) redirect(base_url() . 'documents/personal');
 	}
 
@@ -157,6 +158,7 @@ class Documents extends MY_Controller
 			}
 		}
 
+		$this->logging->Log($this->session->userdata('user_id'), '402', 'Extra documenten verwijderd (max 10)');
 		redirect(base_url() . 'auth');
 		
 	}

@@ -62,7 +62,11 @@ class Create_s460 extends MY_Controller
 			$docId = $document_id;
 		}
 		
-		if(empty($docId) || empty($inputData)) return null;
+		if(empty($docId) || empty($inputData)) 
+		{
+			$this->logging->Log($this->session->userdata('user_id'), '101', 'Lege docId of lege inputData');
+			return null;
+		} 
 
 		foreach($inputData as $element)
 		{
@@ -71,6 +75,7 @@ class Create_s460 extends MY_Controller
 			$data['s460_input_verzender'] = $element['s460_input_verzender'];
 
 			$data['s460_input_created_at'] = date('Y-m-d H:i:s');
+			$this->logging->Log($this->session->userdata('user_id'), '102', 'S460 aangemaakt of aangepast ' . $docId);
 			$this->document_model->setS460enInputData($data);	
 		}
 		

@@ -31,20 +31,22 @@ class Downloads extends MY_Controller
 		$opgemaaktDoor = $this->document_model->getDocumentCreatorName($document_id);
 		$documentS627enData = $this->document_model->getDocumentS627en($document_id);
 		$docNeeded = $this->input->post('S627type');
+
+		$baseURL = './assets/base/';
 		
 		switch($docNeeded) 
 		{
 			case 'S627':
-				$sourceFile = './assets/base/S627.pdf';
+				$sourceFile = $baseURL . 'S627.pdf';
 			break;
 			case 's627bLvhw':
-				$sourceFile = './assets/base/S627-bis-lvhw.pdf';
+				$sourceFile = $baseURL . 'S627-bis-lvhw.pdf';
 			break; 
 			case 's627bWl':
-				$sourceFile = './assets/base/S627-bis-wl.pdf';
+				$sourceFile = $baseURL . 'S627-bis-wl.pdf';
 			break;
 			default:
-				$sourceFile = './assets/base/S627.pdf';
+				$sourceFile = $baseURL . 'S627.pdf';
 		}
 
 		$single = array();
@@ -62,6 +64,7 @@ class Downloads extends MY_Controller
 
 		$this->load->library('CreateS627Pdf');
 		$this->creates627pdf->create($data, $sourceFile);
+		$this->logging->Log($this->session->userdata('user_id'), '501', 'S627 ' . $document_id . ' gedownload');
 	}
 
 	/**
@@ -118,6 +121,7 @@ class Downloads extends MY_Controller
 		}
 
 		$mpdf->Output(date("Y-m-d_H-i-s") . $name . '.' . $docName . '.pdf', 'D');
+		$this->logging->Log($this->session->userdata('user_id'), '502', 'Verdeler ' . $document_id . ' gedownload');
 	}
 
 	/**
@@ -141,6 +145,7 @@ class Downloads extends MY_Controller
 		$sourceFile = './assets/base/S460.pdf';
 		$this->load->library('CreateS460Pdf');
 		$this->creates460pdf->create($data, $sourceFile);
+		$this->logging->Log($this->session->userdata('user_id'), '503', 'S460 ' . $document_id . ' gedownload');
 	}
 
 	/**

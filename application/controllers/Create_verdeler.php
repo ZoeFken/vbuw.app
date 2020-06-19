@@ -75,10 +75,15 @@ class Create_verdeler extends MY_Controller
 				$this->document_model->updateVerdelersData($inputData);
 			}
 
+			$this->logging->Log($this->session->userdata('user_id'), '301', 'Verdeler aangemaakt of aangepast ' . $inputData['document_id']);
 			redirect(base_url('documents'));
 		}
 
-		else redirect(base_url('create_verdeler'));
+		else 
+		{
+			$this->logging->Log($this->session->userdata('user_id'), '302', 'Verdeler validatie gefaald');
+			redirect(base_url('create_verdeler'));
+		}
 	}
 
 	/**

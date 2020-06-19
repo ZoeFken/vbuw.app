@@ -85,10 +85,15 @@ class Create_s627 extends MY_Controller
 
 			}
 
+			$this->logging->Log($this->session->userdata('user_id'), '201', 'S627 aangemaakt of aangepast ' . $data['document_id']);
 			redirect(base_url('documents'));
 		}
 
-		else redirect(base_url('create_s627'));
+		else 
+		{
+			$this->logging->Log($this->session->userdata('user_id'), '202', 'S627 validatie gefaald');
+			redirect(base_url('create_s627'));
+		}
 	}
 
 	/**
