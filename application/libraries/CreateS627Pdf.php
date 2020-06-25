@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Maak een pdf s 627 en bissen
+ * Maak een pdf voor S627 of bis
  */
 class CreateS627Pdf
 {
