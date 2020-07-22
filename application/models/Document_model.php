@@ -43,6 +43,7 @@ class Document_model extends CI_Model
 		$this->db->select('documents.*, users.first_name, users.last_name');
 		$this->db->from('documents');
 		$this->db->join('users', 'documents.user_id = users.id');
+		$this->db->order_by('documents.document_created_at', 'DESC');
 		$this->db->limit($limit);
 		
 		$query = $this->db->get();
