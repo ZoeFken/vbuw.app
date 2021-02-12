@@ -20,7 +20,7 @@
 					<a class="nav-link" href="<?php echo base_url('create_s460') ?>"><?php echo $this->lang->line('s460'); ?></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#"><del><?php echo $this->lang->line('i427'); ?></del></a>
+				<a class="nav-link" href="<?php echo base_url('create_s505') ?>"><?php echo $this->lang->line('s505'); ?></a>
 				</li>
 
 				<li class="nav-item dropdown">
@@ -41,6 +41,7 @@
 						?>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="https://drive.google.com/drive/folders/1wfK-iDhOTg_Xtzm-rLQYlmB-5gyzOYTZ?usp=sharing" target="_blanck"><?php echo $this->lang->line('blanco'); ?></a>
+					<a class="dropdown-item" href="https://amdm-web.infrabel.be/" target="_blanck"><?php echo $this->lang->line('amdm'); ?></a>
 					</div>
 				</li>
 

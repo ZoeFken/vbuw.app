@@ -91,6 +91,7 @@ class Create_s627 extends MY_Controller
 
 		else 
 		{
+			// Voeg repopulatie toe
 			$this->logging->Log($this->session->userdata('user_id'), '202', 'S627 validatie gefaald');
 			redirect(base_url('create_s627'));
 		}
@@ -141,7 +142,7 @@ class Create_s627 extends MY_Controller
 		return $this->form_validation->run();
 	}
 
-		/**
+	/**
 	 * Verzamel al de ingevulde s627 data
 	 * 
 	 * @return array met key

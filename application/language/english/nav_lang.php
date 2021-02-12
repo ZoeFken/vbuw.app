@@ -11,6 +11,7 @@ $lang["doc"] = "Documents";
 $lang["persoonlijk"] = "Personel";
 $lang["alle"] = "All";
 $lang["blanco"] = "Blanco";
+$lang["amdm"] = "Amdm";
 $lang["gebruikers"] = "Users";
 
 $lang["login"] = "Login";

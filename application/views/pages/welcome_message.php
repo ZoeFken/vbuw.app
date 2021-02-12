@@ -12,18 +12,20 @@
 		<p><?php echo $this->lang->line('reglementering'); ?></p>
 		<p><?php echo $this->lang->line('melding'); ?></p>
 		<div class="mail-block">
-			<h3>Een antwoord van Safety team Tucrail</h3>
-			<p>Dag  Pieter-Jan,</p>
-			<p>Wij kunnen niet toestaan dat er andere documenten of procedures worden gebruikt dan diegene die door Infrabel worden voorgeschreven.</br>
-			Naar aanleiding van de Corona-crisis werd er nog een aanpassing van de procedure gecommuniceerd om besmetting van het virus door contact te vermijden. (zie bijlage)</br>
-			Er mag dus in geen enkel geval worden afgeweken van de procedure of de voorgeschreven documenten.</br>
-			Infrabel werkt reeds geruime tijd zelf aan de digitalisering van de communicatiedocumenten. Zij zullen ons ten gepaste tijde hierover informeren en hierbij betrekken.</p>
-			</p>Met vriendelijke groeten</p>
-			<h3>Mijn response</h3>
-			<p>Ik heb mijn bedenkingen bij deze mail. Zover mijn kennis reikt (daarvoor dat ik ook enkele mails had gestuurd) wijken we niet af van de procedure bij het gebruik van een uitgeprint document. Het document in nagemaakt met alle gegevens van een S627 – S627B - … . Op het origineel document (afgedrukt in de printers van Infrabel) staat er nergens een volgnummer of iets dat aanduid dat elk document een unicum is. Dit was anders bij de S427 waar er bovenaan een volgnummer stond.<p>
-			<p>Het enige wat ik heb kunnen vinden in de regelgeving is dat het document moet geschreven worden in onuitwisbare inkt. Mits mijn printer niet kan afdrukken in potlood lijkt me dit zo te zijn.</p>
-			<p>Elk document dat ik digitaliseer is een document dat niet in tweevoud moet gemaakt worden. Het wordt uitgeprint dus het kan ook 2 jaar bewaard worden. Het is niet zo dat het document enkel leeft in een online platform. Het is wel degelijk de bedoeling van dit af te printen en dan verder aan te vullen met nummers en gegevens met de hand.</p>
-			<p>Wel spijtig dat er een mail wordt gestuurd die duidelijk opgemaakt is als een paraplu zonder kennis van zaken of enige blijk van denk werk. Ze hebben dit vandaag besproken (zover is duidelijk door de voorgaande mails die ik gekregen heb). Ik heb de mail ontvangen om 8u58. Ik kan het niet geloven dat ze hier veel tijd hebben aan besteed in hun vergadering.</p>
+			<code>10-02-2021</code>
+			<p>Ik had gehoopt dat we tegen dit moment een permanente oplossing zouden gekregen hebben van Tucrail voor de support en onderhoude van de site. Spijtig genoeg is dit niet het geval. De site is niet gratis om online te blijven en kost me wel iets. Het eerste jaar heb ik dit betaalt. Maar ik hoop dat ik nu mag vragen aan de gebruikers om een kleine donatie te doen. Dit is niet verplicht, ik doe dit met alle plezier.</p>
+		<form action="https://www.paypal.com/donate" method="post" target="_top">
+			<input type="hidden" name="business" value="pjcasteels@gmail.com" />
+			<input type="hidden" name="item_name" value="upkeep en onderhoud van vbuw.app" />
+			<input type="hidden" name="currency_code" value="EUR" />
+			<input type="image" src="https://vbuw.app/assets/images/supportpp.jpg" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Doneren met PayPal-knop" />
+			<img alt="" border="0" src="https://www.paypal.com/nl_BE/i/scr/pixel.gif" width="1" height="1" />
+		</form>
+		</div>
+		<div class="mail-block">
+			<code>21-11-2020</code>
+			<p>Ik heb een rollback moeten doen van het systeem. Hierdoor zijn enkele documenten verwijderd geweest. Hiervoor mijn oprechte excuses.</p>
+			<p>Normaal zou alles terug moeten functioneren zoals voordien.</p>
 		</div>
 	</div>
 

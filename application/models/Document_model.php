@@ -65,6 +65,7 @@ class Document_model extends CI_Model
 			$this->db->from('documents');
 			$this->db->join('users', 'documents.user_id = users.id');
 			$this->db->where('users.id', $user_id);
+			$this->db->order_by('documents.document_created_at', 'DESC');
 			$this->db->limit($limit);
 			
 			$query = $this->db->get();
@@ -396,5 +397,47 @@ class Document_model extends CI_Model
 	{
 		$this->db->where('document_id', $document_id);
         return $this->db->delete('verdelers');
+	}
+
+	/**
+	 * Krijg alle gebruikers hun user_id terug
+	 * 
+	 * @return gebruikers of null
+	 */
+	public function getAllUsers()
+	{
+		$this->db->select('id');
+		$this->db->from('users');
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : NULL;
+	}
+
+	/*****************
+	 *      S505     *
+	 ****************/
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param s505enInputData om weg te schrijven naar de db
+	 * @return success or fail
+	 */
+	public function setS505enInputData($s505enInputData)
+	{
+		return $this->db->insert('s505en_input', $s505enInputData);
+	}
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param s505enInputData om weg te schrijven naar de db
+	 * @return success or fail
+	 */
+	public function updateS505enInputData($s505enInputData)
+	{
+		$this->db->where('document_id', $s505enInputData['document_id']);
+		$this->db->where('s505_input_name', $s505enInputData['s505_input_name']);
+        return $this->db->update('s505en_input', $s505enInputData);
 	}
 }	

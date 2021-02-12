@@ -146,7 +146,7 @@ CREATE TABLE `verdelers` (
   `verdeler_eindDatum` varchar(25),
   `verdeler_eindUur` varchar(25),
   `verdeler_lijn` varchar(25),
-  `verdeler_spoor` varchar(10),
+  `verdeler_spoor` varchar(255),
   `verdeler_kpVan` varchar(7),
   `verdeler_kpTot` varchar(7),
   `verdeler_tpo` varchar(255),
@@ -203,6 +203,51 @@ INSERT INTO `s460en` (`s460_id`, `s460_name`, `s460_y`, `s460_x`, `s460_w`, `s46
 (10, '10', '19.7', '45', '127', '39.7', 'L', 'T', '0'),
 (11, '11', '36.5', '119', '127', '39.7', 'L', 'T', '0'),
 (12, '12', '36.5', '142', '94', '14', 'L', 'T', '0');
+
+--
+-- Tabelstructuur voor tabel `s505en`
+--
+
+CREATE TABLE `s505en` (
+  `s505_id` int(11) NOT NULL,
+  `s505_name` varchar(25) NOT NULL,
+  `s505_y` FLOAT(5, 2) NOT NULL,
+	`s505_x` FLOAT(5, 2) NOT NULL,
+	`s505_w` FLOAT(5, 2),
+	`s505_h` FLOAT(5, 2),
+	`s505_align` CHAR(1),
+	`s505_valign` CHAR(1),
+	`s505_border` tinyint(1)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `s505en` (`s505_id`, `s505_name`, `s505_y`, `s505_x`, `s505_w`, `s505_h`, `s505_align`, `s505_valign`, `s505_border`) VALUES
+(1, 'houderS627', 40.50, 29.00, 48.00, 5.00, NULL, NULL, NULL),
+(2, 'verantwoordelijkeBss', 109.00, 29.00, 38.00, 5.00, NULL, NULL, NULL),
+(3, 'gevallen', 26.00, 34.20, 41.00, 5.00, NULL, NULL, NULL),
+(4, 'lijn1', 50.50, 84.70, 21.00, 5.00, NULL, NULL, NULL),
+(5, 'spoor1', 78.00, 84.70, 20.00, 5.00, NULL, NULL, NULL),
+(6, 'ap1', 125.50, 84.70, 21.00, 5.00, NULL, NULL, NULL),
+(7, 'lijn2', 174.00, 168.40, 40.00, 5.00, NULL, NULL, NULL),
+(8, 'spoor2', 79.20, 34.20, 18.00, 5.00, NULL, NULL, NULL),
+(9, 'ap2', 109.00, 34.20, 38.00, 5.00, NULL, NULL, NULL),
+(10, 'tpoBnx', 19.70, 45.00, 127.00, 39.70, 'L', 'T', 0),
+(11, 'eindDatum', 36.50, 119.00, 127.00, 39.70, 'L', 'T', 0),
+(12, 'eindUur', 36.50, 142.00, 94.00, 14.00, 'L', 'T', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `s505en_input`
+--
+
+CREATE TABLE `s505en_input` (
+  `s505_input_id` int(11) NOT NULL,
+  `document_id` int(11) NOT NULL,
+  `s505_input_name` varchar(25) NOT NULL,
+  `s505_input_input` varchar(25) NOT NULL,
+  `s505_input_created_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+	`s505_input_updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -266,6 +311,17 @@ ALTER TABLE `s460en`
   ADD PRIMARY KEY (`s460_id`);
 
 --
+-- Indexen voor tabel `s505en`
+--
+ALTER TABLE `s505en`
+  ADD PRIMARY KEY (`s505_id`);
+
+--
+-- Indexen voor tabel `s505en_input`
+--
+ALTER TABLE `s505en_input`
+  ADD PRIMARY KEY (`s505_input_id`,`document_id`);
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -323,6 +379,17 @@ ALTER TABLE `s460en_input`
 ALTER TABLE `s460en`
   MODIFY `s460_id` int(11) NOT NULL AUTO_INCREMENT;
 
+--
+-- AUTO_INCREMENT voor een tabel `s505en`
+--
+ALTER TABLE `s505en`
+  MODIFY `s505_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `s505en`
+--
+ALTER TABLE `s505en_input`
+  MODIFY `s505_input_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --

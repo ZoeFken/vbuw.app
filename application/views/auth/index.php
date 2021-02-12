@@ -2,6 +2,7 @@
 <p><?php echo lang('index_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
+<?php echo anchor("documents/removeAllExtraDocuments/", 'Remove extra') ;?>
 
 <table class="table" cellpadding=0 cellspacing=10>
 	<tr class="table-primary">

@@ -67,8 +67,6 @@ class CreateS627Pdf
 					if($data['overdracht'] != null) $single['s627_input_input'] = ' ';
 				}
 
-				// if($docName != 'S627' && ($single['s627_name'] == 'post' || $single['s627_name'] == 'station')) continue;
-
 				// station niet wegschrijven op doc
 				if($docName != 'S627' &&  $single['s627_name'] == 'station') continue;
 

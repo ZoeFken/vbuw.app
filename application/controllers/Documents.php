@@ -71,7 +71,7 @@ class Documents extends MY_Controller
 	 */
 	private function getLatestDocuments($limit = 25)
 	{
-		$this->load->model('document_model');
+		// $this->load->model('document_model');
 		return $this->document_model->getLatestDocuments($limit);
 	}
 
@@ -84,7 +84,7 @@ class Documents extends MY_Controller
 	 */
 	private function getLatestUserDocuments($limit = 25, $user_id)
 	{
-		$this->load->model('document_model');
+		// $this->load->model('document_model');
 		return $this->document_model->getLatestUserDocuments($limit, $user_id);
 	}
 
@@ -100,7 +100,7 @@ class Documents extends MY_Controller
 			if(!$this->ion_auth->is_admin()) redirect('auth/login');
 		}
 
-		$this->load->model('document_model');
+		// $this->load->model('document_model');
 
 		$document = $this->document_model->getDocument($document_id);
 		$document_type = $document['document_type'];
@@ -124,43 +124,66 @@ class Documents extends MY_Controller
 	}
 
 	/**
-	 * Verwijder alle oude documenten en geassocieerde velden
-	 * 
-	 * @param user_id
+	 * Verwijder alle gebruikers hun teveel aan documenten
 	 */
-	public function removeExtraDocuments($user_id)
+	public function removeAllExtraDocuments()
 	{
 		if (!$this->ion_auth->is_admin())
 		{
 			redirect('auth/login');
 		}
-		$this->load->model('document_model');
+
+		$allUsers = $this->document_model->getAllUsers();
+
+		foreach($allUsers as $user_id) $this->removeExtraDocuments($user_id['id'], false);
+
+		redirect(base_url() . 'auth');
+	}
+
+	/**
+	 * Verwijder alle oude documenten en geassocieerde velden
+	 * 
+	 * @param user_id
+	 * @param singleUser = true
+	 */
+	public function removeExtraDocuments($user_id, $singleUser = true)
+	{
+		if (!$this->ion_auth->is_admin())
+		{
+			redirect('auth/login');
+		}
+
+		// $this->load->model('document_model');
 
 		$allUserDocuments = $this->document_model->getAllUsersDocuments($user_id);
 
-		if(count($allUserDocuments) > 9)
+		if(!empty($allUserDocuments))
 		{
-			// Zet document als referentie en niet als nieuwe variabele
-			foreach($allUserDocuments as &$document)
+			if(count($allUserDocuments) > 10)
 			{
-				if($document['document_updated_at'] != '0000-00-00 00:00:00') 
+				// Zet document als referentie en niet als nieuwe variabele
+				foreach($allUserDocuments as &$document)
 				{
-					$document['document_created_at'] = $document['document_updated_at'];
+					if($document['document_updated_at'] != '0000-00-00 00:00:00') 
+					{
+						$document['document_created_at'] = $document['document_updated_at'];
+					}
 				}
-			}
-
-			// Callback voor het sorteren van de array
-			usort($allUserDocuments, array($this, 'date_compare'));
-
-			for($i = 9; $i < count($allUserDocuments); $i++)
-			{
-				$this->removeDocument($allUserDocuments[$i]['document_id'], false);
+	
+				// Callback voor het sorteren van de array
+				usort($allUserDocuments, array($this, 'date_compare'));
+				$reversedArray = array_reverse($allUserDocuments);
+	
+				for($i = 9; $i < count($reversedArray); $i++)
+				{
+					var_dump($reversedArray[$i]);
+					$this->removeDocument($reversedArray[$i]['document_id'], false);
+				}
 			}
 		}
 
 		$this->logging->Log($this->session->userdata('user_id'), '402', 'Extra documenten verwijderd (max 10)');
-		redirect(base_url() . 'auth');
-		
+		if ($singleUser === true) redirect(base_url() . 'auth');
 	}
 
 	/**

@@ -109,6 +109,7 @@ defined('CREATEADMIN')      OR define('CREATEADMIN', 8); // Create Admin
 */
 defined('S627')     		  OR define('S627', 's627');
 defined('S460')     		  OR define('S460', 's460');
+defined('S505')     		  OR define('S505', 's505');
 defined('VERDELER')      	  OR define('VERDELER', 'verdeler');
 defined('DOCUMENT')           OR define('DOCUMENT', 'document');
 defined('WELCOME')     		  OR define('WELCOME', 'welcome');
