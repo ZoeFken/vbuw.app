@@ -31,13 +31,17 @@
            <label for="lijn"><?php echo $this->lang->line('lijn'); ?></label>
            <input type="text" name="lijn1" class="form-control" id="lijn1" placeholder="L75" value="<?php echo set_value('lijn'); ?>">
          </div>
-         <div class="form-group col-md-4 col-xs-13">
+         <div class="form-group col-md-2 col-xs-13">
            <label for="spoor"><?php echo $this->lang->line('spoor'); ?></label>
            <input type="text" name="spoor1" class="form-control" id="spoor1" placeholder="A" value="<?php echo set_value('spoor'); ?>">
          </div>
-         <div class="form-group col-md-4 col-xs-13">
+         <div class="form-group col-md-3 col-xs-13">
            <label for="ap"><?php echo $this->lang->line('ap'); ?></label>
            <input type="text" name="ap1" class="form-control" id="ap1" placeholder="25.000" value="<?php echo set_value('ap'); ?>">
+         </div>
+         <div class="form-group col-md-3 col-xs-13">
+           <label for="ap"><?php echo $this->lang->line('ap'); ?></label>
+           <input type="text" name="ap2" class="form-control" id="ap2" placeholder="25.001" value="<?php echo set_value('ap'); ?>">
          </div>
        </div>
        <div class="row">
@@ -45,13 +49,17 @@
            <label for="lijn"><?php echo $this->lang->line('lijn'); ?></label>
            <input type="text" name="lijn2" class="form-control" id="lijn2" placeholder="L75" value="<?php echo set_value('lijn'); ?>">
          </div>
-         <div class="form-group col-md-4 col-xs-13">
+         <div class="form-group col-md-2 col-xs-13">
            <label for="spoor"><?php echo $this->lang->line('spoor'); ?></label>
            <input type="text" name="spoor2" class="form-control" id="spoor2" placeholder="B" value="<?php echo set_value('spoor'); ?>">
          </div>
-         <div class="form-group col-md-4 col-xs-13">
+         <div class="form-group col-md-3 col-xs-13">
            <label for="ap"><?php echo $this->lang->line('ap'); ?></label>
-           <input type="text" name="ap2" class="form-control" id="ap2" placeholder="25.000" value="<?php echo set_value('ap'); ?>">
+           <input type="text" name="ap3" class="form-control" id="ap3" placeholder="25.000" value="<?php echo set_value('ap'); ?>">
+         </div>
+         <div class="form-group col-md-3 col-xs-13">
+           <label for="ap"><?php echo $this->lang->line('ap'); ?></label>
+           <input type="text" name="ap4" class="form-control" id="ap4" placeholder="25.001" value="<?php echo set_value('ap'); ?>">
          </div>
        </div>
        <div class="form-group col-md-13 col-xs-13">

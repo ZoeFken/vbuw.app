@@ -54,10 +54,6 @@ class Create_s505 extends MY_Controller
 		{
 			$type = 's505';
 			$inputData = $this->collectS505Data();
-
-			// echo '<pre>';
-			// var_dump($inputData);
-			// echo '</pre>';
 		
 			if($document_id === false)
 			{
@@ -131,9 +127,11 @@ class Create_s505 extends MY_Controller
 			array('lijn1', $this->input->post('lijn1')),
 			array('spoor1', $this->input->post('spoor1')),
 			array('ap1', $this->input->post('ap1')),
+			array('ap2', $this->input->post('ap2')),
 			array('lijn2', $this->input->post('lijn2')),
 			array('spoor2', $this->input->post('spoor2')),
-			array('ap2', $this->input->post('ap2')),
+			array('ap3', $this->input->post('ap3')),
+			array('ap4', $this->input->post('ap4')),
 			array('tpoBnx', $this->input->post('tpoBnx')),
 			array('eindDatum', $this->input->post('eindDatum')),
 			array('eindUur', $this->input->post('eindUur'))
@@ -157,5 +155,33 @@ class Create_s505 extends MY_Controller
 		];
 
 		return $data;
+	}
+
+	/**
+	 * Editeer het document
+	 * 
+	 * @param document_id
+	 */
+	public function editDocument($document_id)
+	{
+		$this->load->model('document_model');
+		$this->checkIfOwner($document_id);
+		$info['document_id'] = $document_id;
+		$s505en = $this->document_model->getEditDocumentS505en($document_id);
+
+		foreach($s505en as $s505)
+		{
+			if(!empty($s505['s505_input_name']) || !empty($s505['s505_input_input'])) $info[$s505['s505_input_name']] = $s505['s505_input_input']; 			
+		}
+
+		$this->loadLang(S505);
+
+		$data = [
+			'title' => $this->lang->line('titel')
+		];
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('pages/edit_s505', $info);
+		$this->load->view('templates/footer');
 	}
 }

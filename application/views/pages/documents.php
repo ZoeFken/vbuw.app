@@ -40,7 +40,10 @@
 				break;
 				case 's460':
 					$this->load->view('modals/s460_modal', array('document_id' => $document['document_id']));
-				break;	
+				break;
+				case 's505':
+					$this->load->view('modals/s505_modal', array('document_id' => $document['document_id']));
+				break;
 			}	
 		}
 		endif;

@@ -440,4 +440,52 @@ class Document_model extends CI_Model
 		$this->db->where('s505_input_name', $s505enInputData['s505_input_name']);
         return $this->db->update('s505en_input', $s505enInputData);
 	}
+
+	/**
+	 * Krijg velden terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getDocumentS505en($document_id)
+	{
+		$this->db->select('*');
+		$this->db->from('s505en_input');
+		$this->db->join('s505en', 's505en_input.s505_input_name = s505en.s505_name');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+
+	/**
+	 * Verwijder de velden
+	 * 
+	 * @param document_id
+	 * @return success or fail
+	 */
+	public function deleteS505enInputData($document_id)
+	{
+		$this->db->where('document_id', $document_id);
+        return $this->db->delete('s505en_input');
+	}
+
+	/**
+	 * Krijg velden terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getEditDocumentS505en($document_id)
+	{
+		$this->db->select('s505en_input.s505_input_name, s505en_input.s505_input_input');
+		$this->db->from('s505en_input');
+		$this->db->join('s505en', 's505en_input.s505_input_name = s505en.s505_name');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
 }	

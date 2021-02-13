@@ -12,6 +12,9 @@
 		<p><?php echo $this->lang->line('reglementering'); ?></p>
 		<p><?php echo $this->lang->line('melding'); ?></p>
 		<div class="mail-block">
+			<p>Zoals gevraagd door enkele collega's heb ik het document S505 toegevoegd aan vbuw.app. Dit is functioneel. Indien je bugs vindt of een aanpassing wenst -> mail me.</p>
+		</div>
+		<div class="mail-block">
 			<code>10-02-2021</code>
 			<p>Ik had gehoopt dat we tegen dit moment een permanente oplossing zouden gekregen hebben van Tucrail voor de support en onderhoude van de site. Spijtig genoeg is dit niet het geval. De site is niet gratis om online te blijven en kost me wel iets. Het eerste jaar heb ik dit betaalt. Maar ik hoop dat ik nu mag vragen aan de gebruikers om een kleine donatie te doen. Dit is niet verplicht, ik doe dit met alle plezier.</p>
 		<form action="https://www.paypal.com/donate" method="post" target="_top">

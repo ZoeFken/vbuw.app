@@ -221,18 +221,21 @@ CREATE TABLE `s505en` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `s505en` (`s505_id`, `s505_name`, `s505_y`, `s505_x`, `s505_w`, `s505_h`, `s505_align`, `s505_valign`, `s505_border`) VALUES
-(1, 'houderS627', 40.50, 29.00, 48.00, 5.00, NULL, NULL, NULL),
-(2, 'verantwoordelijkeBss', 109.00, 29.00, 38.00, 5.00, NULL, NULL, NULL),
-(3, 'gevallen', 26.00, 34.20, 41.00, 5.00, NULL, NULL, NULL),
-(4, 'lijn1', 50.50, 84.70, 21.00, 5.00, NULL, NULL, NULL),
-(5, 'spoor1', 78.00, 84.70, 20.00, 5.00, NULL, NULL, NULL),
-(6, 'ap1', 125.50, 84.70, 21.00, 5.00, NULL, NULL, NULL),
-(7, 'lijn2', 174.00, 168.40, 40.00, 5.00, NULL, NULL, NULL),
-(8, 'spoor2', 79.20, 34.20, 18.00, 5.00, NULL, NULL, NULL),
-(9, 'ap2', 109.00, 34.20, 38.00, 5.00, NULL, NULL, NULL),
-(10, 'tpoBnx', 19.70, 45.00, 127.00, 39.70, 'L', 'T', 0),
-(11, 'eindDatum', 36.50, 119.00, 127.00, 39.70, 'L', 'T', 0),
-(12, 'eindUur', 36.50, 142.00, 94.00, 14.00, 'L', 'T', 0);
+(1, 'houderS627', 173.00, 42.00, 40.00, 5.00, NULL, NULL, NULL),
+(2, 'verantwoordelijkeBss', 227.00, 42.00, 40.00, 5.00, NULL, NULL, NULL),
+(3, 'gevallen', 24.50, 50.00, 135.00, 14.00, 'L', 'T', NULL),
+(4, 'lijn1', 36.00, 86.00, 20.00, 5.00, NULL, NULL, NULL),
+(5, 'spoor1', 66.50, 86.00, 20.00, 5.00, NULL, NULL, NULL),
+(6, 'ap1', 97.00, 86.00, 20.00, 5.00, NULL, NULL, NULL),
+(7, 'ap2', 130.00, 86.00, 20.00, 5.00, NULL, NULL, NULL),
+(8, 'lijn2', 36.00, 90.70, 20.00, 5.00, NULL, NULL, NULL),
+(9, 'spoor2', 66.50, 90.70, 20.00, 5.00, NULL, NULL, NULL),
+(10, 'ap3', 97.00, 90.70, 20.00, 5.00, NULL, NULL, NULL),
+(11, 'ap4', 130.00, 90.70, 20.00, 5.00, NULL, NULL, NULL),
+(12, 'tpoBnx', 24.50, 102.00, 135.00, 5.00, NULL, NULL, NULL),
+(13, 'eindDatum', 101.00, 134.10, 40.00, 5.00, NULL, NULL, NULL),
+(14, 'eindUur', 139.00, 134.10, 40.00, 5.00, NULL, NULL, NULL),
+(16, 'gevallen', 24.50, 118.50, 135.00, 10.00, 'L', 'T', NULL);
 
 -- --------------------------------------------------------
 

@@ -116,6 +116,9 @@ class Documents extends MY_Controller
 			case "s460":
 				$this->document_model->deleteS460enInputData($document_id);
 			break;
+			case "s505":
+				$this->document_model->deleteS505enInputData($document_id);
+			break;
 		}
 
 		$this->document_model->deleteDocument($document_id);

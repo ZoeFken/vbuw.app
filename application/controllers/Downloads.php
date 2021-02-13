@@ -151,6 +151,37 @@ class Downloads extends MY_Controller
 	}
 
 	/**
+	 * Genereer het s505 document
+	 * 
+	 * @param $document_id
+	 */
+	public function s505($document_id)
+	{
+		$opgemaaktDoor = $this->document_model->getDocumentCreatorName($document_id);
+		$documentS505enData = $this->document_model->getDocumentS505en($document_id);
+
+		$sourceFile = './assets/base/S505.pdf';
+
+		$single = array();
+		$textbox = array();
+		foreach($documentS505enData as $s505)
+		{
+			($s505['s505_align'] == null) ? array_push($single, $s505) : array_push($textbox, $s505);
+		}
+
+		$data['single'] = $single;
+		$data['textbox'] = $textbox;
+		$data['hoeveelDagen'] = $this->collectHoeveelDagen();
+		$data['overdracht'] = $this->input->post('overdracht');
+		$data['opgemaaktDoor'] = $opgemaaktDoor;
+
+		$this->load->library('CreateS505Pdf');
+		($this->creates505pdf->create($data, $sourceFile)) ?
+			$this->logging->Log($this->session->userdata('user_id'), '501', 'S505 ' . $document_id . ' gedownload') :
+			$this->logging->Log($this->session->userdata('user_id'), '511', 'S505 ' . $document_id . ' kon niet gedownload worden');
+	}
+
+	/**
 	 * Verzamel en controleer het aantal dagen bedoeld voor een document
 	 * 
 	 * @return hoeveelDagen
