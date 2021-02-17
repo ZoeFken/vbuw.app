@@ -235,7 +235,8 @@ INSERT INTO `s505en` (`s505_id`, `s505_name`, `s505_y`, `s505_x`, `s505_w`, `s50
 (12, 'tpoBnx', 24.50, 102.00, 135.00, 5.00, NULL, NULL, NULL),
 (13, 'eindDatum', 101.00, 134.10, 40.00, 5.00, NULL, NULL, NULL),
 (14, 'eindUur', 139.00, 134.10, 40.00, 5.00, NULL, NULL, NULL),
-(16, 'gevallen', 24.50, 118.50, 135.00, 10.00, 'L', 'T', NULL);
+(16, 'gevallen', 24.50, 118.50, 135.00, 10.00, 'L', 'T', NULL),
+(17, 'tpoBnx', 24.50, 118.50, 135.00, 5.00, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -247,7 +248,7 @@ CREATE TABLE `s505en_input` (
   `s505_input_id` int(11) NOT NULL,
   `document_id` int(11) NOT NULL,
   `s505_input_name` varchar(25) NOT NULL,
-  `s505_input_input` varchar(25) NOT NULL,
+  `s505_input_input` text,
   `s505_input_created_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
 	`s505_input_updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

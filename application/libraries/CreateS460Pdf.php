@@ -44,6 +44,7 @@ class CreateS460Pdf
 					// Nieuwe pagina
 					$pdf->AddPage();
 					$pdf->setSourceFile($sourceFile);
+					$pdf->SetAutoPageBreak(false);
 					$tpl = $pdf->importPage(1);
 					$pdf->useTemplate($tpl, 0, 0, null, null);
 					$itteration = ($ix > 0) ? $itteration + 12 : 0;

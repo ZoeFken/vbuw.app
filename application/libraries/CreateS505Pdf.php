@@ -36,6 +36,17 @@ class CreateS505Pdf
 			
 			foreach($data['single'] as $single)
 			{
+				if($single['s505_name'] == 'eindDatum')
+				{
+					if (!empty($single['s505_input_input']))
+					{
+						$date = new DateTime($single['s505_input_input']);
+						$interval = new DateInterval('P' . ($i-1) . 'D');
+						$date->add($interval);
+						$single['s505_input_input'] = $date->format('d-m-Y');
+					}
+				}
+				
 				$pdf->SetFont($fontName, 'B', 8);
 				$pdf->SetXY($single['s505_y'], $single['s505_x']);
 				$pdf->Cell($single['s505_w'], $single['s505_h'], $single['s505_input_input'], 0);
