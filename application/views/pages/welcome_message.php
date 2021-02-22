@@ -17,6 +17,14 @@
 		<div class="mail-block">
 			<code>10-02-2021</code>
 			<p>Ik had gehoopt dat we tegen dit moment een permanente oplossing zouden gekregen hebben van Tucrail voor de support en onderhoude van de site. Spijtig genoeg is dit niet het geval. De site is niet gratis om online te blijven en kost me wel iets. Het eerste jaar heb ik dit betaalt. Maar ik hoop dat ik nu mag vragen aan de gebruikers om een kleine donatie te doen. Dit is niet verplicht, ik doe dit met alle plezier.</p>
+			<div class="progress">
+				<div class='money'><p>0 €</p></div>
+				<div class="progress-bar">
+					<span class="progress-bar-fill" style="width: 37%;">37%</span>
+				</div>
+				<div class='money'><p>132,91 €</p></div>
+			</div><br>
+			<p>Bedankt aan de enkelingen die hebben gesponserd. De totale kost voor dit jaar bedraagt 132,91 EUR.</p>
 		<form action="https://www.paypal.com/donate" method="post" target="_top">
 			<input type="hidden" name="business" value="pjcasteels@gmail.com" />
 			<input type="hidden" name="item_name" value="upkeep en onderhoud van vbuw.app" />
@@ -31,4 +39,3 @@
 			<p>Normaal zou alles terug moeten functioneren zoals voordien.</p>
 		</div>
 	</div>
-

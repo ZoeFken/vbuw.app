@@ -48,10 +48,37 @@ class Documents extends MY_Controller
 		$this->load->view('templates/footer');
 	}
 
+	/**
+	 * Krijg alle documenten terug indien admin
+	 */
 	public function all()
 	{
 		$documents = [
 			'documents' => $this->getLatestDocuments(25),
+			'persoonlijk' => FALSE
+		];	
+		$data = ['title' => 'Download bestanden'];
+
+		$this->loadLang(DOCUMENT);
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('pages/documents', $documents);
+		$this->load->view('templates/footer');
+	}
+
+	/**
+	 * Krijg alle documenten van een specifieke gebruiker
+	 * 
+	 * @param $user_id
+	 */
+	public function specific($user_id)
+	{
+		if (!$this->ion_auth->is_admin())
+		{
+			redirect('auth/login');
+		}
+		$documents = [
+			'documents' => $this->getLatestUserDocuments(10, $user_id),
 			'persoonlijk' => FALSE
 		];	
 		$data = ['title' => 'Download bestanden'];
