@@ -38,6 +38,7 @@ $lang['index_email_th']          = 'E-mailadres';
 $lang['index_groups_th']         = 'Groepen';
 $lang['index_status_th']         = 'Status';
 $lang['index_action_th']         = 'Actie';
+$lang['index_action_doc']         = 'Documenten';
 $lang['index_active_link']       = 'Actief';
 $lang['index_inactive_link']     = 'Inactief';
 $lang['index_create_user_link']  = 'Nieuwe gebruiker aanmaken';

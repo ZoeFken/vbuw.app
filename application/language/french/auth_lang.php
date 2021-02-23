@@ -40,6 +40,7 @@ $lang['index_email_th']          = 'Email';
 $lang['index_groups_th']         = 'Groupes';
 $lang['index_status_th']         = 'Statut';
 $lang['index_action_th']         = 'Action';
+$lang['index_action_doc']         = 'Document';
 $lang['index_active_link']       = 'Activer';
 $lang['index_inactive_link']     = 'Désactiver';
 $lang['index_create_user_link']  = 'Créer un nouvel utilisateur';

@@ -12,6 +12,7 @@
 		<th><?php echo lang('index_groups_th');?></th>
 		<th><?php echo lang('index_status_th');?></th>
 		<th><?php echo lang('index_action_th');?></th>
+		<th><?php echo lang('index_action_doc');?></th>
 	</tr>
 	<?php foreach ($users as $user):?>
 		<tr class="table-secondary">
@@ -26,7 +27,7 @@
 			<td><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
 			<td><?php echo anchor("auth/edit_user/".$user->id, 'Edit') ;?><br>
 			<?php echo anchor("documents/removeExtraDocuments/".$user->id, 'Remove extra') ;?><br></td>
-			<td><?php echo anchor('documents/specific/'.$user->id, 'Last documents') ?><br></td>
+			<td><?php echo anchor('documents/specific/'.$user->id, 'Last') ?><br></td>
 		</tr>
 	<?php endforeach;?>
 </table>
