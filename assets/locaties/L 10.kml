@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 10 Cit Techniekers</name>
+<Point><coordinates>4.2724,51.266239,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 10 Koestraat Kallo</name>
+<Point><coordinates>4.2437,51.248751,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 10 Pomphuis</name>
+<Point><coordinates>4.262895,51.258042,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 10 Schoorhavenweg</name>
+<Point><coordinates>4.204556,51.251414,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

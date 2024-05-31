@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 75 De Klokke</name>
+<Point><coordinates>3.247,50.819101,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Den Trap</name>
+<Point><coordinates>3.279148,50.826116,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ex. Ow 51 Waalstraat</name>
+<Point><coordinates>3.453169,50.916892,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Jaguar</name>
+<Point><coordinates>3.290503,50.834438,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Nieuwe Brug</name>
+<Point><coordinates>3.447404,50.910672,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 104</name>
+<Point><coordinates>3.225285,50.808689,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 109</name>
+<Point><coordinates>3.202291,50.789446,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 114</name>
+<Point><coordinates>3.221038,50.765886,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 117</name>
+<Point><coordinates>3.225009,50.758221,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 18</name>
+<Point><coordinates>3.607767,50.98932,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 26</name>
+<Point><coordinates>3.565395,50.982906,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 27</name>
+<Point><coordinates>3.56161,50.982127,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 33</name>
+<Point><coordinates>3.519473,50.9693,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 35</name>
+<Point><coordinates>3.509553,50.960848,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 35</name>
+<Point><coordinates>3.509207,50.961104,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 38</name>
+<Point><coordinates>3.497858,50.951393,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 39</name>
+<Point><coordinates>3.494186,50.948384,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 40</name>
+<Point><coordinates>3.488674,50.944228,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 44</name>
+<Point><coordinates>3.476099,50.934042,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 47</name>
+<Point><coordinates>3.4658,50.9255,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Ow 49</name>
+<Point><coordinates>3.459228,50.919595,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Paal 40</name>
+<Point><coordinates>3.226459,50.739552,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Pijkstraat Seinen Na FVG</name>
+<Point><coordinates>3.41245,50.886665,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 R-F. 6 En RX-F. 6</name>
+<Point><coordinates>3.517365,50.968115,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Sein MK37</name>
+<Point><coordinates>3.228521,50.750292,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Slekkeput Oprij</name>
+<Point><coordinates>3.426918,50.894018,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Leemput Oprijplaats</name>
+<Point><coordinates>3.378745,50.878734,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Werfkeet Deinze</name>
+<Point><coordinates>3.541856,50.978806,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Spoorwegstraat</name>
+<Point><coordinates>3.29159,50.835479,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Vennestraat Kortrijk</name>
+<Point><coordinates>3.287098,50.832106,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Waregem Lentedre DX-V en DW-V</name>
+<Point><coordinates>3.433668,50.898048,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Waregem Stationsparking</name>
+<Point><coordinates>3.423838,50.892164,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Zandberg</name>
+<Point><coordinates>3.292517,50.836101,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 Zandberg BVL 38/25 - 38/26</name>
+<Point><coordinates>3.295834,50.839320,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 75 TWaalfapostelenstraat Sint-Denijs-Westrem</name>
+<Point><coordinates>3.678044,51.019426,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

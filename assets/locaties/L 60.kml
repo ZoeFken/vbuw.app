@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 60 Mollem Station</name>
+<Point><coordinates>4.215596,50.932081,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 1</name>
+<Point><coordinates>4.31565,50.880634,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 12 Zittert Asse</name>
+<Point><coordinates>4.229917,50.895451,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 17</name>
+<Point><coordinates>4.205083,50.920801,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 17</name>
+<Point><coordinates>4.204766,50.920917,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 19</name>
+<Point><coordinates>4.21415,50.930984,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 27 Bis</name>
+<Point><coordinates>4.192743,50.972616,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 29</name>
+<Point><coordinates>4.170602,50.981271,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 3</name>
+<Point><coordinates>4.299839,50.881834,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 30</name>
+<Point><coordinates>4.163756,50.984936,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 30 Stw Op Lebbeke Opwy</name>
+<Point><coordinates>4.163756,50.984938,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 31</name>
+<Point><coordinates>4.154391,50.990672,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 31 Kl.A&#39;Werpenst Lebbe</name>
+<Point><coordinates>4.154391,50.990672,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 32</name>
+<Point><coordinates>4.14778,50.995218,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 33 Langest Lebbeke</name>
+<Point><coordinates>4.146317,50.999119,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 34</name>
+<Point><coordinates>4.139638,51.001584,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 35</name>
+<Point><coordinates>4.133949,51.005103,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 35</name>
+<Point><coordinates>4.1337,51.004347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 35 Lebbeke Stationstr</name>
+<Point><coordinates>4.1337,51.004346,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 36</name>
+<Point><coordinates>4.124122,51.014501,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 37 Vlietbergst D&#39;mond</name>
+<Point><coordinates>4.121586,51.018088,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 37 Vlietbergst D&#39;monde</name>
+<Point><coordinates>4.121586,51.018088,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 38 Buisst.D&#39;MONDE</name>
+<Point><coordinates>4.118528,51.021506,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow 8</name>
+<Point><coordinates>4.268983,50.892401,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow36 Haagstraat St.Gilli</name>
+<Point><coordinates>4.124283,51.014468,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 60 Ow36 Haagstraat St.Gillis</name>
+<Point><coordinates>4.124283,51.014467,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

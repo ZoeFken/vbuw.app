@@ -32,14 +32,27 @@ class MY_Form_validation extends CI_Form_validation
 	 */
 	public function valid_hours_minutes($str)
 	{
-		if (strrchr($str,":")) {
-			list($hh, $mm) = explode(':', $str);
-			if (!is_numeric($hh) || !is_numeric($mm)) return FALSE;
-			elseif ((int) $mm > 59) return FALSE;
-			elseif (mktime((int) $hh, (int) $mm) === FALSE) return FALSE;
-			return TRUE;
+		$chars = array(":", "h", "H", "u", "U");
+		foreach($chars as $char) {
+			if (strrchr($str,$char)) {
+				list($hh, $mm) = explode($char, $str);
+				if (!is_numeric($hh) || !is_numeric($mm)) return FALSE;
+				elseif ((int) $mm > 59) return FALSE;
+				elseif (mktime((int) $hh, (int) $mm) === FALSE) return FALSE;
+				return TRUE;
+			}
 		}
-		else return FALSE; 
+
+		return FALSE; 
+		
+		// if (strrchr($str,":")) {
+		// 	list($hh, $mm) = explode(':', $str);
+		// 	if (!is_numeric($hh) || !is_numeric($mm)) return FALSE;
+		// 	elseif ((int) $mm > 59) return FALSE;
+		// 	elseif (mktime((int) $hh, (int) $mm) === FALSE) return FALSE;
+		// 	return TRUE;
+		// }
+		// else return FALSE; 
 	}
 
 	/**

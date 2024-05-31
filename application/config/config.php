@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 date_default_timezone_set('Europe/Brussels');
 $config['base_url'] = 'http://localhost/vbuwdoc/';
-// $config['base_url'] = 'https://www.vbuw.app';
+// $config['base_url'] = 'https://www.vbuw.be';
 
 /*
 |--------------------------------------------------------------------------

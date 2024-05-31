@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 51 Ow 38L51 Ow 38</name>
+<Point><coordinates>3.173583,51.286217,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 51 Sein CW-7 Ap 106557</name>
+<Point><coordinates>3.14025,51.307684,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 51 Sein O-U 7  Ap 98900</name>
+<Point><coordinates>3.204267,51.251451,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

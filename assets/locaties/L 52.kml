@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 52 Antwerpsestraat</name>
+<Point><coordinates>4.367033,51.098851,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 52 Langelei</name>
+<Point><coordinates>4.364467,51.096951,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 52 Langelei Boom</name>
+<Point><coordinates>4.365583,51.096401,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 52 Scheldeweg Boom</name>
+<Point><coordinates>4.363267,51.098984,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 52 WALENHOF Niel</name>
+<Point><coordinates>4.355217,51.103384,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

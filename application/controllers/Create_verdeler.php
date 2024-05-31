@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  * De aanmaak documenten controller
@@ -9,23 +9,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @version   0.5
  */
 
-class Create_verdeler extends MY_Controller 
+class Create_verdeler extends MY_Controller
 {
-	public function __construct() 
-    {
+	public function __construct()
+	{
 		parent::__construct();
-		if (!$this->ion_auth->logged_in())
-		{
+		if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
 		}
 	}
-	
+
 	public function index()
 	{
 		$data = [
 			'title' => $this->lang->line('titel')
 		];
-		
+
 		$this->loadLang(VERDELER);
 
 		$this->load->view('templates/header', $data);
@@ -48,39 +47,29 @@ class Create_verdeler extends MY_Controller
 		$this->load->model('document_model');
 		$validated = $this->validateVerdeler();
 
-		if($validated == TRUE)
-		{
-			$inputData =$this->collectVerdelerData();
+		if ($validated == TRUE) {
+			$inputData = $this->collectVerdelerData();
 
-			if($document_id === false)
-			{
+			if ($document_id === false) {
 				$documentData = $this->collectDocumentData($type);
 				$inputData['document_id'] = $this->document_model->setDocument($documentData);
 				$inputData['verdeler_created_at'] = date('Y-m-d H:i:s');
-			}
-			else
-			{
+			} else {
 				$inputData['document_id'] = $document_id;
 				$inputData['verdeler_updated_at'] = date('Y-m-d H:i:s');
 			}
 
-			if(empty($inputData['document_id']) || empty($inputData)) return null;
+			if (empty($inputData['document_id']) || empty($inputData)) return null;
 
-			if($document_id === false)
-			{
+			if ($document_id === false) {
 				$this->document_model->setVerdelersData($inputData);
-			}
-			else
-			{
+			} else {
 				$this->document_model->updateVerdelersData($inputData);
 			}
 
 			$this->logging->Log($this->session->userdata('user_id'), '301', 'Verdeler aangemaakt of aangepast ' . $inputData['document_id']);
 			redirect(base_url('documents'));
-		}
-
-		else 
-		{
+		} else {
 			$this->logging->Log($this->session->userdata('user_id'), '302', 'Verdeler validatie gefaald');
 			redirect(base_url('create_verdeler'));
 		}
@@ -106,7 +95,7 @@ class Create_verdeler extends MY_Controller
 		$data = [
 			'title' => $this->lang->line('titel')
 		];
-		
+
 		$this->loadLang(VERDELER);
 
 		$this->load->view('templates/header', $data);
@@ -122,10 +111,10 @@ class Create_verdeler extends MY_Controller
 	private function validateVerdeler()
 	{
 		$this->form_validation->set_error_delimiters('<div class="p-3 mb-2 bg-danger text-white">', '</div>');
-		$this->form_validation->set_rules('aanvangsDatum','Aanvangs datum','trim|min_length[10]|max_length[10]|valid_date[d-m-Y]');
-		$this->form_validation->set_rules('aanvangUur','Aanvang uur','trim|min_length[5]|max_length[5]|valid_time');
-		$this->form_validation->set_rules('eindDatum','Eind datum','trim|min_length[10]|max_length[10]|valid_date[d-m-Y]');
-		$this->form_validation->set_rules('eindUur','Eind uur','trim|min_length[5]|max_length[5]|valid_time');
+		$this->form_validation->set_rules('aanvangsDatum', 'Aanvangs datum', 'trim|min_length[10]|max_length[10]|valid_date[d-m-Y]');
+		$this->form_validation->set_rules('aanvangUur', 'Aanvang uur', 'trim|min_length[5]|max_length[5]|valid_time');
+		$this->form_validation->set_rules('eindDatum', 'Eind datum', 'trim|min_length[10]|max_length[10]|valid_date[d-m-Y]');
+		$this->form_validation->set_rules('eindUur', 'Eind uur', 'trim|min_length[5]|max_length[5]|valid_time');
 
 		return $this->form_validation->run();
 	}
@@ -144,12 +133,13 @@ class Create_verdeler extends MY_Controller
 		$data['verdeler_eindUur'] = $this->input->post('eindUur');
 		$data['verdeler_lijn'] = $this->input->post('lijn');
 		$data['verdeler_spoor'] = $this->input->post('spoor');
-		$data['verdeler_kpVan'] = $this->input->post('kpVan');
-		$data['verdeler_kpTot'] = $this->input->post('kpTot');
+		// $data['verdeler_kpVan'] = $this->input->post('kpVan');
+		// $data['verdeler_kpTot'] = $this->input->post('kpTot');
 		$data['verdeler_tpo'] = $this->input->post('tpo');
 		$data['verdeler_gevallen'] = $this->input->post('gevallen');
 		$data['verdeler_uiterstePalen'] = $this->input->post('uiterstePalen');
 		$data['verdeler_geplaatstePalen'] = $this->input->post('geplaatstePalen');
+		$data['verdeler_documentNaam'] = $this->input->post('documentNaam');
 
 		return $data;
 	}

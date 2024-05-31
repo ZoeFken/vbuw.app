@@ -1,9 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 // Invul doc
 $lang["titel"] = "Opmaak S 627";
-$lang["ingediendDoor"] = "Ingediend Door";
+$lang["documentNaam"] = "Document naam";
+$lang["ingediendDoor"] = "Ingediend door";
 $lang["specialiteit"] = "Specialiteit";
 $lang["aan"] = "Aan";
 $lang["post"] = "Post / Werf";

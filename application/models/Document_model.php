@@ -48,7 +48,9 @@ class Document_model extends CI_Model
 		
 		$query = $this->db->get();
 
-        return ($query->num_rows() > 0) ? $query->result_array() : NULL;
+		$query = ($query->num_rows() > 0) ? $query->result_array() : NULL;
+
+        return $this->combineDocumentArrayWithName($query);
 	}
 
 	/**
@@ -57,8 +59,10 @@ class Document_model extends CI_Model
 	 * @param limit aantal of standaard 25
 	 * @return array van documenten
 	 */
-	public function getLatestUserDocuments($limit = 25, $user_id)
+	public function getLatestUserDocuments($user_id, $limit = 25)
 	{
+		$query = NULL;
+
 		if(!empty($user_id))
 		{
 			$this->db->select('documents.*, users.first_name, users.last_name');
@@ -69,10 +73,11 @@ class Document_model extends CI_Model
 			$this->db->limit($limit);
 			
 			$query = $this->db->get();
-	
-			return ($query->num_rows() > 0) ? $query->result_array() : NULL;
+
+			$query = ($query->num_rows() > 0) ? $query->result_array() : NULL;
 		}
-		return NULL;
+
+		return $this->combineDocumentArrayWithName($query);
 	}
 
 	/**
@@ -89,7 +94,86 @@ class Document_model extends CI_Model
 		
 		$query = $this->db->get();
 
-        return ($query->num_rows() > 0) ? $query->result_array() : NULL;
+		$query = ($query->num_rows() > 0) ? $query->result_array() : NULL;
+
+		return $this->combineDocumentArrayWithName($query);
+	}
+
+	/**
+	 * Combineer de documenten met hun naam
+	 * 
+	 * @param documenten Array
+	 * @return array van documenten
+	 */
+	public function combineDocumentArrayWithName($query)
+	{
+		$newQuery = [];
+		if($query != NULL) 
+		{
+			foreach ($query as $value) 
+			{
+				$documentName = $this->getDocumentName( (int) $value['document_id'], (string) $value['document_type']);
+				if(!empty($documentName))
+				{
+					$value['document_naam'] = $documentName;
+				} 
+				else 
+				{
+					$value['document_naam'] = NULL;
+				}
+
+				// echo "<pre>";
+				// var_dump($value);
+				// echo "</pre>";
+				array_push($newQuery, $value);
+				
+			}
+			return $newQuery;
+		}
+		return NULL;
+	}
+
+	/**
+	 * Krijg het document naam terug indien dit bestaat
+	 * 
+	 * @param document_id
+	 * @return array van document_naam
+	 */
+	public function getDocumentName($document_id, $document_name)
+	{
+		if($document_name == 's627') 
+		{
+			$this->db->select('s627en_input.s627_input_input');
+			$this->db->from('s627en_input');
+			$this->db->where('s627en_input.document_id', $document_id);
+			$this->db->where('s627en_input.s627_input_name', 'documentNaam');
+
+			$query = $this->db->get();
+
+			return ($query->num_rows() > 0) ? (string) $query->row()->s627_input_input : FALSE;
+		}
+		elseif($document_name == 'verdeler') 
+		{
+			$this->db->select('verdelers.verdeler_documentNaam');
+			$this->db->from('verdelers');
+			$this->db->where('document_id', $document_id);
+
+			$query = $this->db->get();
+
+			return ($query->num_rows() > 0) ? (string) $query->row()->verdeler_documentNaam : FALSE;
+		}
+		elseif($document_name == 's460') 
+		{ 
+			return "s460";
+		}
+		elseif($document_name == 's505') 
+		{ 
+			return "s505";
+		}
+		else
+		{
+			return NULL;
+		}
 	}
 
 	/**

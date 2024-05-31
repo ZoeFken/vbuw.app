@@ -17,6 +17,7 @@ $lang["tpo"] = "TPO - F.B.S.S";
 $lang["gevallen"] = "Gevallen";
 $lang["uiterstePalen"] = "Uiterste punten";
 $lang["geplaatstePalen"] = "Locatie geplaatste SSV";
+$lang["documentNaam"] = "Document naam";
 
 // Uitleg
 $lang["documentNaam"] = "voor document naam";

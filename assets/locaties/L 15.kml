@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lijn 15</name>
+    <Style id="icon-1899-F9A825-normal">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-F9A825-highlight">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-F9A825">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-F9A825-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-F9A825-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>L15 OW 011</name>
+      <Point>
+        <coordinates>
+          4.521182,51.149747,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 014</name>
+      <Point>
+        <coordinates>
+          4.54434,51.137813,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 024</name>
+      <Point>
+        <coordinates>
+          4.572637,51.139114,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 027</name>
+      <Point>
+        <coordinates>
+          4.59518,51.145077,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 028</name>
+      <Point>
+        <coordinates>
+          4.599939,51.146294,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 033</name>
+      <Point>
+        <coordinates>
+          4.618033,51.150916,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 035</name>
+      <Point>
+        <coordinates>
+          4.632466,51.154597,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 041</name>
+      <Point>
+        <coordinates>
+          4.654606,51.158878,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 042</name>
+      <Point>
+        <coordinates>
+          4.662504,51.15946,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 043</name>
+      <Point>
+        <coordinates>
+          4.667193,51.159808,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 044</name>
+      <Point>
+        <coordinates>
+          4.671144,51.160101,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 045</name>
+      <Point>
+        <coordinates>
+          4.675294,51.160409,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 046</name>
+      <Point>
+        <coordinates>
+          4.680129,51.160768,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 047</name>
+      <Point>
+        <coordinates>
+          4.692846,51.161715,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 049</name>
+      <Point>
+        <coordinates>
+          4.709693,51.162968,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 050</name>
+      <Point>
+        <coordinates>
+          4.719711,51.163712,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 051</name>
+      <Point>
+        <coordinates>
+          4.728192,51.164342,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 054</name>
+      <Point>
+        <coordinates>
+          4.746131,51.165671,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 055</name>
+      <Point>
+        <coordinates>
+          4.755515,51.166372,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 062</name>
+      <Point>
+        <coordinates>
+          4.820482,51.177975,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 063</name>
+      <Point>
+        <coordinates>
+          4.830578,51.181864,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 069</name>
+      <Point>
+        <coordinates>
+          4.837052,51.187543,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 078</name>
+      <Point>
+        <coordinates>
+          5.126534,51.192554,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 079</name>
+      <Point>
+        <coordinates>
+          5.118454,51.191312,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 08</name>
+      <Point>
+        <coordinates>
+          4.495245,51.163157,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 080</name>
+      <Point>
+        <coordinates>
+          5.105621,51.189038,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 081</name>
+      <Point>
+        <coordinates>
+          5.094557,51.187082,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 082</name>
+      <Point>
+        <coordinates>
+          5.085686,51.185514,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 083</name>
+      <Point>
+        <coordinates>
+          5.077102,51.183997,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 085</name>
+      <Point>
+        <coordinates>
+          5.062856,51.181476,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 086</name>
+      <Point>
+        <coordinates>
+          5.051266,51.179423,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 087</name>
+      <Point>
+        <coordinates>
+          5.043318,51.178015,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 088</name>
+      <Point>
+        <coordinates>
+          5.029919,51.175692,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 09</name>
+      <Point>
+        <coordinates>
+          4.504743,51.158239,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 090</name>
+      <Point>
+        <coordinates>
+          5.009587,51.172139,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 091</name>
+      <Point>
+        <coordinates>
+          5.004851,51.171254,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 092</name>
+      <Point>
+        <coordinates>
+          4.98824,51.168852,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 092 BIS</name>
+      <Point>
+        <coordinates>
+          4.98343,51.168197,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 093</name>
+      <Point>
+        <coordinates>
+          4.970485,51.167868,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 094</name>
+      <Point>
+        <coordinates>
+          4.96296,51.168542,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 096</name>
+      <Point>
+        <coordinates>
+          4.947372,51.169964,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 097</name>
+      <Point>
+        <coordinates>
+          4.94001,51.170635,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 098</name>
+      <Point>
+        <coordinates>
+          4.933676,51.171211,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 099</name>
+      <Point>
+        <coordinates>
+          4.92564,51.171944,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 101</name>
+      <Point>
+        <coordinates>
+          4.907928,51.173555,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 102</name>
+      <Point>
+        <coordinates>
+          4.902877,51.174013,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 103</name>
+      <Point>
+        <coordinates>
+          4.890781,51.175108,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 104</name>
+      <Point>
+        <coordinates>
+          4.881845,51.175918,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 107</name>
+      <Point>
+        <coordinates>
+          4.839496,51.188771,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 110</name>
+      <Point>
+        <coordinates>
+          5.130424,51.192747,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 111</name>
+      <Point>
+        <coordinates>
+          5.142955,51.181938,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 112</name>
+      <Point>
+        <coordinates>
+          5.158541,51.17217,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 113</name>
+      <Point>
+        <coordinates>
+          5.162458,51.170237,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 114</name>
+      <Point>
+        <coordinates>
+          5.164635,51.169163,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 115</name>
+      <Point>
+        <coordinates>
+          5.170005,51.166512,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 117</name>
+      <Point>
+        <coordinates>
+          5.182774,51.160206,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 119</name>
+      <Point>
+        <coordinates>
+          5.196777,51.15346,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 120</name>
+      <Point>
+        <coordinates>
+          5.203718,51.150189,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 121</name>
+      <Point>
+        <coordinates>
+          5.214091,51.145299,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 124</name>
+      <Point>
+        <coordinates>
+          5.237787,51.134073,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 125</name>
+      <Point>
+        <coordinates>
+          5.244556,51.130254,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 126</name>
+      <Point>
+        <coordinates>
+          5.258095,51.116018,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 127</name>
+      <Point>
+        <coordinates>
+          5.256926,51.112685,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 128</name>
+      <Point>
+        <coordinates>
+          5.246107,51.107383,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 129</name>
+      <Point>
+        <coordinates>
+          5.238459,51.103058,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 130</name>
+      <Point>
+        <coordinates>
+          5.235626,51.093771,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 131</name>
+      <Point>
+        <coordinates>
+          5.234491,51.088428,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 132</name>
+      <Point>
+        <coordinates>
+          5.22922,51.063794,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 133</name>
+      <Point>
+        <coordinates>
+          5.252052,51.044039,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 134</name>
+      <Point>
+        <coordinates>
+          5.265497,51.039847,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 135</name>
+      <Point>
+        <coordinates>
+          5.275959,51.038783,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 136</name>
+      <Point>
+        <coordinates>
+          5.281981,51.038219,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 137</name>
+      <Point>
+        <coordinates>
+          5.30034,51.036511,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 138</name>
+      <Point>
+        <coordinates>
+          5.330615,51.033653,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 139</name>
+      <Point>
+        <coordinates>
+          5.351772,51.025253,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 140</name>
+      <Point>
+        <coordinates>
+          5.3481,51.003371,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 141</name>
+      <Point>
+        <coordinates>
+          5.348303,50.999475,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 142</name>
+      <Point>
+        <coordinates>
+          5.34855,50.994734,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 143</name>
+      <Point>
+        <coordinates>
+          5.348824,50.989488,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 144</name>
+      <Point>
+        <coordinates>
+          5.349104,50.983333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 145</name>
+      <Point>
+        <coordinates>
+          5.348323,50.979489,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 146</name>
+      <Point>
+        <coordinates>
+          5.340834,50.960933,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 147</name>
+      <Point>
+        <coordinates>
+          5.337059,50.957529,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>L15 OW 148</name>
+      <Point>
+        <coordinates>
+          5.334393,50.95518,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

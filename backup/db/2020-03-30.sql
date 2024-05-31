@@ -253,6 +253,44 @@ CREATE TABLE `s505en_input` (
 	`s505_input_updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `wagen`
+--
+
+CREATE TABLE `wagens` (
+  `wagen_id` int(11) NOT NULL,
+  `trein_id` int(11) NOT NULL,
+  `wagen_plaats` int(3) NULL DEFAULT 0,
+  `wagen_nummer` varchar(13) NULL DEFAULT 0,
+  `wagen_lengte` int(4) NOT NULL,
+  `wagen_massa_netto` int(5) NULL DEFAULT 0,
+  `wagen_tarra` int(5) NULL DEFAULT 0,
+  `wagen_totaal` int(5) NULL DEFAULT 0,
+  `wagen_frein` int(3) NOT NULL,
+  `wagen_snelheid` int(3) NULL DEFAULT 100,
+  `wagen_handrem` int(3) NOT NULL,
+  `wagen_alternator` varchar(25) DEFAULT 'auto',
+  `wagen_remming_min` int(3) NULL,
+  `wagen_remming_kantel` int(3) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `s505en_input`
+--
+
+CREATE TABLE `treinen` (
+  `trein_id` int(11) NOT NULL,
+  `trein_nummer` varchar(10) NULL,
+  `trein_created_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+	`trein_updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -325,6 +363,19 @@ ALTER TABLE `s505en`
 --
 ALTER TABLE `s505en_input`
   ADD PRIMARY KEY (`s505_input_id`,`document_id`);
+
+--
+-- Indexen voor tabel `treinen`
+--
+ALTER TABLE `treinen`
+  ADD PRIMARY KEY (`trein_id`);
+
+--
+-- Indexen voor tabel `wagens`
+--
+ALTER TABLE `wagens`
+  ADD PRIMARY KEY (`wagen_id`,`trein_id`);
+
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
@@ -394,6 +445,19 @@ ALTER TABLE `s505en`
 --
 ALTER TABLE `s505en_input`
   MODIFY `s505_input_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `treinen`
+--
+ALTER TABLE `treinen`
+  MODIFY `trein_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `s505en`
+--
+ALTER TABLE `wagens`
+  MODIFY `wagen_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- Beperkingen voor geëxporteerde tabellen
 --

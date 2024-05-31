@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 0 Blok 8 Brussel Noord</name>
+<Point><coordinates>4.36105,50.861667,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 0 Brussel Centraal</name>
+<Point><coordinates>4.356412,50.845056,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 0 Brussel Noord Staken</name>
+<Point><coordinates>4.362939,50.855348,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 0 Brussel Zuid</name>
+<Point><coordinates>4.32888,50.828779,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 0 Brussel zuid Ingang</name>
+<Point><coordinates>4.328797,50.828934,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 0 Kappelekerk Toegang</name>
+<Point><coordinates>4.349322,50.841758,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 0 Station Brussel-Noord</name>
+<Point><coordinates>4.359469,50.860477,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 0 Tuc Rail Fonsnylaan</name>
+<Point><coordinates>4.33702,50.8351,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

@@ -133,7 +133,7 @@ class Create_s627 extends MY_Controller
 	private function validateS627()
 	{
 		$this->form_validation->set_error_delimiters('<div class="p-3 mb-2 bg-danger text-white">', '</div>');
-		$this->form_validation->set_rules('vermoedelijkeDuur','Vermoedelijke duur','trim|min_length[5]|valid_hours_minutes');
+		$this->form_validation->set_rules('vermoedelijkeDuur','Vermoedelijke duur','trim|min_length[4]|valid_hours_minutes');
 		$this->form_validation->set_rules('aanvangDatum','Aanvangs datum','trim|min_length[10]|max_length[10]|valid_date[d-m-Y]');
 		$this->form_validation->set_rules('aanvangUur','Aanvang uur','trim|min_length[5]|max_length[5]|valid_time');
 		$this->form_validation->set_rules('eindDatum','Eind datum','trim|min_length[10]|max_length[10]|valid_date[d-m-Y]');
@@ -150,9 +150,11 @@ class Create_s627 extends MY_Controller
 	private function collectS627Data()
 	{
 		$vermoedelijkeDuur = (empty($this->input->post('vermoedelijkeDuur'))) ? $this->calculateDiffrence() : $this->input->post('vermoedelijkeDuur');
+		$checkedVermoedelijkeDuur = $this->checkHourNotation($vermoedelijkeDuur);
 		
 		$data = array(
 			array('ingediendDoor', $this->input->post('ingediendDoor')),
+			array('documentNaam', $this->input->post('documentNaam')),
 			array('specialiteit', $this->input->post('specialiteit')),
 			array('aan', $this->input->post('aan')),
 			array('post', $this->input->post('post')),
@@ -160,13 +162,34 @@ class Create_s627 extends MY_Controller
 			array('aanvraag', $this->input->post('aanvraag')),
 			array('aanvangDatum', $this->input->post('aanvangDatum')),
 			array('aanvangUur', $this->input->post('aanvangUur')),
-			array('vermoedelijkeDuur', $vermoedelijkeDuur),
+			array('vermoedelijkeDuur', $checkedVermoedelijkeDuur),
 			array('rubriek2ARMS', $this->input->post('rubriek2ARMS')),
 			array('rubriek2AAndere', $this->input->post('rubriek2AAndere')),
 			array('rubriek5VVHW', $this->input->post('rubriek5VVHW'))
 		);
 
 		return $data;
+	}
+
+	/**
+	 * Controleer en pas eventueel de vermoedelijke duur aan
+	 * 
+	 * @param $vermoedelijkeDuur
+	 * @return $checkedVermoedelijkeDuur
+	 */
+	private function checkHourNotation($vermoedelijkeDuur) 
+	{
+		if(strlen($vermoedelijkeDuur) == 4) {
+			$vermoedelijkeDuur = 0 . $vermoedelijkeDuur;
+		}
+
+		$uurLetters = array("h", "H", "u", "U");
+		$vermoedelijkeDuur = str_replace($uurLetters, ":", $vermoedelijkeDuur);
+
+		$minLetters = array("M", "m");
+		$vermoedelijkeDuur = str_replace($uurLetters, "", $vermoedelijkeDuur);
+
+		return $vermoedelijkeDuur;
 	}
 
 	/** ------------------------------------

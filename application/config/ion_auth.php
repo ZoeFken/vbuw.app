@@ -130,8 +130,8 @@ $config['argon2_admin_params']		= [
  | The library will fail for empty password or password size above 4096 bytes.
  | This is an arbitrary (long) value to protect against DOS attack.
  */
-$config['site_title']                 = "vbuw.app";          // Site Title, example.com
-$config['admin_email']                = "vbuwapp@gmail.com"; // Admin Email, admin@example.com
+$config['site_title']                 = "vbuw.be";           // Site Title, example.com
+$config['admin_email']                = "no-reply@vbuw.be";  // Admin Email, admin@example.com
 $config['default_group']              = 'members';           // Default group, use name
 $config['admin_group']                = 'admin';             // Default administrators group, use name
 $config['identity']                   = 'email';             /* You can use any unique column in your table as identity column.
@@ -219,20 +219,37 @@ $config['use_ci_email'] = TRUE; // Send Email using the builtin CI email class, 
 // ];
 
 // Testing Gmail
+// $config['email_config'] = [
+// 	'email_address' => 'vbuwapp@gmail.com',
+// 	'owner'         => 'Pieter-Jan Casteels',
+// 	'email_owner'   => 'vbuwapp@gmail.com',
+// 	'charset'       => 'iso-8859-1',
+// 	'mailtype'      => 'html',
+// 	'protocol'      => 'ssmtp',
+// 	'smtp_host'     => 'ssl://ssmtp.gmail.com',
+// 	'smtp_crypto'   => 'ssl',
+// 	'smtp_port'     => '465', // 465, 25, 587
+// 	'smtp_timeout'  => '7',
+// 	'smtp_user'     => 'vbuwapp@gmail.com',
+// 	'smtp_pass'     => 'jecyC4Pp7M5S',
+// 	'wordwrap'      => TRUE
+// ];
+
+// Testing Gmail
 $config['email_config'] = [
-	'email_address' => 'vbuwapp@gmail.com',
+	'email_address' => 'no-reply@vbuw.be',
 	'owner'         => 'Pieter-Jan Casteels',
-	'email_owner'   => 'vbuwapp@gmail.com',
-	'charset'       => 'iso-8859-1',
+	'email_owner'   => 'no-reply@vbuw.be',
+	'charset'       => 'utf-8',
 	'mailtype'      => 'html',
-	'protocol'      => 'ssmtp',
-	'smtp_host'     => 'ssl://ssmtp.gmail.com',
-	'smtp_crypto'   => 'ssl',
-	'smtp_port'     => '465', // 465, 25, 587
+	'protocol'      => 'smtp',
+	'smtp_host'     => 'mail.vbuw.be',
+	'smtp_crypto'   => 'tls',
+	'smtp_port'     => '587', // 465, 25, 587
 	'smtp_timeout'  => '7',
-	'smtp_user'     => 'vbuwapp@gmail.com',
-	'smtp_pass'     => 'jecyC4Pp7M5S',
-	'wordwrap'      => TRUE
+	'smtp_user'     => 'no-reply@vbuw.be',
+	'smtp_pass'     => '5z3TD3xpTmYo',
+	'validation'    => TRUE
 ];
 
 

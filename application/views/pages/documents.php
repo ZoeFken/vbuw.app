@@ -1,12 +1,12 @@
 <h2 class="display-4 text-center pb-3"><?php echo $this->lang->line('titel'); ?></h2>
-
 <section>
 <table class="table">
 	<thead class="thead-light">
 		<tr>
-			<th style="width: 40%"><?php echo $this->lang->line('aangemaakt'); ?></th>
-			<th style="width: 40%"><?php echo $this->lang->line('opgemaaktDoor'); ?></th>
-			<th style="width: 20%" class="text-right" ><?php echo $this->lang->line('type'); ?></th>
+			<th style="width: 27%"><?php echo $this->lang->line('aangemaakt'); ?></th>
+			<th style="width: 27%"><?php echo $this->lang->line('documentNaam'); ?></th>
+			<th style="width: 27%"><?php echo $this->lang->line('opgemaaktDoor'); ?></th>
+			<th style="width: 19%" class="text-right" ><?php echo $this->lang->line('type'); ?></th>
 		</tr>
 	</thead>
 	</tbody>
@@ -14,6 +14,7 @@
 		  foreach($documents as $document): ?>
 		<tr>
 			<td><?php echo $document['document_created_at']; ?></td>
+			<td><?php echo $document['document_naam']; ?></td>
 			<td><?php echo $document['last_name'] . ' ' . $document['first_name']; ?></a></td>
 			<td class="text-right">
 				<button class="btn btn-primary" data-toggle="modal" data-target="#docmodal_<?php echo $document['document_id'] ?>"><?php echo $document['document_type']; ?></button>

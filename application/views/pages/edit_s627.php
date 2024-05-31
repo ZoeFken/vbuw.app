@@ -12,6 +12,10 @@
 ?>
      <div class="form-group">
        <div class="row">
+         <div class="form-group col-md-12">
+           <label for="documentNaam"><?php echo $this->lang->line('documentNaam'); ?></label>
+           <input type="text" name="documentNaam" class="form-control" id="documentNaam" placeholder="L75 SP A&B Deinze - Waregem" value="<?php echo issetor($documentNaam); ?>">
+         </div>
          <div class="form-group col-md-8 col-xs-13">
            <label for="ingediendDoor"><?php echo $this->lang->line('ingediendDoor'); ?></label>
            <input type="text" name="ingediendDoor" class="form-control" id="ingediendDoor" placeholder="Pieter-Jan Casteels" value="<?php echo issetor($ingediendDoor); ?>">

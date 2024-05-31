@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $lang["titel"] = "VBUW Document Generator";
 $lang["home"] = "Home";
@@ -12,8 +12,14 @@ $lang["doc"] = "Documenten";
 $lang["persoonlijk"] = "Persoonlijk";
 $lang["alle"] = "Alle";
 $lang["blanco"] = "Blanco";
+$lang["drive"] = "Google Drive";
 $lang["amdm"] = "Amdm";
+$lang["bnx"] = "BNX Infrabel";
+$lang["drawin"] = "Draw in Infrabel";
 $lang["gebruikers"] = "Gebruikers";
+$lang["remming"] = "Remming";
+$lang["rostar"] = "RostarCas";
+$lang["locations"] = "Locaties";
 
 $lang["login"] = "Login";
 $lang["logout"] = "Logout";

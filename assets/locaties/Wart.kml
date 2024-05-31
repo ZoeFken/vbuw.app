@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 27 Wart bundel A1 antwerpen</name>
+<Point><coordinates>4.424858,51.286772,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wart bundel A1 antwerpen</name>
+<Point><coordinates>4.424858,51.286772,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

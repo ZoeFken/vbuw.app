@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 35 Lci Leuven</name>
+<Point><coordinates>4.714786,50.884517,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 35 Leuven Diestsesteenweg 3</name>
+<Point><coordinates>4.715133,50.884584,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 35 Leuven Tivolistraat</name>
+<Point><coordinates>4.716682,50.868586,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 35 Leuven Y Parkbrug</name>
+<Point><coordinates>4.712176,50.86509,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 35 OW 106 Herseltsestwg. Aa</name>
+<Point><coordinates>4.8341,50.99687,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 35 Ow 119</name>
+<Point><coordinates>4.74721,50.955921,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 35 Ow 129</name>
+<Point><coordinates>4.720115,50.913848,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

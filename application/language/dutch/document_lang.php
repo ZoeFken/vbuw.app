@@ -12,3 +12,4 @@ $lang["datum_aanvang"] = "Datum aanvang";
 $lang["wissel"] = "Wissel verzender - ontvanger";
 $lang["download"] = "Download";
 $lang["editeer"] = "Editeer";
+$lang["documentNaam"] = "Document naam";

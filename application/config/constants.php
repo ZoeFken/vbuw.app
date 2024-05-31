@@ -117,3 +117,5 @@ defined('FORM')               OR define('FORM', 'form');
 defined('LOGS')               OR define('LOGS', 'logs');
 defined('NAV')                OR define('NAV', 'nav');
 defined('REGISTRATION')       OR define('REGISTRATION', 'registration');
+defined('REMMING')            OR define('REMMING', 'remming');
+defined('LOCATIONS')          OR define('LOCATIONS', 'locations');

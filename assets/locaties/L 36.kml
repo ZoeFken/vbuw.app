@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 36 Erps-KWERPS Kerselarenlaan</name>
+<Point><coordinates>4.583467,50.896934,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 36 Herent KP 25000</name>
+<Point><coordinates>4.688183,50.904151,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 36 Herent Kp 26300</name>
+<Point><coordinates>4.702983,50.901501,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 36 Herent Station</name>
+<Point><coordinates>4.67345,50.903317,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 36 Neerijsestraat 16 Veltem</name>
+<Point><coordinates>4.6414827,50.900865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 36 Rijkestraat 16</name>
+<Point><coordinates>4.64035,50.901332,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 36 Stationsstr &amp; Rijkestr Veltem</name>
+<Point><coordinates>4.631884,50.900579,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

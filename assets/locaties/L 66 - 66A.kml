@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 66 Den Appel</name>
+<Point><coordinates>3.254034,50.82666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Izegem Station</name>
+<Point><coordinates>3.214617,50.920901,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 104</name>
+<Point><coordinates>3.254203,50.91557,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 105</name>
+<Point><coordinates>3.255673,50.913568,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 waterzuivering SSV</name>
+<Point><coordinates>3.249060,50.915214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 106</name>
+<Point><coordinates>3.255883,50.909402,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 107</name>
+<Point><coordinates>3.254990,50.904565,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 108</name>
+<Point><coordinates>3.253967,50.900382,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 111</name>
+<Point><coordinates>3.251521,50.890808,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 112</name>
+<Point><coordinates>3.250246,50.885482,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 116 St-katriensteenweg</name>
+<Point><coordinates>3.247133,50.871551,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 118</name>
+<Point><coordinates>3.246117,50.868034,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 119</name>
+<Point><coordinates>3.245033,50.864901,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 120</name>
+<Point><coordinates>3.244283,50.860951,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 123</name>
+<Point><coordinates>3.24324,50.857216,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 124</name>
+<Point><coordinates>3.24095,50.848384,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 125</name>
+<Point><coordinates>3.240417,50.844834,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 125</name>
+<Point><coordinates>3.240417,50.844834,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 126</name>
+<Point><coordinates>3.240067,50.837684,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 126</name>
+<Point><coordinates>3.240067,50.837686,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 129</name>
+<Point><coordinates>3.245656,50.831575,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 53 Sneppestraat Torhout</name>
+<Point><coordinates>3.114466,51.036762,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 73</name>
+<Point><coordinates>3.126578,50.964659,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 80 Herderstraat Roesel</name>
+<Point><coordinates>3.143083,50.939784,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow 83</name>
+<Point><coordinates>3.143098,50.939716,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Ow113 Kwadestr Lendelede</name>
+<Point><coordinates>3.248917,50.879401,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66 Roeselare Betonwerf Infra</name>
+<Point><coordinates>3.131783,50.952351,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66A ANZEGEM STATION</name>
+<Point><coordinates>3.49295,50.826434,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66A Driesstraat Wortegem-petegem</name>
+<Point><coordinates>3.539174,50.831303,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66A Ow 99 Anzegem Belsbruggestraat</name>
+<Point><coordinates>3.4798,50.828984,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66A Ow Oudenaarde Kortrijkstraat</name>
+<Point><coordinates>3.579564,50.845165,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 66A Ow Vichte Antoniusstraat</name>
+<Point><coordinates>3.42634,50.832754,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

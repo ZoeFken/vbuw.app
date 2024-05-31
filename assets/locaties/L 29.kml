@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>OW 70</name>
+<Point><coordinates>4.839036,51.189534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 71</name>
+<Point><coordinates>4.844272,51.191964,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 75</name>
+<Point><coordinates>4.864471,51.213656,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 77</name>
+<Point><coordinates>4.869543,51.218443,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 79</name>
+<Point><coordinates>4.875212,51.223787,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 80</name>
+<Point><coordinates>4.877850,51.226268,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 82</name>
+<Point><coordinates>4.890454,51.238126,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 84</name> 
+<Point><coordinates>4.896159,51.243512,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 85</name>
+<Point><coordinates>4.898604,51.246263,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 86</name> 
+<Point><coordinates>4.901050,51.250292,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 88</name> 
+<Point><coordinates>4.903357,51.254862,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 88 Bis</name>
+<Point><coordinates>4.905127,51.258183,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 89</name>
+<Point><coordinates>4.907153,51.262111,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 90</name>
+<Point><coordinates>4.912168,51.272046,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 91</name>
+<Point><coordinates>4.921799,51.290921,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 92 Bis</name>
+<Point><coordinates>4.927395,51.302000,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 95</name>
+<Point><coordinates>4.932878,51.312924,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 96</name>
+<Point><coordinates>4.935611,51.318241,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 97</name>
+<Point><coordinates>4.937335,51.321643,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>OW 98</name>
+<Point><coordinates>4.939044,51.324988,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

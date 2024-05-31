@@ -53,7 +53,7 @@ class Downloads extends MY_Controller
 		$textbox = array();
 		foreach($documentS627enData as $s627)
 		{
-			($s627['s627_align'] == null) ? array_push($single, $s627) : array_push($textbox, $s627);
+			if($s627['s627_name'] != 'documentNaam') ($s627['s627_align'] == null) ? array_push($single, $s627) : array_push($textbox, $s627);
 		}
 
 		$data['single'] = $single;
@@ -97,7 +97,8 @@ class Downloads extends MY_Controller
 				$docName = 'verdeler';
 		}
 
-		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+		// $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P','tempDir' => sys_get_temp_dir().DIRECTORY_SEPARATOR.'mpdf']);
 		$mpdf->use_kwt = true;
 		$mpdf->shrink_tables_to_fit = 1;
 

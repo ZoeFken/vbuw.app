@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 16 OW 21B Mushaag Berlaar</name>
+<Point><coordinates>4.611898,51.128587,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 23</name>
+<Point><coordinates>4.622372,51.122988,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 28</name>
+<Point><coordinates>4.654732,51.104236,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 30</name>
+<Point><coordinates>4.672089,51.094851,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 31 Bis</name>
+<Point><coordinates>4.684181,51.087544,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 33</name>
+<Point><coordinates>4.700108,51.078942,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 42 Kleine Pijpelstr.</name>
+<Point><coordinates>4.770057,51.039026,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 43</name>
+<Point><coordinates>4.77409,51.037188,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 44</name>
+<Point><coordinates>4.789027,51.028346,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 45</name>
+<Point><coordinates>4.799634,51.022886,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 47</name>
+<Point><coordinates>4.817144,51.012434,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 49</name>
+<Point><coordinates>4.831292,51.004004,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

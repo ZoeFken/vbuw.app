@@ -109,7 +109,7 @@ class Documents extends MY_Controller
 	 * @param user_id
 	 * @return array van documenten
 	 */
-	private function getLatestUserDocuments($limit = 25, $user_id)
+	private function getLatestUserDocuments($user_id, $limit = 25)
 	{
 		// $this->load->model('document_model');
 		return $this->document_model->getLatestUserDocuments($limit, $user_id);
@@ -206,7 +206,7 @@ class Documents extends MY_Controller
 	
 				for($i = 9; $i < count($reversedArray); $i++)
 				{
-					var_dump($reversedArray[$i]);
+					// var_dump($reversedArray[$i]);
 					$this->removeDocument($reversedArray[$i]['document_id'], false);
 				}
 			}

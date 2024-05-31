@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>Blok 1 Infrabel</name>
+<Point><coordinates>4.230892,51.249531,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok 10</name>
+<Point><coordinates>3.872919,50.771438,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok 19 Dendermonde</name>
+<Point><coordinates>4.093952,51.021454,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok 9</name>
+<Point><coordinates>4.378857,51.289383,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok Dendermonde</name>
+<Point><coordinates>4.09415,51.021018,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok Etterbeek</name>
+<Point><coordinates>4.402195,50.815166,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok Ieper</name>
+<Point><coordinates>2.877559,50.848153,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok Lokeren</name>
+<Point><coordinates>3.98625,51.106884,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Blok Oudenaarde</name>
+<Point><coordinates>3.599919,50.848429,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Bundel Berendrecht</name>
+<Point><coordinates>4.32841,51.317881,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Bundel Schaarbeek B-Zuid</name>
+<Point><coordinates>4.38375,50.880856,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Bundel Schijnpoort</name>
+<Point><coordinates>4.4399,51.226551,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Bundel Zandvliet</name>
+<Point><coordinates>4.333053,51.333942,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Lci Oostende</name>
+<Point><coordinates>2.930044,51.223101,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Lci Gent</name>
+<Point><coordinates>3.698939,51.039485,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Bundel Ruisbroek</name>
+<Point><coordinates>4.303755,50.800765,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Bundel A1 Antwerpen</name>
+<Point><coordinates>4.391872,51.294048,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Bundel B2 Antwerpen</name>
+<Point><coordinates>4.375392,51.297550,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Machinisten lokaal Antwerpen Noord</name>
+<Point><coordinates>4.386993,51.290773,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Brussel Noord toegang</name>
+<Point><coordinates>4.361510,50.862452,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Brussel Zuid parking Infrabel</name>
+<Point><coordinates>4.332993,50.835858,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

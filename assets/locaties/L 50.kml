@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 50 Bergensesteenweg</name>
+<Point><coordinates>4.291596,50.818037,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Denderleeuw</name>
+<Point><coordinates>4.08405,50.885534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Dilbeek Station</name>
+<Point><coordinates>4.2448858,50.8664965,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Groot-bijgaarden</name>
+<Point><coordinates>4.27405,50.868467,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 L 50A Twee Bruggen Gent</name>
+<Point><coordinates>3.730163,51.031216,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Melle Kouterree H-T.6</name>
+<Point><coordinates>3.811573,50.995849,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ow 12</name>
+<Point><coordinates>3.997153,50.964769,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 OW 14 Ganshoren</name>
+<Point><coordinates>4.300867,50.878067,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ow 15</name>
+<Point><coordinates>3.986954,50.969917,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ow 18</name>
+<Point><coordinates>3.983077,50.971913,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ow 24</name>
+<Point><coordinates>3.962272,50.98293,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ow 25</name>
+<Point><coordinates>3.958215,50.98413,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ow 27</name>
+<Point><coordinates>3.947008,50.991596,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ow 6</name>
+<Point><coordinates>4.017999,50.953706,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 St. Martens-Bodegem Station</name>
+<Point><coordinates>4.206233,50.867101,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 St-Agatha-Berchem Station</name>
+<Point><coordinates>4.289346,50.872664,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Station Ternat</name>
+<Point><coordinates>4.164548,50.874467,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Ternat Hopstraat</name>
+<Point><coordinates>4.107417,50.882234,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50 Vertakking Meulewijk</name>
+<Point><coordinates>3.812107,50.993428,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50</name>
+<Point><coordinates>4.06175,50.899484,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

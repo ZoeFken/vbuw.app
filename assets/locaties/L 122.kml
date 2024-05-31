@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 122 Ow 34</name>
+<Point><coordinates>3.867337,50.893949,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 122 Ow 52</name>
+<Point><coordinates>3.864726,50.794479,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 122 Ow 53</name>
+<Point><coordinates>3.873368,50.78538,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 122 Zottegem Koer</name>
+<Point><coordinates>3.815148,50.868398,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

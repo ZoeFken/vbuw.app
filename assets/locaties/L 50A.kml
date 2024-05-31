@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 50A Asselsstraat Drongen Aardinge</name>
+<Point><coordinates>3.665188,51.045348,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Bellem</name>
+<Point><coordinates>3.497883,51.081623,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Bvl.18/53 En 18/54</name>
+<Point><coordinates>4.11805,50.879851,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Dilbeek Rvp Poverstraat</name>
+<Point><coordinates>4.239417,50.824967,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Drongen Elshout</name>
+<Point><coordinates>3.6329,51.052234,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A G-I.7</name>
+<Point><coordinates>3.221381,51.189991,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Hansbeke L-U.6 &amp; LX-U.6</name>
+<Point><coordinates>3.550807,51.070128,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A hansbeke Station</name>
+<Point><coordinates>3.53725,51.072717,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Heistraat Y Lombeek</name>
+<Point><coordinates>4.141608,50.868941,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Jabbeke Bekedijkstraat Ow82</name>
+<Point><coordinates>3.0674,51.197951,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Kippendonkstraat Bellem</name>
+<Point><coordinates>3.5065679,51.0797667,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Landegem Wildedreef</name>
+<Point><coordinates>3.5884,51.062034,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Ondehoudspost Oostende</name>
+<Point><coordinates>2.935041,51.219175,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Oprijplaats Kwaadestraat</name>
+<Point><coordinates>3.23866,51.163022,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Ow Ternat Dahlialaan</name>
+<Point><coordinates>4.126126,50.875301,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Station Maria-aalter</name>
+<Point><coordinates>3.387583,51.107134,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Steenbrugge</name>
+<Point><coordinates>3.231639,51.177223,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Ternat Vianestraat</name>
+<Point><coordinates>4.14875,50.865001,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Beernem G-Q.7 GX-Q.7</name>
+<Point><coordinates>3.314659,51.133288,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Oostkamp Stuivenberg Wart</name>
+<Point><coordinates>3.266425,51.149976,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Tiengemeten CX-Q.7</name>
+<Point><coordinates>3.33317,51.126381,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Vianestraat Ternat</name>
+<Point><coordinates>4.155087,50.863458,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Vijverstraat Beernem</name>
+<Point><coordinates>3.3510706,51.1203602,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Wildekouter</name>
+<Point><coordinates>3.589947,51.060842,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Wissels Landegem Kant FR</name>
+<Point><coordinates>3.55844,51.068509,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Sp B En 50A Kant FR</name>
+<Point><coordinates>3.238827,51.16615,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Toegang Halewijnstationstraat</name>
+<Point><coordinates>3.613349,51.056082,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A AW 25U en 24U</name>
+<Point><coordinates>3.557680,51.068645,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 50A Seinen MX-N.6 en N-N.6</name>
+<Point><coordinates>3.665133,51.045286,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>
