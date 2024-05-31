@@ -197,7 +197,7 @@ $config['use_ci_email'] = TRUE; // Send Email using the builtin CI email class, 
 // 	'smtp_port'     => '587', // 465, 25, 587
 // 	'smtp_timeout'  => '7',
 // 	'smtp_user'     => 'no-reply@vbuw.app',
-// 	'smtp_pass'     => '5z3TD3xpTmYo',
+// 	'smtp_pass'     => 'xxx',
 // 	'validation'    => TRUE, 
 // ];
 
@@ -214,7 +214,7 @@ $config['use_ci_email'] = TRUE; // Send Email using the builtin CI email class, 
 // 	'smtp_port'     => '465', // 465, 25, 587
 // 	'smtp_timeout'  => '7',
 // 	'smtp_user'     => 'no-reply@vbuw.app',
-// 	'smtp_pass'     => '5z3TD3xpTmYo',
+// 	'smtp_pass'     => 'xxx',
 // 	'validation'    => TRUE, 
 // ];
 
@@ -231,7 +231,7 @@ $config['email_config'] = [
 	'smtp_port'     => '465', // 465, 25, 587
 	'smtp_timeout'  => '7',
 	'smtp_user'     => 'vbuwapp@gmail.com',
-	'smtp_pass'     => 'jecyC4Pp7M5S',
+	'smtp_pass'     => 'xxx',
 	'wordwrap'      => TRUE
 ];
 
