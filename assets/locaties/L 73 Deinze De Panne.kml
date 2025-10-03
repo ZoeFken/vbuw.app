@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 73 L66 Koer Lichtervelde</name>
+<Point><coordinates>3.124195,51.027237,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Lichtervelde Station</name>
+<Point><coordinates>3.1278,51.024267,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 10 Keibosstr Aarsele</name>
+<Point><coordinates>3.40655,50.985601,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 14</name>
+<Point><coordinates>3.373217,50.988784,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 OW 15 Wielmakersstraat Ti</name>
+<Point><coordinates>3.36265,50.990003,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 OW 15 Wielmakersstraat Tie</name>
+<Point><coordinates>3.36265,50.990001,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 16</name>
+<Point><coordinates>3.34345,50.992084,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 OW 18 Abeelstr Tielt</name>
+<Point><coordinates>3.322683,50.986367,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 OW 19 Meulebeeksestw Tiel</name>
+<Point><coordinates>3.313333,50.982517,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 OW 19 Meulebeeksestw Tielt</name>
+<Point><coordinates>3.313333,50.982517,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 20 St Amandstraat</name>
+<Point><coordinates>3.305167,50.982367,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 22</name>
+<Point><coordinates>3.292533,50.984751,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 53</name>
+<Point><coordinates>3.015133,51.022002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 54</name>
+<Point><coordinates>3.004074,51.020939,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 55</name>
+<Point><coordinates>2.997122,51.019801,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 OW 65</name>
+<Point><coordinates>2.941758,51.020964,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 69</name>
+<Point><coordinates>2.923843,51.025805,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 73</name>
+<Point><coordinates>2.909933,51.028962,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 74</name>
+<Point><coordinates>2.90196,51.030696,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Ow 77</name>
+<Point><coordinates>2.88553,51.03304,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 73 Tabakstraat Wontergem</name>
+<Point><coordinates>3.436817,50.982567,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

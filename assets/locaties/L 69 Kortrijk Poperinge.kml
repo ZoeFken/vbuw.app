@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 69 0w 5</name>
+<Point><coordinates>3.22405,50.825617,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ieper Goederenkoer</name>
+<Point><coordinates>2.8797,50.844817,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Moeskroensesteenweg</name>
+<Point><coordinates>3.230811,50.778898,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 4 Heulsestr Bissegem</name>
+<Point><coordinates>3.229483,50.827667,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 52</name>
+<Point><coordinates>3.031483,50.781051,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 63</name>
+<Point><coordinates>2.99335,50.771151,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 64</name>
+<Point><coordinates>2.98465,50.775434,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 68</name>
+<Point><coordinates>2.97555,50.780767,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 70</name>
+<Point><coordinates>2.966667,50.786784,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 76</name>
+<Point><coordinates>2.914433,50.832367,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 78</name>
+<Point><coordinates>2.905654,50.833919,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 79</name>
+<Point><coordinates>2.919967,50.828201,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 81 En 82</name>
+<Point><coordinates>2.887412,50.837348,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow 87</name>
+<Point><coordinates>2.859535,50.851357,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Ow74</name>
+<Point><coordinates>2.955183,50.797417,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Poperinge Koer</name>
+<Point><coordinates>2.736983,50.854134,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 69 Vlamertinge Hugo Verrieststr.</name>
+<Point><coordinates>2.824127,50.853403,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

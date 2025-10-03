@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 59 Bundel Gent</name>
+<Point><coordinates>3.745288,51.073724,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Dampoort</name>
+<Point><coordinates>3.746319,51.074933,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Gent Zeeh- Containerpark</name>
+<Point><coordinates>3.755383,51.077751,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Grote Heimelinkstr St-Niklaas</name>
+<Point><coordinates>4.162783,51.178034,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Hotel Beveren Van Der Valk</name>
+<Point><coordinates>4.223942,51.197818,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ketshage</name>
+<Point><coordinates>3.785623,51.068478,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 kP 52</name>
+<Point><coordinates>3.776353,51.069933,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Lokeren Koer Pijlstraat</name>
+<Point><coordinates>4.007933,51.117734,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Oostakker lourdes</name>
+<Point><coordinates>3.759047,51.077227,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 11</name>
+<Point><coordinates>4.279667,51.210013,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 12</name>
+<Point><coordinates>4.273325,51.209351,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 17</name>
+<Point><coordinates>4.241111,51.202566,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 21</name>
+<Point><coordinates>4.218424,51.196129,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 23</name>
+<Point><coordinates>4.201644,51.190766,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 25</name>
+<Point><coordinates>4.1855,51.185381,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 26</name>
+<Point><coordinates>4.170814,51.180712,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 35</name>
+<Point><coordinates>4.109353,51.158569,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 38</name>
+<Point><coordinates>4.088297,51.150581,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 OW 40</name>
+<Point><coordinates>4.084043,51.149098,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 OW 41</name>
+<Point><coordinates>4.07957,51.147456,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 42</name>
+<Point><coordinates>4.06752,51.143077,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 44 Vortekoestraat</name>
+<Point><coordinates>4.042232,51.13217,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 47</name>
+<Point><coordinates>4.028847,51.126261,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 OW 57 Eekstraat</name>
+<Point><coordinates>3.951808,51.099477,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Sein D-I,19</name>
+<Point><coordinates>3.969274,51.102846,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 OW 58 Bormtestraat</name>
+<Point><coordinates>3.947413,51.098753,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 OW 60 Nieuwe Molenstraat</name>
+<Point><coordinates>3.916287,51.093309,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 61</name>
+<Point><coordinates>3.908229,51.09191,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 OW 65 Beerveldsebaan</name>
+<Point><coordinates>3.879958,51.087367,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 67</name>
+<Point><coordinates>3.863691,51.084059,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 OW 71</name>
+<Point><coordinates>3.835077,51.078273,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 72</name>
+<Point><coordinates>3.828756,51.0766,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 73</name>
+<Point><coordinates>3.822363,51.075,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 74</name>
+<Point><coordinates>3.811432,51.072637,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Ow 76</name>
+<Point><coordinates>3.7993,51.069834,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Schuurstraat St Amandsberg</name>
+<Point><coordinates>3.776403,51.069957,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Station Beveren</name>
+<Point><coordinates>4.261498,51.208811,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Station Sint-Niklaas</name>
+<Point><coordinates>4.143562,51.17097,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Temse</name>
+<Point><coordinates>4.195708,51.135012,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Kennedytunnel Antwerpen Zuid</name>
+<Point><coordinates>4.389650,51.200285,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 59 Kennedytunnel Zwijdrecht</name>
+<Point><coordinates>4.365071,51.213763,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

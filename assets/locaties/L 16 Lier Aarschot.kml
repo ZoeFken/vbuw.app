@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document> 
+<Placemark>
+<name>L 16 OW 16</name>
+<Point><coordinates>4.592731,51.142131,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 OW 17</name>
+<Point><coordinates>4.596716,51.139158,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 OW 20</name>
+<Point><coordinates>4.605614,51.132674,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 OW 21 Bis</name>
+<Point><coordinates>4.611898,51.128587,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 23</name>
+<Point><coordinates>4.622372,51.122988,0</coordinates></Point>
+</Placemark> 
+<Placemark>
+<name>L 16 Ow 26 station Berlaar</name>
+<Point><coordinates>4.639434,51.113199,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 28</name>
+<Point><coordinates>4.654732,51.104236,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 30</name>
+<Point><coordinates>4.672089,51.094851,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 31 Bis</name>
+<Point><coordinates>4.684181,51.087544,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 33</name>
+<Point><coordinates>4.700108,51.078942,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 37</name>
+<Point><coordinates>4.734541,51.059256,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 38</name>
+<Point><coordinates>4.741128,51.055594,0</coordinates></Point>
+</Placemark>
+<Placemark> 
+<name>L 16 Ow 39</name>
+<Point><coordinates>4.748113,51.051635,0</coordinates></Point>
+</Placemark>
+<Placemark> 
+<name>L 16 Ow 40</name>
+<Point><coordinates>4.756478,51.046911,0</coordinates></Point>
+</Placemark>
+<Placemark> 
+<name>L 16 Ow 41</name>
+<Point><coordinates>4.763548,51.042890,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 42</name>
+<Point><coordinates>4.770057,51.039026,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 43</name>
+<Point><coordinates>4.77409,51.037188,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 43 Bis</name>
+<Point><coordinates>4.786911,51.029690,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 44</name>
+<Point><coordinates>4.789027,51.028346,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 45</name>
+<Point><coordinates>4.799634,51.022886,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 47</name>
+<Point><coordinates>4.817144,51.012434,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 16 Ow 49</name>
+<Point><coordinates>4.831292,51.004004,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

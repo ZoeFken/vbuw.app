@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 58 Ow 15</name>
+<Point><coordinates>3.731189,51.073209,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 58 Ow 16</name>
+<Point><coordinates>3.727832,51.072993,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 58 Ow 17</name>
+<Point><coordinates>3.726456,51.072912,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 58 Ow 17 Bis</name>
+<Point><coordinates>3.716172,51.07574,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 58 Ringvaart1</name>
+<Point><coordinates>3.716312,51.096924,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 58 Wondelgem Station</name>
+<Point><coordinates>3.719533,51.089617,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

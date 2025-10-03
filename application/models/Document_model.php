@@ -1,0 +1,575 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Het documenten model voor de data te behandelen
+ * 
+ * @author    Casteels Pieter-Jan
+ * @copyright 2020 Casteels Pieter-Jan
+ * @version   0.5
+ */
+
+class Document_model extends CI_Model
+{
+    public function __construct() 
+    {
+		parent::__construct();
+	}
+
+	/*****************
+	 *   Documenten  *
+	 ****************/
+
+	/**
+	 * Creeer een document in de database
+	 * 
+	 * @param documentData
+	 * @return insert_id
+	 */
+	public function setDocument($documentData)
+	{
+		$this->db->insert('documents', $documentData);
+        return $this->db->insert_id();
+	}
+
+	/**
+	 * Krijg de laatste aangemaakte documenten terug 
+	 * 
+	 * @param limit aantal of standaard 25
+	 * @return array van documenten
+	 */
+	public function getLatestDocuments($limit = 25)
+	{
+		$this->db->select('documents.*, users.first_name, users.last_name');
+		$this->db->from('documents');
+		$this->db->join('users', 'documents.user_id = users.id');
+		$this->db->order_by('documents.document_created_at', 'DESC');
+		$this->db->limit($limit);
+		
+		$query = $this->db->get();
+
+		$query = ($query->num_rows() > 0) ? $query->result_array() : NULL;
+
+        return $this->combineDocumentArrayWithName($query);
+	}
+
+	/**
+	 * Krijg de laatste aangemaakte documenten terug 
+	 * 
+	 * @param limit aantal of standaard 25
+	 * @return array van documenten
+	 */
+	public function getLatestUserDocuments($user_id, $limit = 25)
+	{
+		$query = NULL;
+
+		if(!empty($user_id))
+		{
+			$this->db->select('documents.*, users.first_name, users.last_name');
+			$this->db->from('documents');
+			$this->db->join('users', 'documents.user_id = users.id');
+			$this->db->where('users.id', $user_id);
+			$this->db->order_by('documents.document_created_at', 'DESC');
+			$this->db->limit($limit);
+			
+			$query = $this->db->get();
+
+			$query = ($query->num_rows() > 0) ? $query->result_array() : NULL;
+		}
+
+		return $this->combineDocumentArrayWithName($query);
+	}
+
+	/**
+	 * Krijg de alle documenten van een gebruiker
+	 * 
+	 * @param user_id
+	 * @return array van documenten
+	 */
+	public function getAllUsersDocuments($user_id)
+	{
+		$this->db->select('*');
+		$this->db->from('documents');
+		$this->db->where('user_id', $user_id);
+		
+		$query = $this->db->get();
+
+		$query = ($query->num_rows() > 0) ? $query->result_array() : NULL;
+
+		return $this->combineDocumentArrayWithName($query);
+	}
+
+	/**
+	 * Combineer de documenten met hun naam
+	 * 
+	 * @param documenten Array
+	 * @return array van documenten
+	 */
+	public function combineDocumentArrayWithName($query)
+	{
+		$newQuery = [];
+		if($query != NULL) 
+		{
+			foreach ($query as $value) 
+			{
+				$documentName = $this->getDocumentName( (int) $value['document_id'], (string) $value['document_type']);
+				if(!empty($documentName))
+				{
+					$value['document_naam'] = $documentName;
+				} 
+				else 
+				{
+					$value['document_naam'] = NULL;
+				}
+
+				// echo "<pre>";
+				// var_dump($value);
+				// echo "</pre>";
+				array_push($newQuery, $value);
+				
+			}
+			return $newQuery;
+		}
+		return NULL;
+	}
+
+	/**
+	 * Krijg het document naam terug indien dit bestaat
+	 * 
+	 * @param document_id
+	 * @return array van document_naam
+	 */
+	public function getDocumentName($document_id, $document_name)
+	{
+		if($document_name == 's627') 
+		{
+			$this->db->select('s627en_input.s627_input_input');
+			$this->db->from('s627en_input');
+			$this->db->where('s627en_input.document_id', $document_id);
+			$this->db->where('s627en_input.s627_input_name', 'documentNaam');
+
+			$query = $this->db->get();
+
+			return ($query->num_rows() > 0) ? (string) $query->row()->s627_input_input : FALSE;
+		}
+		elseif($document_name == 'verdeler') 
+		{
+			$this->db->select('verdelers.verdeler_documentNaam');
+			$this->db->from('verdelers');
+			$this->db->where('document_id', $document_id);
+
+			$query = $this->db->get();
+
+			return ($query->num_rows() > 0) ? (string) $query->row()->verdeler_documentNaam : FALSE;
+		}
+		elseif($document_name == 's460') 
+		{ 
+			return "s460";
+		}
+		elseif($document_name == 's505') 
+		{ 
+			return "s505";
+		}
+		else
+		{
+			return NULL;
+		}
+	}
+
+	/**
+	 * Krijg een specifiek document terug
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getDocument($document_id)
+	{
+		$this->db->select('*');
+		$this->db->from('documents');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->row_array() : FALSE;
+	}
+
+	/**
+	 * Krijg een specifiek document aanmaker terug
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek gebruiker
+	 */
+	public function getDocumentCreatorName($document_id)
+	{
+		$this->db->select('users.first_name, users.last_name');
+		$this->db->from('documents');
+		$this->db->join('users', 'documents.user_id = users.id');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+		if($query->num_rows() > 0)
+		{
+			$data = $query->row_array();
+			return $data['first_name'] . '-' . $data['last_name'];
+		}
+		else return ' ';
+	}
+
+	/**
+	 * Krijg alle documenten van een specifieke gebruiker
+	 * 
+	 * @param user_id
+	 * @return array van een gebruikers documenten
+	 */
+	public function getUserDocuments($user_id)
+	{
+		$this->db->select('*');
+		$this->db->from('documents');
+		$this->db->where('user_id', $user_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->row_array() : FALSE;
+	}
+
+	/**
+	 * Wie is de eigenaar van een document
+	 * 
+	 * @param document_id
+	 */
+	public function ownerDocument($document_id)
+	{
+		$this->db->select('user_id');
+		$this->db->from('documents');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? (int) $query->row()->user_id : FALSE;
+	}
+
+	/**
+     * Kijk of een gebruiker de eigenaar is van een document
+	 * 
+     * @param $document_id
+     * @param $user_id
+     * @return true of false
+     */
+    public function isUserOwnerDocument($document_id, $user_id)
+    {
+        $this->db->select('user_id');
+        $this->db->from('documents');
+        $this->db->where('user_id', $user_id);
+        $this->db->where('document_id', $document_id);
+
+        $query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? TRUE : FALSE;
+	}
+	
+	/**
+	 * Verwijder het document
+	 * 
+	 * @param document_id
+	 * @return success or fail
+	 */
+	public function deleteDocument($document_id)
+	{
+		$this->db->where('document_id', $document_id);
+        return $this->db->delete('documents');
+	}
+
+	/*****************
+	 *     S627      *
+	 ****************/
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param s627enInputData om weg te schrijven naar de db
+	 * @return success or fail
+	 */
+	public function setS627enInputData($s627enInputData)
+	{
+		return $this->db->insert('s627en_input', $s627enInputData);
+	}
+
+	/**
+	 * Verwijder de velden
+	 * 
+	 * @param document_id
+	 * @return success or fail
+	 */
+	public function deleteS627enInputData($document_id)
+	{
+		$this->db->where('document_id', $document_id);
+        return $this->db->delete('s627en_input');
+	}
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param s627enInputData om weg te schrijven naar de db
+	 * @return success or fail
+	 */
+	public function updateS627enInputData($s627enInputData)
+	{
+		$this->db->where('document_id', $s627enInputData['document_id']);
+		$this->db->where('s627_input_name', $s627enInputData['s627_input_name']);
+        return $this->db->update('s627en_input', $s627enInputData);
+	}
+
+	/**
+	 * Krijg velden terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getEditDocumentS627en($document_id)
+	{
+		$this->db->select('s627en_input.s627_input_name, s627en_input.s627_input_input');
+		$this->db->from('s627en_input');
+		$this->db->join('s627en', 's627en_input.s627_input_name = s627en.s627_name');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+
+	/**
+	 * Krijg velden terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getDocumentS627en($document_id)
+	{
+		$this->db->select('*');
+		$this->db->from('s627en_input');
+		$this->db->join('s627en', 's627en_input.s627_input_name = s627en.s627_name');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+
+	/*****************
+	 *      S460     *
+	 ****************/
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param s460enInputData om weg te schrijven naar de db
+	 * @return success or fail
+	 */
+	public function setS460enInputData($s460enInputData)
+	{
+		return $this->db->insert('s460en_input', $s460enInputData);
+	}
+
+	/**
+	 * Verwijder de velden
+	 * 
+	 * @param document_id
+	 * @return success or fail
+	 */
+	public function deleteS460enInputData($document_id)
+	{
+		$this->db->where('document_id', $document_id);
+        return $this->db->delete('s460en_input');
+	}
+
+	/**
+	 * Krijg de velden terug voor een s460 document
+	 */
+	public function getDocumentS460en($document_id)
+	{
+		$this->db->select('*');
+		$this->db->from('s460en_input');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+
+	/**
+	 * Krijg de velden terug voor een s460 document
+	 */
+	public function getS460Locaties()
+	{
+		$this->db->select('*');
+		$this->db->from('s460en');
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+
+	/**
+	 * Krijg velden terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getEditDocumentS460en($document_id)
+	{
+		$this->db->select('*');
+		$this->db->from('s460en_input');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+
+	/*****************
+	 *    Verdeler   *
+	 ****************/
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param verdelerData
+	 * @return success or fail
+	 */
+	public function setVerdelersData($verdelersData)
+	{
+		return $this->db->insert('verdelers', $verdelersData);
+	}
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param verdelerData
+	 * @return success or fail
+	 */
+	public function updateVerdelersData($verdelersData)
+	{
+		$this->db->where('document_id', $verdelersData['document_id']);
+        return $this->db->update('verdelers', $verdelersData);
+	}
+
+	/**
+	 * Krijg verdeleren terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getDocumentVerdelers($document_id)
+	{
+		$this->db->select('*');
+		$this->db->from('verdelers');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->row_array() : NULL;
+	}
+
+	/**
+	 * Verwijder de velden
+	 * 
+	 * @param document_id
+	 * @return success or fail
+	 */
+	public function deleteVerdelersData($document_id)
+	{
+		$this->db->where('document_id', $document_id);
+        return $this->db->delete('verdelers');
+	}
+
+	/**
+	 * Krijg alle gebruikers hun user_id terug
+	 * 
+	 * @return gebruikers of null
+	 */
+	public function getAllUsers()
+	{
+		$this->db->select('id');
+		$this->db->from('users');
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : NULL;
+	}
+
+	/*****************
+	 *      S505     *
+	 ****************/
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param s505enInputData om weg te schrijven naar de db
+	 * @return success or fail
+	 */
+	public function setS505enInputData($s505enInputData)
+	{
+		return $this->db->insert('s505en_input', $s505enInputData);
+	}
+
+	/**
+	 * Schrijf de velden weg naar de db
+	 * 
+	 * @param s505enInputData om weg te schrijven naar de db
+	 * @return success or fail
+	 */
+	public function updateS505enInputData($s505enInputData)
+	{
+		$this->db->where('document_id', $s505enInputData['document_id']);
+		$this->db->where('s505_input_name', $s505enInputData['s505_input_name']);
+        return $this->db->update('s505en_input', $s505enInputData);
+	}
+
+	/**
+	 * Krijg velden terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getDocumentS505en($document_id)
+	{
+		$this->db->select('*');
+		$this->db->from('s505en_input');
+		$this->db->join('s505en', 's505en_input.s505_input_name = s505en.s505_name');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+
+	/**
+	 * Verwijder de velden
+	 * 
+	 * @param document_id
+	 * @return success or fail
+	 */
+	public function deleteS505enInputData($document_id)
+	{
+		$this->db->where('document_id', $document_id);
+        return $this->db->delete('s505en_input');
+	}
+
+	/**
+	 * Krijg velden terug van een specifiek document
+	 * 
+	 * @param document_id
+	 * @return array van een specifiek document
+	 */
+	public function getEditDocumentS505en($document_id)
+	{
+		$this->db->select('s505en_input.s505_input_name, s505en_input.s505_input_input');
+		$this->db->from('s505en_input');
+		$this->db->join('s505en', 's505en_input.s505_input_name = s505en.s505_name');
+		$this->db->where('document_id', $document_id);
+		
+		$query = $this->db->get();
+
+        return ($query->num_rows() > 0) ? $query->result_array() : FALSE;
+	}
+}	

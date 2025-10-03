@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 11 Toegang brandweer</name>
+<Point><coordinates>4.348288,51.319052,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 11 Werfkeet</name>
+<Point><coordinates>4.306878,51.366919,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 11 OW 07 BASF</name>
+<Point><coordinates>4.289459,51.371505,0</coordinates></Point>
+</Placemark>,
+<Placemark>
+<name>L 11 Seinen P-Q.9 en O-Q.9</name>
+<Point><coordinates>4.271479,51.373383,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 11 Sein G-Q.9</name>
+<Point><coordinates>4.286705,51.371406,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

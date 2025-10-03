@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>Oprijplaats Groenstraat (keet)</name>
+<Point><coordinates>4.908101,51.151333,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Oprijplaats Duivenstraat</name>
+<Point><coordinates>4.493177,51.045800,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Toegang seinen einde perron Mechelen-Nekkerspoel</name>
+<Point><coordinates>4.490804,51.037951,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wissels 04AJ - 01AJ - 02AJ - 03AJ</name>
+<Point><coordinates>4.491945,51.038660,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

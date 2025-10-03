@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>Cit Techniekers</name>
+<Point><coordinates>4.2724,51.266239,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Koestraat Kallo</name>
+<Point><coordinates>4.2437,51.248751,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pomphuis</name>
+<Point><coordinates>4.262895,51.258042,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Schoorhavenweg</name>
+<Point><coordinates>4.204556,51.251414,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Ingang Antigoon ES00</name>
+<Point><coordinates>4.263164,51.258204,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES01</name> 
+<Point><coordinates>4.272818,51.265273,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES02/03</name>
+<Point><coordinates>4.278002,51.272931,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES04</name>
+<Point><coordinates>4.283656,51.280092,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES05</name>
+<Point><coordinates>4.284848,51.284124,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES06</name>
+<Point><coordinates>4.288420,51.287567,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES07</name>
+<Point><coordinates>4.291993,51.292391,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES08</name>
+<Point><coordinates>4.302333,51.303199,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES09</name>
+<Point><coordinates>4.307623,51.305835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES10</name>
+<Point><coordinates>4.315966,51.309370,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES11</name>
+<Point><coordinates>4.324833,51.313753,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES12</name>
+<Point><coordinates>4.329983,51.316116,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Antigoon ES13</name>
+<Point><coordinates>4.334647,51.317304,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

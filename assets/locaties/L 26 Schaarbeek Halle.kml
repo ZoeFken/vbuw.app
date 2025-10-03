@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 26 Aardi Kant Huizinging</name>
+<Point><coordinates>4.26069,50.751219,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Cinquantenaire Av.Eug.PLASKY</name>
+<Point><coordinates>4.396357,50.850271,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Etterbeek Triomflaan</name>
+<Point><coordinates>4.39895,50.816817,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Halle Porseleinstraat Koer</name>
+<Point><coordinates>4.247402,50.742326,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Josaphat Schaarbeek</name>
+<Point><coordinates>4.396853,50.861633,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Kriekenbomenlaan Elsene</name>
+<Point><coordinates>4.396817,50.807434,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Lakenberg</name>
+<Point><coordinates>4.283402,50.756364,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Station Buizingen Parking</name>
+<Point><coordinates>4.259072,50.751455,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 26 Station Moensberg</name>
+<Point><coordinates>4.331618,50.778537,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

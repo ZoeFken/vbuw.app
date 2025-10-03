@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>Werfkeet Aalter Loskaai</name>
+<Point><coordinates>3.444144,51.092833,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Dendermonde</name>
+<Point><coordinates>4.105222,51.023454,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Aalter Nieuwendam</name>
+<Point><coordinates>3.417453,51.097955,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Beernem</name>
+<Point><coordinates>3.3275952,51.1278038,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Berlaar</name>
+<Point><coordinates>4.637363,51.114474,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Brugge Palingstraat</name>
+<Point><coordinates>3.2058,51.234681,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Deinze</name>
+<Point><coordinates>3.541867,50.978807,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Etterbeek</name>
+<Point><coordinates>4.404892,50.815338,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Gelrode</name>
+<Point><coordinates>4.787315,50.968156,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Kepi</name>
+<Point><coordinates>4.319131,50.822784,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Kortemark</name>
+<Point><coordinates>3.047643,51.025267,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Kortrijk</name>
+<Point><coordinates>3.239502,50.814789,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet leuven</name>
+<Point><coordinates>4.715609,50.884743,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Machelen</name>
+<Point><coordinates>4.427602,50.900716,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Mechelen Douaneplein</name>
+<Point><coordinates>4.4920889,51.0258408,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Melle</name>
+<Point><coordinates>3.788245,51.008385,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Oostkamp</name>
+<Point><coordinates>3.257468,51.154769,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Pci</name>
+<Point><coordinates>4.414436,50.891646,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Wipstraat L 35</name>
+<Point><coordinates>4.787282,50.968156,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Zeebruge</name>
+<Point><coordinates>3.20305,51.271924,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Kuurne</name>
+<Point><coordinates>3.247034,50.871569,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Schaarbeek brug</name>
+<Point><coordinates>4.383707,50.880947,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Schaarbeek nieuwe toegang</name>
+<Point><coordinates>4.406914,50.900381,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Kennedytunnel</name> 
+<Point><coordinates>4.376638,51.211689,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Wezemaal</name>
+<Point><coordinates>4.749797,50.953710,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Herentals</name>
+<Point><coordinates>4.827920,51.181819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Sint-Katelijne-Waver</name>
+<Point><coordinates>4.495268,51.057265,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Malderen</name>
+<Point><coordinates>4.234732,51.015081,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Boom</name>
+<Point><coordinates>4.363091,51.098163,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Olen</name>
+<Point><coordinates>4.908101,51.151333,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Werfkeet Zandvliet</name>
+<Point><coordinates>4.306878,51.366919,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

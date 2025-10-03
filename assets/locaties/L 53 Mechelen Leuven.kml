@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 53 OW 8</name>
+<Point><coordinates>4.537557,50.997832,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 9</name>
+<Point><coordinates>4.547593,50.993440,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 10</name>
+<Point><coordinates>4.552357,50.991353,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 11</name>
+<Point><coordinates>4.557625,50.989023,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 13</name>
+<Point><coordinates>4.569340,50.983910,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 14</name>
+<Point><coordinates>4.573105,50.982295,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 15</name>
+<Point><coordinates>4.586534,50.976403,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 18</name>
+<Point><coordinates>4.612469,50.966516,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 fiets OW 21</name>
+<Point><coordinates>4.627225,50.962792,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 23</name>
+<Point><coordinates>4.633916,50.960320,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 24 Hambos</name>
+<Point><coordinates>4.638823,50.957993,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 25</name>
+<Point><coordinates>4.643136,50.955631,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 26</name>
+<Point><coordinates>4.656188,50.948372,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 27</name>
+<Point><coordinates>4.664028,50.943944,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 29</name>
+<Point><coordinates>4.676893,50.936724,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 30</name>
+<Point><coordinates>4.690212,50.929258,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 31</name>
+<Point><coordinates>4.694626,50.926758,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 32</name>
+<Point><coordinates>4.697787,50.925010,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 OW 33 Wijgmaal</name>
+<Point><coordinates>4.701994,50.922355,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 53 Y Dijlebrug</name>
+<Point><coordinates>4.710121,50.904423,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

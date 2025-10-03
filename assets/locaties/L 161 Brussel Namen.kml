@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 161 Baekenbos Stationstraat Hoeil</name>
+<Point><coordinates>4.481622,50.753077,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 161 Baekenbos Stationstraat Hoeila</name>
+<Point><coordinates>4.481622,50.753077,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 161 Hoeilaert Station</name>
+<Point><coordinates>4.4683,50.759367,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 161 Station Groenendaal</name>
+<Point><coordinates>4.449377,50.76645,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 161 Watermaal Elandstraat</name>
+<Point><coordinates>4.403162,50.803002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 161 Watermaal Station</name>
+<Point><coordinates>4.400086,50.809938,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

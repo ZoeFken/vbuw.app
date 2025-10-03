@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #375a7f;
+}
+
+table {
+    width: 750px;
+}
+
+.centertable {
+    margin-left:auto; 
+    margin-right:auto;
+    border-collapse: collapse;
+}
+
+#main table, #main th, #main td {
+    border: 1px solid black;
+    height: 50px;
+}
+
+#main th, #main td {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.column-1 {
+    width: 50px;
+}
+
+.column-2 {
+    width: 75px;
+}
+
+.column-3 {
+    width: 400px;
+}
+
+.column-4 {
+    width: 100px;
+}
+
+.column-5 {
+    width: 75px;
+}
+
+.column-6 {
+    width: 50px;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}

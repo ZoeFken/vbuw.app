@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 204 OW 01</name>
+<Point><coordinates>3.745964,51.075788,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 204 H-F.13 en HX-F.13</name>
+<Point><coordinates>3.743508,51.072407,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 204 OW 02</name>
+<Point><coordinates>3.748462,51.078170,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 204 H-K.13 en GX-K.13</name>
+<Point><coordinates>3.766526,51.113071,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

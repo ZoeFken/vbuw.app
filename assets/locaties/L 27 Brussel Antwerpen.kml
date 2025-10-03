@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 27 Bechem Y-stadion</name>
+<Point><coordinates>4.441069,51.189817,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 Eppegem</name>
+<Point><coordinates>4.45888,50.95955,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 Jubellaan Mechelen</name>
+<Point><coordinates>4.4767693,51.011554,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 Kontich Duffelhoek</name>
+<Point><coordinates>4.48065,51.125817,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 L 50 Masuiplein Schaarbeek</name>
+<Point><coordinates>4.364947,50.870478,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 Mechelen Jubellaan</name>
+<Point><coordinates>4.477133,51.003151,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 Station Mechelen-Nekkerspoel</name>
+<Point><coordinates>4.489353,51.029908,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 T Schakelaar Kant Neckerspoel</name>
+<Point><coordinates>4.491702,51.038309,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 Weerde Station</name>
+<Point><coordinates>4.4708255,50.9766844,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 27 Y. Abeelstraat Mechelen</name>
+<Point><coordinates>4.474978,51.009093,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wart bundel A1 antwerpen</name>
+<Point><coordinates>4.424858,51.286772,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

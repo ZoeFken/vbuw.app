@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 86 Ow 26</name>
+<Point><coordinates>3.614385,50.747119,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 27</name>
+<Point><coordinates>3.623453,50.752275,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 28</name>
+<Point><coordinates>3.629836,50.757488,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 29</name>
+<Point><coordinates>3.619025,50.780424,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 31</name>
+<Point><coordinates>3.619991,50.785361,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 32</name>
+<Point><coordinates>3.620816,50.793042,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 33</name>
+<Point><coordinates>3.620321,50.79677,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 34</name>
+<Point><coordinates>3.619543,50.800542,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 37</name>
+<Point><coordinates>3.613792,50.821135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 78</name>
+<Point><coordinates>3.639007,50.931740,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 80</name>
+<Point><coordinates>3.636672,50.937353,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 87</name>
+<Point><coordinates>3.631812,50.949209,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 92</name>
+<Point><coordinates>3.628018,50.960458,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 94</name>
+<Point><coordinates>3.628350,50.966167,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 95</name>
+<Point><coordinates>3.629956,50.969771,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 98</name>
+<Point><coordinates>3.632906,50.976250,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ow 100</name>
+<Point><coordinates>3.635459,50.981873,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 86 Ronse Stationstraat</name>
+<Point><coordinates>3.6015552,50.7425463,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>

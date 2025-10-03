@@ -1,0 +1,81 @@
+<!-- Modal -->
+<div class="modal fade" id="docmodal_<?php echo $document_id ?>" tabindex="-1" role="dialog" aria-labelledby="documentModal" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="documentModalLabel"><?php echo $this->lang->line('download_s460'); ?></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		
+			<div class="modal-body d-flex justify-content-center">
+				<?php 
+				$attributes = array('class' => 'col-12'); 
+				echo form_open('downloads/s460/' . $document_id, $attributes); 
+				?>
+
+				<div class="form-group row">
+					<label><?php echo $this->lang->line('aantal_dagen'); ?> <small class="text-warning"><?php echo $this->lang->line('tussen_dagen'); ?></small></label>
+					<?php 
+					$data = array(
+						'class' => 'form-control mb-2',
+						'type' => 'text',
+						'name' => 'hoeveelDagen',
+						'placeholder' => 1,
+						'value' => '1'
+					);
+					echo form_input($data); 
+					?>
+					<label><?php echo $this->lang->line('datum_aanvang'); ?></label>
+					<?php 
+					$data = array(
+						'class' => 'form-control mb-2 date',
+						'type' => 'text',
+						'name' => 'startDate',
+						'placeholder' => 'DD-MM-YYYY',
+						'pattern' => '(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}'
+					);
+					echo form_input($data); 
+					?>
+				</div>
+
+				<div class="form-group row">
+				<label><?php echo $this->lang->line('wissel'); ?></label>
+					<?php 
+					$data = array(
+						'name'          => 'wissel',
+						'id'            => 'wissel',
+						'value'         => 'wissel',
+						'checked'       => false,
+						'style'         => 'margin-top:5px; margin-left:10px'
+					);
+					echo form_checkbox($data);
+					?>
+				</div>
+
+				<div class="form-group row">
+
+					<?php 
+					$data = array(
+						'class' => 'btn btn-primary btn-block',
+						'type' => 'submit',
+						'value' => $this->lang->line('download')
+					);
+					echo form_submit($data); 
+					?>
+					
+				</div>
+
+				
+				
+				<div class="form-group row">
+					<a class="btn btn-warning btn-block" href="<?php echo base_url('create_s460/editDocument/' . $document_id) ?>" role="button"><?php echo $this->lang->line('editeer'); ?></a>
+				</div>
+
+				<?php echo form_close(); ?>
+			</div>
+			
+		</div>
+	</div>
+</div>

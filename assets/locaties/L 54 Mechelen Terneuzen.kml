@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Placemark>
+<name>L 54 0w 23a</name>
+<Point><coordinates>4.280567,51.077851,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 17 Bis</name>
+<Point><coordinates>4.340973,51.067373,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 17 C</name>
+<Point><coordinates>4.329787,51.068211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 18</name>
+<Point><coordinates>4.324562,51.068466,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 21</name>
+<Point><coordinates>4.3009,51.073184,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 ow 22</name>
+<Point><coordinates>4.294617,51.073701,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 23</name>
+<Point><coordinates>4.289583,51.075701,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 24</name>
+<Point><coordinates>4.277517,51.079017,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 25</name>
+<Point><coordinates>4.2759,51.079734,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Ow 26</name>
+<Point><coordinates>4.2695,51.082667,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Puurs Station</name>
+<Point><coordinates>4.283517,51.076867,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Tuc Temse</name>
+<Point><coordinates>4.195235,51.135818,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Willebroek Brug</name>
+<Point><coordinates>4.3679,51.065622,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>L 54 Willebroek Tuc</name>
+<Point><coordinates>4.356774,51.066847,0</coordinates></Point>
+</Placemark>
+</Document>
+</kml>
