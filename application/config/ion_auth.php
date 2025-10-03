@@ -130,8 +130,8 @@ $config['argon2_admin_params']		= [
  | The library will fail for empty password or password size above 4096 bytes.
  | This is an arbitrary (long) value to protect against DOS attack.
  */
-$config['site_title']                 = "vbuw.app";          // Site Title, example.com
-$config['admin_email']                = "vbuwapp@gmail.com"; // Admin Email, admin@example.com
+$config['site_title']                 = "xxxxxxxx";          // Site Title, example.com
+$config['admin_email']                = "xxxxxxxx"; // Admin Email, admin@example.com
 $config['default_group']              = 'members';           // Default group, use name
 $config['admin_group']                = 'admin';             // Default administrators group, use name
 $config['identity']                   = 'email';             /* You can use any unique column in your table as identity column.
@@ -165,7 +165,7 @@ $config['recheck_timer']              = 0;                   /* The number of se
  |
  | Please customize
  */
-$config['session_hash'] = '6583d6c4f205998ecacc9f51b68a2a2e44ea0006';
+$config['session_hash'] = 'xxxxxxxx';
 
 /*
  | -------------------------------------------------------------------------
@@ -184,53 +184,20 @@ $config['remember_cookie_name'] = 'remember_code';
  | 	  array  = Manually set your email config settings
  */
 $config['use_ci_email'] = TRUE; // Send Email using the builtin CI email class, if false it will return the code and the identity
-// Working none ssl
-// $config['email_config'] = [
-// 	'email_address' => 'no-reply@vbuw.app',
-// 	'owner'         => 'Pieter-Jan Casteels',
-// 	'email_owner'   => 'no-reply@vbuw.app',
-// 	'charset'       => 'utf-8',
-// 	'mailtype'      => 'html',
-// 	'protocol'      => 'smtp',
-// 	'smtp_host'     => 'mail.vbuw.app',
-// 	// 'smtp_crypto'   => 'ssl',
-// 	'smtp_port'     => '587', // 465, 25, 587
-// 	'smtp_timeout'  => '7',
-// 	'smtp_user'     => 'no-reply@vbuw.app',
-// 	'smtp_pass'     => 'xxx',
-// 	'validation'    => TRUE, 
-// ];
-
-// Not working with ssl
-// $config['email_config'] = [
-// 	'email_address' => 'no-reply@vbuw.app',
-// 	'owner'         => 'Pieter-Jan Casteels',
-// 	'email_owner'   => 'no-reply@vbuw.app',
-// 	'charset'       => 'utf-8',
-// 	'mailtype'      => 'html',
-// 	'protocol'      => 'smtp',
-// 	'smtp_host'     => 'vbuw.app',
-// 	'smtp_crypto'   => 'ssl/tls',
-// 	'smtp_port'     => '465', // 465, 25, 587
-// 	'smtp_timeout'  => '7',
-// 	'smtp_user'     => 'no-reply@vbuw.app',
-// 	'smtp_pass'     => 'xxx',
-// 	'validation'    => TRUE, 
-// ];
 
 // Testing Gmail
 $config['email_config'] = [
-	'email_address' => 'vbuwapp@gmail.com',
-	'owner'         => 'Pieter-Jan Casteels',
-	'email_owner'   => 'vbuwapp@gmail.com',
+	'email_address' => 'xxxxxxxx',
+	'owner'         => 'xxxxxxxx',
+	'email_owner'   => 'xxxxxxxx',
 	'charset'       => 'iso-8859-1',
 	'mailtype'      => 'html',
 	'protocol'      => 'ssmtp',
-	'smtp_host'     => 'ssl://ssmtp.gmail.com',
+	'smtp_host'     => 'xxxxxxxx',
 	'smtp_crypto'   => 'ssl',
 	'smtp_port'     => '465', // 465, 25, 587
 	'smtp_timeout'  => '7',
-	'smtp_user'     => 'vbuwapp@gmail.com',
+	'smtp_user'     => 'xxxxxxxx',
 	'smtp_pass'     => 'xxx',
 	'wordwrap'      => TRUE
 ];
