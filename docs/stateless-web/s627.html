@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S627 - Stateless documenten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-document-type="s627">
+  <nav class="topnav">
+    <a class="brand" href="index.html">Stateless docs</a>
+    <div class="nav-links">
+      <a href="s627.html" class="active">S627</a>
+      <a href="s460.html">S460</a>
+      <a href="s505.html">S505</a>
+    </div>
+  </nav>
+  <main>
+    <header>
+      <h1>S627 document (stateless)</h1>
+    </header>
+
+    <section class="card" id="s627Section">
+      <h2>S627 velden</h2>
+      <div class="row grid">
+        <div>
+          <label>Ingediend door</label>
+          <input id="s627_ingediendDoor" placeholder="Pieter-Jan Casteels">
+        </div>
+        <div>
+          <label>Specialiteit</label>
+          <input id="s627_specialiteit" placeholder="specialiteit">
+        </div>
+      </div>
+      <div class="row">
+        <label>Aan</label>
+        <input id="s627_aan" placeholder="John Doe">
+      </div>
+      <div class="row grid">
+        <div>
+          <label>Post / Werf</label>
+          <input id="s627_postWerf" placeholder="Blok 6">
+        </div>
+        <div>
+          <label>Station</label>
+          <input id="s627_station" placeholder="Gent-Sint-Pieters">
+        </div>
+      </div>
+      <div class="row">
+        <label>Aanvraag</label>
+        <textarea id="s627_aanvraag" placeholder="...uw aanvraag hier..."></textarea>
+      </div>
+      <div class="row">
+        <label>Vermoedelijke duur <small>uur notatie 12:30</small></label>
+        <input id="s627_vermoedelijkeDuur" placeholder="05:00">
+      </div>
+      <div class="row">
+        <label>Rubriek 2A RMS</label>
+        <textarea id="s627_rubriekRms" placeholder="...uw rmsen hier..."></textarea>
+      </div>
+      <div class="row">
+        <label>Rubriek 2A Andere</label>
+        <textarea id="s627_rubriekAndere" placeholder="...uw andere hier..."></textarea>
+      </div>
+      <div class="row">
+        <label>Voltooiing van het werk</label>
+        <textarea id="s627_voltooiing" placeholder="...voltooiing van het werk..."></textarea>
+      </div>
+      <div class="row grid">
+        <div>
+          <label>Aanvang datum</label>
+          <input id="s627_aanvangDatum" placeholder="DD-MM-YYYY">
+        </div>
+        <div>
+          <label>Aanvang uur</label>
+          <input id="s627_aanvangUur" placeholder="--:--" type="time">
+        </div>
+        <div>
+          <label>Eind datum</label>
+          <input id="s627_eindDatum" placeholder="DD-MM-YYYY">
+        </div>
+        <div>
+          <label>Eind uur</label>
+          <input id="s627_eindUur" placeholder="--:--" type="time">
+        </div>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="generatePdf" type="button">Genereer PDF</button>
+      <button id="downloadJson" type="button">Download JSON</button>
+      <label class="upload">
+        <input id="uploadJson" type="file" accept="application/json">
+        JSON importeren
+      </label>
+      <span id="status"></span>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="pdf-renderer.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

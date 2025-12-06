@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S460 - Stateless documenten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-document-type="s460">
+  <nav class="topnav">
+    <a class="brand" href="index.html">Stateless docs</a>
+    <div class="nav-links">
+      <a href="s627.html">S627</a>
+      <a href="s460.html" class="active">S460</a>
+      <a href="s505.html">S505</a>
+    </div>
+  </nav>
+  <main>
+    <header>
+      <h1>S460 document (stateless)</h1>
+      <p>Geen backend, geen DB. Vul velden in, exporteer JSON en importeer later opnieuw.</p>
+    </header>
+
+    <section class="card">
+      <h2>Inputs (S460)</h2>
+      <div id="inputList"></div>
+      <button id="addInput" type="button">+ Voeg input toe</button>
+    </section>
+
+    <section class="card">
+      <h2>Velden</h2>
+      <div id="fieldsList"></div>
+      <button id="addField" type="button">+ Voeg veld toe</button>
+    </section>
+
+    <section class="actions">
+      <button id="downloadJson" type="button">Download JSON</button>
+      <label class="upload">
+        <input id="uploadJson" type="file" accept="application/json">
+        JSON importeren
+      </label>
+      <span id="status"></span>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
