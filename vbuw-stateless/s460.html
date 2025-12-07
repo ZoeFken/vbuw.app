@@ -7,33 +7,23 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-document-type="s460">
-  <nav class="topnav">
-    <a class="brand" href="index.html">Stateless docs</a>
-    <div class="nav-links">
-      <a href="s627.html">S627</a>
-      <a href="s460.html" class="active">S460</a>
-      <a href="s505.html">S505</a>
-    </div>
-  </nav>
+  <div data-nav-placeholder></div>
   <main>
     <header>
-      <h1>S460 document (stateless)</h1>
-      <p>Geen backend, geen DB. Vul velden in, exporteer JSON en importeer later opnieuw.</p>
+      <h1>Opmaak S460</h1>
     </header>
 
-    <section class="card">
-      <h2>Inputs (S460)</h2>
-      <div id="inputList"></div>
-      <button id="addInput" type="button">+ Voeg input toe</button>
-    </section>
-
-    <section class="card">
-      <h2>Velden</h2>
-      <div id="fieldsList"></div>
-      <button id="addField" type="button">+ Voeg veld toe</button>
+    <section class="card s460-card">
+      <div class="s460-list-wrapper">
+        <div class="s460-inputs" id="s460List"></div>
+        <div class="s460-add">
+          <button id="addS460Row" type="button" class="secondary">Voeg meer toe</button>
+        </div>
+      </div>
     </section>
 
     <section class="actions">
+      <button id="generatePdf" type="button">Download PDF</button>
       <button id="downloadJson" type="button">Download JSON</button>
       <label class="upload">
         <input id="uploadJson" type="file" accept="application/json">
@@ -43,6 +33,36 @@
     </section>
   </main>
 
+  <div class="modal-backdrop" id="s460Modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Download S460</h3>
+        <button type="button" class="close" id="closeS460Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <label for="s460_days">Aantal dagen <small>(0..8)</small></label>
+          <input id="s460_days" type="number" min="1" max="8" value="1">
+        </div>
+        <div class="row">
+          <label for="s460_startDatum">Datum aanvang</label>
+          <input id="s460_startDatum" placeholder="DD-MM-YYYY">
+        </div>
+        <div class="row inline">
+          <label for="s460_swap">Wissel verzender - ontvanger</label>
+          <input id="s460_swap" type="checkbox">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="primary" id="confirmS460Download">Download</button>
+        <button type="button" id="cancelS460Download">Annuleer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="navigation.js"></script>
+  <script src="vendor/pdf-lib.min.js"></script>
+  <script src="pdf-renderer.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

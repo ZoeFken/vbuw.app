@@ -7,17 +7,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-document-type="s627">
-  <nav class="topnav">
-    <a class="brand" href="index.html">Stateless docs</a>
-    <div class="nav-links">
-      <a href="s627.html" class="active">S627</a>
-      <a href="s460.html">S460</a>
-      <a href="s505.html">S505</a>
-    </div>
-  </nav>
+  <div data-nav-placeholder></div>
   <main>
     <header>
-      <h1>S627 document (stateless)</h1>
+      <h1>Opmaak S627</h1>
     </header>
 
     <section class="card" id="s627Section">
@@ -73,7 +66,7 @@
         </div>
         <div>
           <label>Aanvang uur</label>
-          <input id="s627_aanvangUur" placeholder="--:--" type="time">
+          <input id="s627_aanvangUur" placeholder="HH:MM" inputmode="numeric">
         </div>
         <div>
           <label>Eind datum</label>
@@ -81,7 +74,7 @@
         </div>
         <div>
           <label>Eind uur</label>
-          <input id="s627_eindUur" placeholder="--:--" type="time">
+          <input id="s627_eindUur" placeholder="HH:MM" inputmode="numeric">
         </div>
       </div>
     </section>
@@ -128,6 +121,7 @@
     </div>
   </div>
 
+  <script src="navigation.js"></script>
   <script src="vendor/pdf-lib.min.js"></script>
   <script src="pdf-renderer.js"></script>
   <script src="script.js"></script>

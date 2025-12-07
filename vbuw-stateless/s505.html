@@ -7,14 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-document-type="s505">
-  <nav class="topnav">
-    <a class="brand" href="index.html">Stateless docs</a>
-    <div class="nav-links">
-      <a href="s627.html">S627</a>
-      <a href="s460.html">S460</a>
-      <a href="s505.html" class="active">S505</a>
-    </div>
-  </nav>
+  <div data-nav-placeholder></div>
   <main>
     <header>
       <h1>S505 document (stateless)</h1>
@@ -34,6 +27,7 @@
     </section>
 
     <section class="actions">
+      <button id="generatePdf" type="button">Download PDF</button>
       <button id="downloadJson" type="button">Download JSON</button>
       <label class="upload">
         <input id="uploadJson" type="file" accept="application/json">
@@ -43,6 +37,9 @@
     </section>
   </main>
 
+  <script src="navigation.js"></script>
+  <script src="vendor/pdf-lib.min.js"></script>
+  <script src="pdf-renderer.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

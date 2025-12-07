@@ -175,6 +175,50 @@
     });
   };
 
+  const buildValueLookup = (payload) => {
+    const map = {};
+    (payload.inputs || []).forEach((item) => {
+      if (!item || !item.name) return;
+      map[item.name.toString().toLowerCase()] = item.value || '';
+    });
+    if (payload.velden) {
+      Object.entries(payload.velden).forEach(([key, value]) => {
+        if (!key) return;
+        map[key.toString().toLowerCase()] = value || '';
+      });
+    }
+    return map;
+  };
+
+  const renderGenericTemplate = async (template, payload, downloadName) => {
+    const pdfBytes = await fetch(template.base).then((res) => res.arrayBuffer());
+    const pdfDoc = await PDFDocument.load(pdfBytes);
+    const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+    const fontSize = template.fontSize || 8;
+    const page = pdfDoc.getPage(0);
+    const lookup = buildValueLookup(payload);
+    const getVal = (name) => lookup[name.toString().toLowerCase()] || '';
+
+    template.fields.forEach((field) => {
+      const value = getVal(field.name);
+      if (!value) return;
+      if (field.type === 'textbox') {
+        renderTextBox(page, field, value, font, fontSize);
+      } else {
+        renderTextField(page, field, value, font, fontSize);
+      }
+    });
+
+    const bytes = await pdfDoc.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const a = document.createElement('a');
+    const baseName = (downloadName || payload.documentNaam || payload.documentType || 'document').replace(/\s+/g, '_');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')}.${baseName}.pdf`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
   const renderS627 = async (payload) => {
     const variant = payload.s627Variant || 'S627';
     const baseMap = {
@@ -237,5 +281,57 @@
     URL.revokeObjectURL(a.href);
   };
 
-  window.StatelessPdf = { renderS627, templates: { S627_TEMPLATE, S460_TEMPLATE, S505_TEMPLATE } };
+  const renderS460 = async (payload) => {
+    const template = S460_TEMPLATE;
+    const pdfBytes = await fetch(template.base).then((res) => res.arrayBuffer());
+    const pdfDoc = await PDFDocument.load(pdfBytes);
+    const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+    const fontRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const fontSize = template.fontSize || 8;
+    const days = Math.max(1, Math.min(8, payload.hoeveelDagen || 1));
+    const startDate = payload.startDatum || payload.aanvangDatum || '';
+    const lookup = buildValueLookup(payload);
+    const getVal = (name) => lookup[name.toString().toLowerCase()] || '';
+    const swap = !!payload.s460Swap;
+
+    for (let day = 0; day < days; day++) {
+      const [page] = await pdfDoc.copyPages(pdfDoc, [0]);
+      pdfDoc.addPage(page);
+      template.fields.forEach((field) => {
+        let sourceName = field.name;
+        const num = parseInt(field.name, 10);
+        if (swap && !Number.isNaN(num)) {
+          if (num >= 1 && num <= 12) sourceName = `${num + 12}`;
+          else if (num >= 13 && num <= 24) sourceName = `${num - 12}`;
+        }
+        let value = getVal(sourceName);
+        const isDateField = field.name === '1';
+        if (isDateField && startDate) {
+          const dateVal = day > 0 ? incrementDate(startDate, day) : startDate;
+          value = value ? `--- ${dateVal} ---\n${value}` : `--- ${dateVal} ---`;
+        }
+        if (!value) return;
+        const fieldFontSize = (isDateField && startDate) ? fontSize + 4 : fontSize;
+        const fieldFont = (isDateField && startDate) ? fontBold : fontRegular;
+        if (field.type === 'textbox') {
+          renderTextBox(page, field, value, fieldFont, fieldFontSize);
+        } else {
+          renderTextField(page, field, value, fieldFont, fieldFontSize);
+        }
+      });
+    }
+
+    pdfDoc.removePage(0);
+    const bytes = await pdfDoc.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const a = document.createElement('a');
+    const baseName = (payload.documentNaam || 'S460').replace(/\s+/g, '_');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')}.${baseName}.pdf`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+  const renderS505 = async (payload) => renderGenericTemplate(S505_TEMPLATE, payload, 'S505');
+
+  window.StatelessPdf = { renderS627, renderS460, renderS505, templates: { S627_TEMPLATE, S460_TEMPLATE, S505_TEMPLATE } };
 })();
