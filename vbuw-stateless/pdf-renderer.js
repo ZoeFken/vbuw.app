@@ -354,7 +354,7 @@
     const docName = payload.documentNaam || payload.documentname || variant;
     const startDate = val('aanvangsdatum') || val('startdatum');
     const endDate = val('einddatum');
-    const startTime = val('aanvangsuur');
+    const startTime = val('aanvanguur');
     const endTime = val('einduur');
     const lijn = val('lijn');
     const spoor = val('spoor');
@@ -374,21 +374,22 @@
       copy.setDate(copy.getDate() + offset);
       return formatDate(copy);
     };
+    console.log('renderVerdeler timing', { startDate, endDate, startTime, endTime, payloadStart: payload.aanvangUur, payloadEnd: payload.eindUur });
 
     const pdfDoc = await PDFDocument.create();
     const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
     const bold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
     const pageSize = [mmToPt(210), mmToPt(297)];
-    const headerFontSize = 10;
-    const bodyFontSize = 10;
+    const headerFontSize = 9;
+    const bodyFontSize = 9;
     const pad = 4;
 
     const colDefs = [
       { header: 'E934', w: mmToPt(12), align: 'center' },
-      { header: 'Herkomst', w: mmToPt(22), align: 'center' },
-      { header: 'Volledige tekst of onderwerp van de mededeling', w: mmToPt(110), align: 'left' },
-      { header: 'Nr. Van de Correspondent', w: mmToPt(22), align: 'center' },
-      { header: 'Bestemming', w: mmToPt(22), align: 'center' },
+      { header: 'Herkomst', w: mmToPt(24), align: 'center' },
+      { header: 'Volledige tekst of onderwerp van de mededeling', w: mmToPt(95), align: 'left' },
+      { header: 'Nr. Van de Correspondent', w: mmToPt(29), align: 'center' },
+      { header: 'Bestemming', w: mmToPt(24), align: 'center' },
       { header: 'Uur', w: mmToPt(12), align: 'center' }
     ];
     const tableWidth = colDefs.reduce((sum, c) => sum + c.w, 0);
@@ -442,20 +443,107 @@
     };
 
     for (let day = 0; day < days; day++) {
+      const dayStart = day === 0 ? startDate : shiftDate(startDate, day);
+      const dayEnd = day === 0 ? endDate : shiftDate(endDate, day);
+
+      if (variant === 'overdracht') {
+        const dispStart = startDate;
+        const dispEnd = endDate;
+        const rowsAll = [];
+        for (let idx = 1; idx <= 4; idx++) {
+          rowsAll.push(
+            [
+              '',
+              'Bediende',
+              `Ik sta af aan de opgeleide bediende.\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\nIngeschreven onder nr:\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
+              '',
+              'Verdeler',
+              ''
+            ]
+          );
+          rowsAll.push(
+            [
+              '',
+              'Bediende',
+              `Ik neem over van de opgeleide bediende\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\nIngeschreven onder nr:\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
+              '',
+              'Verdeler',
+              ''
+            ]
+          );
+        }
+        const chunks = [];
+        for (let i = 0; i < rowsAll.length; i += 4) chunks.push(rowsAll.slice(i, i + 4));
+
+        chunks.forEach((rows) => {
+          const page = pdfDoc.addPage(pageSize);
+          const { height } = page.getSize();
+          const margin = mmToPt(18);
+          const offsetX = Math.max(mmToPt(5), (pageSize[0] - tableWidth) / 2);
+          let y = height - margin;
+
+          const title = 'Overdracht Buitenspanningstelling';
+          const titleSize = 16;
+          const titleWidth = bold.widthOfTextAtSize(title, titleSize);
+          page.drawText(title, { x: (pageSize[0] - titleWidth) / 2, y, size: titleSize, font: bold, color: rgb(37 / 255, 83 / 255, 120 / 255) });
+          y -= 22;
+
+          const infoCols = [
+            { label: 'Lijn', value: fmt(lijn) },
+            { label: 'Spoor', value: fmt(spoor) },
+            { label: 'Datum', value: fmtOptional(dispEnd || endDate) }
+          ];
+          const infoRow2 = [
+            { label: 'Datum', value: fmtOptional(dispStart || startDate) },
+            { label: 'van', value: fmtOptional(startTime) },
+            { label: 'Tot', value: fmtOptional(endTime) }
+          ];
+          const colSpacing = tableWidth / 3;
+          let infoX = margin;
+          const drawInfoRow = (items) => {
+            infoX = offsetX;
+            items.forEach(({ label, value }) => {
+              page.drawText(label, { x: infoX, y, size: 10, font: bold, color: rgb(0, 0, 0) });
+              page.drawText(value, { x: infoX + mmToPt(18), y, size: 10, font, color: rgb(0, 0, 0) });
+              infoX += colSpacing;
+            });
+          };
+          drawInfoRow(infoCols);
+          y -= 14;
+          drawInfoRow(infoRow2);
+          y -= 10;
+
+          const headers = colDefs.map((c) => c.header);
+          y = drawTable(page, y, headers, rows, offsetX);
+          y -= 10;
+
+          const footerLines = [
+            `Document: ${fmt(docName)}`,
+            `TPO / FBSS: ${fmt(tpo)}    BNX: ${fmt(bnx)}    Lijn: ${fmt(lijn)}    Spoor: ${fmt(spoor)}`,
+            `Aanvang: ${fmtOptional(dispStart)} ${fmtOptional(startTime)}    Einde: ${fmtOptional(dispEnd)} ${fmtOptional(endTime)}`,
+            `Uiterste punten: ${fmtOptional(uiterstePalen)}    Geplaatste SSV: ${fmtOptional(geplaatstePalen)}`
+          ];
+          footerLines.forEach((line) => {
+            if (!line.trim()) return;
+            page.drawText(line, { x: margin, y, size: 8, font, color: rgb(0, 0, 0) });
+            y -= 11;
+          });
+        });
+        continue;
+      }
+
       const page = pdfDoc.addPage(pageSize);
       const { height } = page.getSize();
       const margin = mmToPt(18);
       const offsetX = Math.max(mmToPt(5), (pageSize[0] - tableWidth) / 2);
       let y = height - margin;
-      const dayStart = day === 0 ? startDate : shiftDate(startDate, day);
-      const dayEnd = day === 0 ? endDate : shiftDate(endDate, day);
 
-      const title = variant === 'overdracht' ? 'Overdracht Buitenspanningstelling' : 'Buitenspanningstelling';
-      const titleWidth = bold.widthOfTextAtSize(title, 18);
-      page.drawText(title, { x: (pageSize[0] - titleWidth) / 2, y, size: 18, font: bold, color: rgb(37 / 255, 83 / 255, 120 / 255) });
-      y -= 26;
+      const title = 'Buitenspanningstelling';
+      const titleSize = 16;
+      const titleWidth = bold.widthOfTextAtSize(title, titleSize);
+      page.drawText(title, { x: (pageSize[0] - titleWidth) / 2, y, size: titleSize, font: bold, color: rgb(37 / 255, 83 / 255, 120 / 255) });
+      y -= 22;
 
-      // info strip (2 rijen, 3 kolommen)
       const infoCols = [
         { label: 'Lijn', value: fmt(lijn) },
         { label: 'Spoor', value: fmt(spoor) },
@@ -471,9 +559,8 @@
       const drawInfoRow = (items) => {
         infoX = offsetX;
         items.forEach(({ label, value }) => {
-          page.drawText(label, { x: infoX, y, size: 11, font: bold, color: rgb(0, 0, 0) });
-          const vWidth = font.widthOfTextAtSize(value, 11);
-          page.drawText(value, { x: infoX + mmToPt(18), y, size: 11, font, color: rgb(0, 0, 0) });
+          page.drawText(label, { x: infoX, y, size: 10, font: bold, color: rgb(0, 0, 0) });
+          page.drawText(value, { x: infoX + mmToPt(18), y, size: 10, font, color: rgb(0, 0, 0) });
           infoX += colSpacing;
         });
       };
@@ -485,72 +572,46 @@
       const headers = colDefs.map((c) => c.header);
       const rows = [];
 
-      if (variant === 'verdeler') {
-        rows.push(
-          [
-            '',
-            'Bediende',
-            `Ik vraag de buitenspanningstelling van de bovenleiding van de geval(len)\n${fmt(gevallen)}.\nVan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\nVoor werken voorzien in BNX nr ${fmt(bnx)}.\nEn in overeenstemming met FBSS nr ${fmt(tpo)}.`,
-            '',
-            'Verdeler',
-            ''
-          ]
-        );
-        rows.push(
-          [
-            '',
-            'Verdeler',
-            `Gevolg uw nr:\nDe spanning is verbroken op de bovenleiding (en de tegenfase feeder) van de geval(len)\n${fmt(gevallen)},\nvan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\nIk laat het plaatsen van de SSV's/UEG's toe in overeenstemming met FBSS nr ${fmt(tpo)}.\nEnkel de SSV's/UEG's, geplaatst conform de FBSS, zorgen voor een bescherming tegen de elektrische gevaren.`,
-            '',
-            'Bediende',
-            ''
-          ]
-        );
-        rows.push(
-          ['', 'Bediende', `De SSV's/UEG's zijn geplaatst in overeenstemming met FBSS nr ${fmt(tpo)}.`, '', 'Verdeler', '']
-        );
-        rows.push(
-          ['', 'Verdeler', `De buitenspanning is effectief, de werken voorzien in BNX nr ${fmt(bnx)} en in overeenstemming met FBSS nr ${fmt(tpo)} kunnen aangevangen worden op de lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}. Tussen de geplaatste ssv's.`, '', 'Bediende', '']
-        );
-        rows.push(
-          [
-            '',
-            'Bediende',
-            `Ik laat toe om de bovenleiding van de geval(len)\n${fmt(gevallen)}\nLijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)} terug onder spanning te stellen.\nDe SSV's zijn weggenomen, de bovenleiding wordt beschouwd(en) als zijnde onder spanning.`,
-            '',
-            'Verdeler',
-            ''
-          ]
-        );
-      } else {
-        for (let idx = 1; idx <= 4; idx++) {
-          rows.push(
-            [
-              '',
-              'Bediende',
-              `Ik sta af aan de opgeleide bediende.\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\nIngeschreven onder nr:\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
-              '',
-              'Verdeler',
-              ''
-            ]
-          );
-          rows.push(
-            [
-              '',
-              'Bediende',
-              `Ik neem over van de opgeleide bediende\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\nIngeschreven onder nr:\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
-              '',
-              'Verdeler',
-              ''
-            ]
-          );
-        }
-      }
+      rows.push(
+        [
+          '',
+          'Bediende',
+          `Ik vraag de buitenspanningstelling van de bovenleiding van de geval(len)\n${fmt(gevallen)}.\nVan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\nVoor werken voorzien in BNX nr ${fmt(bnx)}.\nEn in overeenstemming met FBSS nr ${fmt(tpo)}.`,
+          '',
+          'Verdeler',
+          ''
+        ]
+      );
+      rows.push(
+        [
+          '',
+          'Verdeler',
+          `Gevolg uw nr:\nDe spanning is verbroken op de bovenleiding (en de tegenfase feeder) van de geval(len)\n${fmt(gevallen)},\nvan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\nIk laat het plaatsen van de SSV's/UEG's toe in overeenstemming met FBSS nr ${fmt(tpo)}.\nEnkel de SSV's/UEG's, geplaatst conform de FBSS, zorgen voor een bescherming tegen de elektrische gevaren.`,
+          '',
+          'Bediende',
+          ''
+        ]
+      );
+      rows.push(
+        ['', 'Bediende', `De SSV's/UEG's zijn geplaatst in overeenstemming met FBSS nr ${fmt(tpo)}.`, '', 'Verdeler', '']
+      );
+      rows.push(
+        ['', 'Verdeler', `De buitenspanning is effectief, de werken voorzien in BNX nr ${fmt(bnx)} en in overeenstemming met FBSS nr ${fmt(tpo)} kunnen aangevangen worden op de lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}. Tussen de geplaatste ssv's.`, '', 'Bediende', '']
+      );
+      rows.push(
+        [
+          '',
+          'Bediende',
+          `Ik laat toe om de bovenleiding van de geval(len)\n${fmt(gevallen)}\nLijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)} terug onder spanning te stellen.\nDe SSV's zijn weggenomen, de bovenleiding wordt beschouwd(en) als zijnde onder spanning.`,
+          '',
+          'Verdeler',
+          ''
+        ]
+      );
 
       y = drawTable(page, y, headers, rows, offsetX);
       y -= 10;
 
-      // extra info footer
       const footerLines = [
         `Document: ${fmt(docName)}`,
         `TPO / FBSS: ${fmt(tpo)}    BNX: ${fmt(bnx)}    Lijn: ${fmt(lijn)}    Spoor: ${fmt(spoor)}`,
@@ -559,8 +620,8 @@
       ];
       footerLines.forEach((line) => {
         if (!line.trim()) return;
-        page.drawText(line, { x: margin, y, size: 9, font, color: rgb(0, 0, 0) });
-        y -= 12;
+        page.drawText(line, { x: margin, y, size: 8, font, color: rgb(0, 0, 0) });
+        y -= 11;
       });
     }
 

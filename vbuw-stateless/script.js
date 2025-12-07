@@ -176,7 +176,7 @@ function addFieldRow(data = {}) {
 function clampDays(n) {
   const num = parseInt(n, 10);
   if (isNaN(num) || num <= 0) return 1;
-  if (num > 7) return 7;
+  if (num > 8) return 8;
   return num;
 }
 function clampDaysS460(n) {
@@ -321,7 +321,6 @@ function buildPayload() {
   const verdelerVariant = getVerdelerVariant();
   if (payload.documentType === 'verdeler' && verdelerVariant) {
     payload.verdelerVariant = verdelerVariant;
-    if (verdelerVariant === 'overdracht') payload.hoeveelDagen = 1;
   }
 
   const startEl = qs('#startDatum');
@@ -719,12 +718,7 @@ function syncVerdelerVariantState() {
   const variant = getVerdelerVariant();
   const dagenEl = qs('#hoeveelDagen');
   if (dagenEl) {
-    if (variant === 'overdracht') {
-      dagenEl.value = 1;
-      dagenEl.disabled = true;
-    } else {
-      dagenEl.disabled = false;
-    }
+    dagenEl.disabled = false;
   }
 }
 
