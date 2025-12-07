@@ -22,6 +22,19 @@ const cancelDownloadBtn = document.getElementById('cancelDownload');
 const closeModalBtn = document.getElementById('closeModal');
 const modalEl = document.getElementById('downloadModal');
 const variantInputs = document.querySelectorAll('input[name="s627Variant"]');
+['s627_aanvangDatum', 's627_eindDatum'].forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener('input', () => {
+      const v = normalizeDateString(el.value);
+      if (v) el.value = v;
+    });
+    el.addEventListener('blur', () => {
+      const v = normalizeDateString(el.value);
+      if (v) el.value = v;
+    });
+  }
+});
 
 if (addInputBtn) addInputBtn.addEventListener('click', () => addInputRow());
 if (addFieldBtn) addFieldBtn.addEventListener('click', () => addFieldRow());
@@ -103,6 +116,18 @@ const formatDurationHM = (minutes) => {
   const m = minutes % 60;
   return `${pad2(h)}:${pad2(m)}`;
 };
+const normalizeDateString = (val) => {
+  if (!val) return val;
+  const digits = val.replace(/\D/g, '');
+  if (digits.length === 8) {
+    const d = digits.slice(0, 2);
+    const m = digits.slice(2, 4);
+    const y = digits.slice(4);
+    return `${d}-${m}-${y}`;
+  }
+  if (val.includes('/')) return val.replace(/\//g, '-');
+  return val;
+};
 
 function buildPayload() {
   const payload = { documentType: docTypeSelect ? docTypeSelect.value : defaultDocType };
@@ -134,6 +159,8 @@ function buildPayload() {
     // Force duration/end/start consistency for S627
     const map = {};
     inputs.forEach((i) => { map[i.name] = i.value; });
+    map.aanvangDatum = normalizeDateString(map.aanvangDatum);
+    map.eindDatum = normalizeDateString(map.eindDatum);
     const startDt = parseDateTime(map.aanvangDatum, map.aanvangUur);
     const endDt = parseDateTime(map.eindDatum, map.eindUur);
     let duurStr = map.vermoedelijkeDuur;
