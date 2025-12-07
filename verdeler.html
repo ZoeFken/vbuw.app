@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdeler - Stateless documenten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-document-type="verdeler">
+  <div data-nav-placeholder></div>
+  <main>
+    <header>
+      <h1>Opmaak verdeler</h1>
+      <p>Gebruik dezelfde velden als in de CI3-versie: kies het type document (verdeler of overdracht), vul gegevens in en download een PDF of JSON.</p>
+    </header>
+
+    <section class="card">
+      <h2>Algemene gegevens</h2>
+      <div class="row grid">
+        <div>
+          <label for="verdeler_bnx">BNX</label>
+          <input id="verdeler_bnx" placeholder="43G-0000012-002">
+        </div>
+        <div>
+          <label for="verdeler_tpo">TPO / FBSS</label>
+          <input id="verdeler_tpo" placeholder="I-AM-SP-2020-DNS-Addendum 2">
+        </div>
+      </div>
+      <div class="row grid">
+        <div>
+          <label for="verdeler_lijn">Lijn</label>
+          <input id="verdeler_lijn" placeholder="75">
+        </div>
+        <div>
+          <label for="verdeler_spoor">Spoor</label>
+          <input id="verdeler_spoor" placeholder="A&B">
+        </div>
+      </div>
+      <div class="row grid">
+        <div>
+          <label for="verdeler_aanvangsDatum">Aanvang datum</label>
+          <input id="verdeler_aanvangsDatum" placeholder="DD-MM-YYYY">
+        </div>
+        <div>
+          <label for="verdeler_aanvangUur">Aanvang uur</label>
+          <input id="verdeler_aanvangUur" placeholder="HH:MM" inputmode="numeric">
+        </div>
+        <div>
+          <label for="verdeler_eindDatum">Eind datum</label>
+          <input id="verdeler_eindDatum" placeholder="DD-MM-YYYY">
+        </div>
+        <div>
+          <label for="verdeler_eindUur">Eind uur</label>
+          <input id="verdeler_eindUur" placeholder="HH:MM" inputmode="numeric">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Beschrijvingen</h2>
+      <div class="row">
+        <label for="verdeler_gevallen">Gevallen</label>
+        <textarea id="verdeler_gevallen" placeholder="29210, 29220, 29230"></textarea>
+      </div>
+      <div class="row">
+        <label for="verdeler_uiterstePalen">Uiterste punten</label>
+        <input id="verdeler_uiterstePalen" placeholder="Sp A: 13/20 & 15/15 en Sp B: 14/20 & 16/15">
+      </div>
+      <div class="row">
+        <label for="verdeler_geplaatstePalen">Locatie geplaatste SSV</label>
+        <textarea id="verdeler_geplaatstePalen" placeholder="Sp A: 13/20 & 15/15 en Sp B: 14/20 & 16/15"></textarea>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="openDownloadModal" type="button">Download PDF</button>
+      <button id="downloadJson" type="button">Download JSON</button>
+      <label class="upload">
+        <input id="uploadJson" type="file" accept="application/json">
+        JSON importeren
+      </label>
+      <span id="status"></span>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="downloadModal">
+    <div class="modal modal--verdeler">
+      <div class="modal-header">
+        <h3>Download Verdeler</h3>
+        <button type="button" class="close" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="row radio-row verdeler-radio-row single-line">
+          <label class="radio-label">
+            <input type="radio" name="verdelerVariant" value="verdeler" checked>
+            <span>Verdeler</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="verdelerVariant" value="overdracht">
+            <span>Overdracht</span>
+          </label>
+        </div>
+        <div class="row">
+          <label for="hoeveelDagen">Aantal Dagen <small class="hint">tussen 0 en 8</small></label>
+          <input id="hoeveelDagen" type="number" min="1" max="7" value="1">
+        </div>
+      </div>
+      <div class="modal-footer modal-footer--block">
+        <div class="cta-row">
+          <button type="button" id="confirmDownload" class="primary block">Download</button>
+          <button type="button" id="cancelDownload" class="text-link">Annuleer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="navigation.js"></script>
+  <script src="vendor/pdf-lib.min.js"></script>
+  <script src="pdf-renderer.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

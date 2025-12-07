@@ -36,24 +36,38 @@
     dt.setDate(dt.getDate() + days);
     return formatDate(dt);
   };
+  const clampDaysGeneric = (n, max) => {
+    const num = parseInt(n, 10);
+    if (Number.isNaN(num) || num < 1) return 1;
+    if (num > max) return max;
+    return num;
+  };
 
   const wrapText = (text, maxWidthPt, font, fontSize, maxLines) => {
-    const words = (text || '').split(/\s+/);
-    const lines = [];
-    let current = '';
     const lineHeight = fontSize * 1.15;
-    words.forEach((word) => {
-      const tentative = current ? `${current} ${word}` : word;
-      const w = font.widthOfTextAtSize(tentative, fontSize);
-      if (w <= maxWidthPt) {
-        current = tentative;
+    const result = [];
+    const segments = (text || '').split(/\n/);
+    segments.forEach((seg, idx) => {
+      const words = seg.trim() === '' ? [] : seg.split(/\s+/);
+      if (words.length === 0) {
+        result.push('');
       } else {
-        if (current) lines.push(current);
-        current = word;
+        let current = '';
+        words.forEach((word) => {
+          const tentative = current ? `${current} ${word}` : word;
+          const w = font.widthOfTextAtSize(tentative, fontSize);
+          if (w <= maxWidthPt) {
+            current = tentative;
+          } else {
+            if (current) result.push(current);
+            current = word;
+          }
+        });
+        if (current) result.push(current);
       }
+      if (idx < segments.length - 1) result.push(''); // preserve explicit newline
     });
-    if (current) lines.push(current);
-    const limited = maxLines ? lines.slice(0, maxLines) : lines;
+    const limited = maxLines ? result.slice(0, maxLines) : result;
     return { lines: limited, lineHeight };
   };
 
@@ -332,6 +346,231 @@
     URL.revokeObjectURL(a.href);
   };
   const renderS505 = async (payload) => renderGenericTemplate(S505_TEMPLATE, payload, 'S505');
+  const renderVerdeler = async (payload) => {
+    const variant = payload.verdelerVariant || payload.verdelertype || 'verdeler';
+    const days = variant === 'overdracht' ? 1 : clampDaysGeneric(payload.hoeveelDagen || 1, 7);
+    const lookup = buildValueLookup(payload);
+    const val = (key) => lookup[key.toString().toLowerCase()] || payload[key] || '';
+    const docName = payload.documentNaam || payload.documentname || variant;
+    const startDate = val('aanvangsdatum') || val('startdatum');
+    const endDate = val('einddatum');
+    const startTime = val('aanvangsuur');
+    const endTime = val('einduur');
+    const lijn = val('lijn');
+    const spoor = val('spoor');
+    const bnx = val('bnx');
+    const tpo = val('tpo');
+    const gevallen = val('gevallen');
+    const uiterstePalen = val('uiterstePalen');
+    const geplaatstePalen = val('geplaatstePalen');
+    const fmt = (v, placeholder = '...') => (v && v.toString().trim() ? v : placeholder);
+    const fmtOptional = (v) => (v && v.toString().trim() ? v : '');
+    const shiftDate = (value, offset) => {
+      if (!value) return value;
+      if (!offset) return value;
+      const dt = parseDate(value);
+      if (!dt) return value;
+      const copy = new Date(dt.getTime());
+      copy.setDate(copy.getDate() + offset);
+      return formatDate(copy);
+    };
 
-  window.StatelessPdf = { renderS627, renderS460, renderS505, templates: { S627_TEMPLATE, S460_TEMPLATE, S505_TEMPLATE } };
+    const pdfDoc = await PDFDocument.create();
+    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const bold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+    const pageSize = [mmToPt(210), mmToPt(297)];
+    const headerFontSize = 10;
+    const bodyFontSize = 10;
+    const pad = 4;
+
+    const colDefs = [
+      { header: 'E934', w: mmToPt(18), align: 'center' },
+      { header: 'Herkomst', w: mmToPt(26), align: 'center' },
+      { header: 'Volledige tekst of onderwerp van de mededeling', w: mmToPt(115), align: 'left' },
+      { header: 'Nr. Van de Correspondent', w: mmToPt(32), align: 'center' },
+      { header: 'Bestemming', w: mmToPt(30), align: 'center' },
+      { header: 'Uur', w: mmToPt(18), align: 'center' }
+    ];
+    const tableWidth = colDefs.reduce((sum, c) => sum + c.w, 0);
+
+    const measureCellHeight = (text, width, isHeader = false) => {
+      const useFont = isHeader ? bold : font;
+      const { lines, lineHeight } = wrapText(text || '', width - pad * 2, useFont, bodyFontSize);
+      return (lines.length || 1) * lineHeight + pad * 2;
+    };
+
+    const drawTable = (page, startY, headers, rows, offsetX) => {
+      let y = startY;
+      const { height } = page.getSize();
+      const headerHeight = Math.max(...colDefs.map((c, idx) => measureCellHeight(headers[idx] || c.header, c.w, true)));
+      let x = offsetX;
+      colDefs.forEach((c, idx) => {
+        const hText = headers[idx] || c.header;
+        page.drawRectangle({ x, y: y - headerHeight, width: c.w, height: headerHeight, borderColor: rgb(0, 0, 0), borderWidth: 0.8 });
+        const { lines, lineHeight } = wrapText(hText, c.w - pad * 2, bold, headerFontSize);
+        lines.forEach((line, i) => {
+          page.drawText(line, { x: x + pad, y: y - pad - (i + 1) * lineHeight + lineHeight, size: headerFontSize, font: bold, color: rgb(0, 0, 0) });
+        });
+        x += c.w;
+      });
+      y -= headerHeight;
+
+      // body rows
+      rows.forEach((row) => {
+        const heights = row.map((cell, idx) => measureCellHeight(cell, colDefs[idx].w, false));
+        const rowHeight = Math.max(...heights);
+        let cx = offsetX;
+        row.forEach((cell, idx) => {
+          const col = colDefs[idx];
+          page.drawRectangle({ x: cx, y: y - rowHeight, width: col.w, height: rowHeight, borderColor: rgb(0, 0, 0), borderWidth: 0.8 });
+          const { lines, lineHeight } = wrapText(cell || '', col.w - pad * 2, font, bodyFontSize);
+          const isCenter = col.align === 'center';
+          const baseY = y - pad - lineHeight;
+          lines.forEach((line, i) => {
+            const textWidth = font.widthOfTextAtSize(line, bodyFontSize);
+            let alignX = cx + pad;
+            if (isCenter) alignX = cx + (col.w - textWidth) / 2;
+            page.drawText(line, { x: alignX, y: baseY - i * lineHeight, size: bodyFontSize, font, color: rgb(0, 0, 0) });
+          });
+          cx += col.w;
+        });
+        y -= rowHeight;
+      });
+      return y;
+    };
+
+    for (let day = 0; day < days; day++) {
+      const page = pdfDoc.addPage(pageSize);
+      const { height } = page.getSize();
+      const margin = mmToPt(18);
+      const offsetX = Math.max(margin, (pageSize[0] - tableWidth) / 2);
+      let y = height - margin;
+      const dayStart = day === 0 ? startDate : shiftDate(startDate, day);
+      const dayEnd = day === 0 ? endDate : shiftDate(endDate, day);
+
+      const title = variant === 'overdracht' ? 'Overdracht Buitenspanningstelling' : 'Buitenspanningstelling';
+      const titleWidth = bold.widthOfTextAtSize(title, 18);
+      page.drawText(title, { x: (pageSize[0] - titleWidth) / 2, y, size: 18, font: bold, color: rgb(37 / 255, 83 / 255, 120 / 255) });
+      y -= 26;
+
+      // info strip (2 rijen, 3 kolommen)
+      const infoCols = [
+        { label: 'Lijn', value: fmt(lijn) },
+        { label: 'Spoor', value: fmt(spoor) },
+        { label: 'Datum', value: fmtOptional(dayEnd || endDate) }
+      ];
+      const infoRow2 = [
+        { label: 'Datum', value: fmtOptional(dayStart || startDate) },
+        { label: 'van', value: fmtOptional(startTime) },
+        { label: 'Tot', value: fmtOptional(endTime) }
+      ];
+      const colSpacing = mmToPt(55);
+      let infoX = margin;
+      const drawInfoRow = (items) => {
+        infoX = offsetX;
+        items.forEach(({ label, value }) => {
+          page.drawText(label, { x: infoX, y, size: 11, font: bold, color: rgb(0, 0, 0) });
+          const vWidth = font.widthOfTextAtSize(value, 11);
+          page.drawText(value, { x: infoX + mmToPt(18), y, size: 11, font, color: rgb(0, 0, 0) });
+          infoX += colSpacing;
+        });
+      };
+      drawInfoRow(infoCols);
+      y -= 14;
+      drawInfoRow(infoRow2);
+      y -= 10;
+
+      const headers = colDefs.map((c) => c.header);
+      const rows = [];
+
+      if (variant === 'verdeler') {
+        rows.push(
+          [
+            '',
+            'Bediende',
+            `Ik vraag de buitenspanningstelling van de bovenleiding van de geval(len)\n${fmt(gevallen)}.\n\nVan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\n\nVoor werken voorzien in BNX nr ${fmt(bnx)}.\nEn in overeenstemming met FBSS nr ${fmt(tpo)}.`,
+            '',
+            'Verdeler',
+            ''
+          ]
+        );
+        rows.push(
+          [
+            '',
+            'Verdeler',
+            `Gevolg uw nr:\n\nDe spanning is verbroken op de bovenleiding (en de tegenfase feeder) van de geval(len)\n${fmt(gevallen)},\nvan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\n\nIk laat het plaatsen van de SSV's/UEG's toe in overeenstemming met FBSS nr ${fmt(tpo)}.\n\nEnkel de SSV's/UEG's, geplaatst conform de FBSS, zorgen voor een bescherming tegen de elektrische gevaren.`,
+            '',
+            'Bediende',
+            ''
+          ]
+        );
+        rows.push(
+          ['', 'Bediende', `De SSV's/UEG's zijn geplaatst in overeenstemming met FBSS nr ${fmt(tpo)}.`, '', 'Verdeler', '']
+        );
+        rows.push(
+          ['', 'Verdeler', `De buitenspanning is effectief, de werken voorzien in BNX nr ${fmt(bnx)} en in overeenstemming met FBSS nr ${fmt(tpo)} kunnen aangevangen worden op de lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}. Tussen de geplaatste ssv's.`, '', 'Bediende', '']
+        );
+        rows.push(
+          [
+            '',
+            'Bediende',
+            `Ik laat toe om de bovenleiding van de geval(len)\n${fmt(gevallen)}\n\nLijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)} terug onder spanning te stellen.\n\nDe SSV's zijn weggenomen, de bovenleiding wordt beschouwd(en) als zijnde onder spanning.`,
+            '',
+            'Verdeler',
+            ''
+          ]
+        );
+      } else {
+        for (let idx = 1; idx <= 4; idx++) {
+          rows.push(
+            [
+              '',
+              'Bediende',
+              `Ik sta af aan de opgeleide bediende.\n\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\n\nIngeschreven onder nr:\n\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
+              '',
+              'Verdeler',
+              ''
+            ]
+          );
+          rows.push(
+            [
+              '',
+              'Bediende',
+              `Ik neem over van de opgeleide bediende\n\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\n\nIngeschreven onder nr:\n\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
+              '',
+              'Verdeler',
+              ''
+            ]
+          );
+        }
+      }
+
+      y = drawTable(page, y, headers, rows, offsetX);
+      y -= 10;
+
+      // extra info footer
+      const footerLines = [
+        `Document: ${fmt(docName)}`,
+        `TPO / FBSS: ${fmt(tpo)}    BNX: ${fmt(bnx)}    Lijn: ${fmt(lijn)}    Spoor: ${fmt(spoor)}`,
+        `Aanvang: ${fmtOptional(dayStart)} ${fmtOptional(startTime)}    Einde: ${fmtOptional(dayEnd)} ${fmtOptional(endTime)}`,
+        `Uiterste punten: ${fmtOptional(uiterstePalen)}    Geplaatste SSV: ${fmtOptional(geplaatstePalen)}`
+      ];
+      footerLines.forEach((line) => {
+        if (!line.trim()) return;
+        page.drawText(line, { x: margin, y, size: 9, font, color: rgb(0, 0, 0) });
+        y -= 12;
+      });
+    }
+
+    const bytes = await pdfDoc.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const a = document.createElement('a');
+    const baseName = (docName || variant || 'verdeler').replace(/\s+/g, '_');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')}.${baseName}.pdf`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
+  window.StatelessPdf = { renderS627, renderS460, renderS505, renderVerdeler, templates: { S627_TEMPLATE, S460_TEMPLATE, S505_TEMPLATE } };
 })();

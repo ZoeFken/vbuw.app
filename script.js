@@ -23,6 +23,7 @@ const cancelDownloadBtn = document.getElementById('cancelDownload');
 const closeModalBtn = document.getElementById('closeModal');
 const modalEl = document.getElementById('downloadModal');
 const variantInputs = document.querySelectorAll('input[name="s627Variant"]');
+const verdelerVariantInputs = document.querySelectorAll('input[name="verdelerVariant"]');
 const s460ModalEl = document.getElementById('s460Modal');
 const s460DaysInput = document.getElementById('s460_days');
 const s460StartInput = document.getElementById('s460_startDatum');
@@ -46,6 +47,33 @@ const addS460RowBtn = document.getElementById('addS460Row');
   }
 });
 ['s627_aanvangUur', 's627_eindUur'].forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener('input', () => {
+      if (shouldNormalizeTimeOnInput(el.value)) {
+        const v = normalizeTimeString(el.value);
+        if (v) el.value = v;
+      }
+    });
+    el.addEventListener('blur', () => {
+      const v = normalizeTimeString(el.value);
+      if (v) el.value = v;
+    });
+  }
+});
+['verdeler_aanvangsDatum', 'verdeler_eindDatum'].forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener('input', () => {
+      el.value = formatDateProgressive(el.value);
+    });
+    el.addEventListener('blur', () => {
+      const v = normalizeDateString(el.value);
+      if (v) el.value = v;
+    });
+  }
+});
+['verdeler_aanvangUur', 'verdeler_eindUur'].forEach((id) => {
   const el = document.getElementById(id);
   if (el) {
     el.addEventListener('input', () => {
@@ -95,6 +123,7 @@ if (confirmDownloadBtn) confirmDownloadBtn.addEventListener('click', () => { clo
 if (cancelDownloadBtn) cancelDownloadBtn.addEventListener('click', closeModal);
 if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
 variantInputs.forEach((el) => el.addEventListener('change', () => {}));
+verdelerVariantInputs.forEach((el) => el.addEventListener('change', () => syncVerdelerVariantState()));
 if (confirmS460DownloadBtn) confirmS460DownloadBtn.addEventListener('click', () => {
   if (s460DaysInput) s460DaysInput.value = clampDaysS460(s460DaysInput.value);
   closeS460Modal();
@@ -289,6 +318,11 @@ function buildPayload() {
 
   const variantEl = document.querySelector('input[name="s627Variant"]:checked');
   if (variantEl) payload.s627Variant = variantEl.value;
+  const verdelerVariant = getVerdelerVariant();
+  if (payload.documentType === 'verdeler' && verdelerVariant) {
+    payload.verdelerVariant = verdelerVariant;
+    if (verdelerVariant === 'overdracht') payload.hoeveelDagen = 1;
+  }
 
   const startEl = qs('#startDatum');
   const eindEl = qs('#eindDatum');
@@ -377,6 +411,12 @@ function buildPayload() {
       velden[keyEl.value] = valueEl.value;
     });
   }
+  if (payload.documentType === 'verdeler') {
+    const verdelerFields = collectVerdelerFields();
+    Object.entries(verdelerFields).forEach(([key, value]) => {
+      if (value !== undefined && value !== '') velden[key] = value;
+    });
+  }
   if (Object.keys(velden).length) payload.velden = velden;
 
   return payload;
@@ -448,6 +488,8 @@ function fillForm(data) {
     const ordered = rows.map(({ value, role }) => ({ value, role }));
     if (ordered.length === 0) ordered.push({ value: '', role: 'verz' });
     ordered.forEach((row) => addS460Row(row));
+  } else if (docType === 'verdeler') {
+    populateVerdelerFields(data.velden || {}, data);
   } else if (inputList) {
     inputList.innerHTML = '';
     (data.inputs || []).forEach(addInputRow);
@@ -461,6 +503,14 @@ function fillForm(data) {
     if (data.velden) {
       Object.entries(data.velden).forEach(([key, value]) => addFieldRow({ key, value }));
     }
+  }
+  if (docType === 'verdeler') {
+    const variant = data.verdelerVariant || data.verdelertype;
+    if (variant) {
+      const el = document.querySelector(`input[name="verdelerVariant"][value="${variant}"]`);
+      if (el) el.checked = true;
+    }
+    syncVerdelerVariantState();
   }
 
   toggleSections();
@@ -486,6 +536,8 @@ async function handleGeneratePdf() {
       await pdf.renderS460(payload);
     } else if (type === 's505' && pdf.renderS505) {
       await pdf.renderS505(payload);
+    } else if (type === 'verdeler' && pdf.renderVerdeler) {
+      await pdf.renderVerdeler(payload);
     } else {
       setStatus('PDF generatie voor dit type is nog niet geimplementeerd');
       return;
@@ -561,6 +613,32 @@ function collectS460Rows() {
   return rows;
 }
 
+function collectVerdelerFields() {
+  const map = {
+    bnx: '#verdeler_bnx',
+    tpo: '#verdeler_tpo',
+    aanvangsDatum: '#verdeler_aanvangsDatum',
+    aanvangUur: '#verdeler_aanvangUur',
+    eindDatum: '#verdeler_eindDatum',
+    eindUur: '#verdeler_eindUur',
+    lijn: '#verdeler_lijn',
+    spoor: '#verdeler_spoor',
+    gevallen: '#verdeler_gevallen',
+    uiterstePalen: '#verdeler_uiterstePalen',
+    geplaatstePalen: '#verdeler_geplaatstePalen'
+  };
+  const values = {};
+  Object.entries(map).forEach(([key, selector]) => {
+    const el = qs(selector);
+    if (!el) return;
+    let val = el.value || '';
+    if (key.toLowerCase().includes('datum')) val = normalizeDateString(val);
+    if (key.toLowerCase().includes('uur')) val = normalizeTimeString(val) || val;
+    if (val) values[key] = val;
+  });
+  return values;
+}
+
 function populateS627FromInputs(inputs, explicit) {
   // Prioriteit: explicit s627Fields map
   const fromExplicit = explicit && Object.keys(explicit).length > 0;
@@ -603,8 +681,56 @@ function populateS627FromInputs(inputs, explicit) {
   });
 }
 
+function populateVerdelerFields(velden, data) {
+  const fallback = data || {};
+  const setVal = (id, value) => {
+    const el = qs(`#${id}`);
+    if (el) el.value = value || '';
+  };
+  const map = {
+    verdeler_bnx: 'bnx',
+    verdeler_tpo: 'tpo',
+    verdeler_aanvangsDatum: 'aanvangsDatum',
+    verdeler_aanvangUur: 'aanvangUur',
+    verdeler_eindDatum: 'eindDatum',
+    verdeler_eindUur: 'eindUur',
+    verdeler_lijn: 'lijn',
+    verdeler_spoor: 'spoor',
+    verdeler_gevallen: 'gevallen',
+    verdeler_uiterstePalen: 'uiterstePalen',
+    verdeler_geplaatstePalen: 'geplaatstePalen'
+  };
+  Object.entries(map).forEach(([id, key]) => {
+    const val = velden[key] !== undefined ? velden[key] : fallback[key];
+    setVal(id, val || '');
+  });
+  const dagenEl = qs('#hoeveelDagen');
+  if (dagenEl && fallback.hoeveelDagen) {
+    dagenEl.value = clampDays(fallback.hoeveelDagen);
+  }
+}
+
+function getVerdelerVariant() {
+  const el = document.querySelector('input[name="verdelerVariant"]:checked');
+  return el ? el.value : null;
+}
+
+function syncVerdelerVariantState() {
+  const variant = getVerdelerVariant();
+  const dagenEl = qs('#hoeveelDagen');
+  if (dagenEl) {
+    if (variant === 'overdracht') {
+      dagenEl.value = 1;
+      dagenEl.disabled = true;
+    } else {
+      dagenEl.disabled = false;
+    }
+  }
+}
+
 // initial rows
 if (inputList) addInputRow();
 if (fieldsList) addFieldRow();
 if (s460List) addS460Row();
+syncVerdelerVariantState();
 toggleSections();
