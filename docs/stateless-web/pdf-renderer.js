@@ -176,7 +176,14 @@
   };
 
   const renderS627 = async (payload) => {
-    const template = S627_TEMPLATE;
+    const variant = payload.s627Variant || 'S627';
+    const baseMap = {
+      'S627': 'base/S627.pdf',
+      'S627-bis-lvhw': 'base/S627-bis-lvhw.pdf',
+      'S627-bis-wl': 'base/S627-bis-wl.pdf'
+    };
+    const base = baseMap[variant] || baseMap['S627'];
+    const template = { ...S627_TEMPLATE, base };
     const pdfBytes = await fetch(template.base).then((res) => res.arrayBuffer());
     const pdfDoc = await PDFDocument.load(pdfBytes);
     const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
@@ -203,6 +210,7 @@
       const [page] = await pdfDoc.copyPages(pdfDoc, [0]);
       pdfDoc.addPage(page);
       template.fields.forEach((field, idx) => {
+        if (variant !== 'S627' && (field.name === 'post' || field.name === 'station')) return;
         let value = getVal(field.name);
         if (field.overdrachtClear && overdracht) value = ' ';
         if (field.dateIncrement && day > 0 && value) {
@@ -222,7 +230,7 @@
     const bytes = await pdfDoc.save();
     const blob = new Blob([bytes], { type: 'application/pdf' });
     const a = document.createElement('a');
-    const baseName = payload.documentNaam ? payload.documentNaam.replace(/\s+/g, '_') : 'S627';
+    const baseName = payload.documentNaam ? payload.documentNaam.replace(/\s+/g, '_') : variant;
     a.href = URL.createObjectURL(blob);
     a.download = `${new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')}.${baseName}.pdf`;
     a.click();

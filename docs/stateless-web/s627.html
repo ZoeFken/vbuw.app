@@ -87,7 +87,7 @@
     </section>
 
     <section class="actions">
-      <button id="generatePdf" type="button">Genereer PDF</button>
+      <button id="openDownloadModal" type="button">Genereer PDF</button>
       <button id="downloadJson" type="button">Download JSON</button>
       <label class="upload">
         <input id="uploadJson" type="file" accept="application/json">
@@ -97,7 +97,38 @@
     </section>
   </main>
 
-  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <div class="modal-backdrop" id="downloadModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Download S627</h3>
+        <button type="button" class="close" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="row inline">
+          <label>Document</label>
+          <div class="radio-row">
+            <label><input type="radio" name="s627Variant" value="S627" checked> S627</label>
+            <label><input type="radio" name="s627Variant" value="S627-bis-lvhw"> S627 Bis LVHW</label>
+            <label><input type="radio" name="s627Variant" value="S627-bis-wl"> S627 Bis WL</label>
+          </div>
+        </div>
+        <div class="row">
+          <label>Aantal dagen (1..7)</label>
+          <input id="hoeveelDagen" type="number" min="1" max="7" value="1">
+        </div>
+        <div class="row inline">
+          <label>Met overdracht</label>
+          <input id="overdracht" type="checkbox">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="confirmDownload" class="primary">Download PDF</button>
+        <button type="button" id="cancelDownload">Annuleer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/pdf-lib.min.js"></script>
   <script src="pdf-renderer.js"></script>
   <script src="script.js"></script>
 </body>

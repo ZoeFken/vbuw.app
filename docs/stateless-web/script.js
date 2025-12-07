@@ -16,14 +16,23 @@ const addFieldBtn = document.getElementById('addField');
 const downloadBtn = document.getElementById('downloadJson');
 const uploadInput = document.getElementById('uploadJson');
 const docTypeSelect = document.getElementById('documentType');
-const generateBtn = document.getElementById('generatePdf');
+const openModalBtn = document.getElementById('openDownloadModal');
+const confirmDownloadBtn = document.getElementById('confirmDownload');
+const cancelDownloadBtn = document.getElementById('cancelDownload');
+const closeModalBtn = document.getElementById('closeModal');
+const modalEl = document.getElementById('downloadModal');
+const variantInputs = document.querySelectorAll('input[name="s627Variant"]');
 
 if (addInputBtn) addInputBtn.addEventListener('click', () => addInputRow());
 if (addFieldBtn) addFieldBtn.addEventListener('click', () => addFieldRow());
 if (downloadBtn) downloadBtn.addEventListener('click', downloadJson);
 if (uploadInput) uploadInput.addEventListener('change', handleUpload);
 if (docTypeSelect) docTypeSelect.addEventListener('change', toggleSections);
-if (generateBtn) generateBtn.addEventListener('click', handleGeneratePdf);
+if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+if (confirmDownloadBtn) confirmDownloadBtn.addEventListener('click', () => { closeModal(); handleGeneratePdf(); });
+if (cancelDownloadBtn) cancelDownloadBtn.addEventListener('click', closeModal);
+if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+variantInputs.forEach((el) => el.addEventListener('change', () => {}));
 
 function addInputRow(data = {}) {
   const row = makeEl('div', 'item');
@@ -72,6 +81,29 @@ function clampDays(n) {
   return num;
 }
 
+const pad2 = (n) => (n < 10 ? `0${n}` : `${n}`);
+const formatDateDMY = (d) => `${pad2(d.getDate())}-${pad2(d.getMonth() + 1)}-${d.getFullYear()}`;
+const parseDateTime = (dateStr, timeStr) => {
+  if (!dateStr || !timeStr) return null;
+  const parts = dateStr.includes('/') ? dateStr.split('/') : dateStr.split('-');
+  if (parts.length !== 3) return null;
+  let d, m, y;
+  if (parts[0].length === 4) {
+    [y, m, d] = parts.map((p) => parseInt(p, 10));
+  } else {
+    [d, m, y] = parts.map((p) => parseInt(p, 10));
+  }
+  const [hh, mm] = timeStr.split(':').map((p) => parseInt(p, 10));
+  if (isNaN(hh) || isNaN(mm)) return null;
+  const dt = new Date(y, (m || 1) - 1, d || 1, hh, mm, 0, 0);
+  return isNaN(dt.getTime()) ? null : dt;
+};
+const formatDurationHM = (minutes) => {
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return `${pad2(h)}:${pad2(m)}`;
+};
+
 function buildPayload() {
   const payload = { documentType: docTypeSelect ? docTypeSelect.value : defaultDocType };
   const naamEl = qs('#documentNaam');
@@ -85,6 +117,9 @@ function buildPayload() {
   const overdrachtEl = qs('#overdracht');
   payload.overdracht = overdrachtEl ? overdrachtEl.checked : false;
 
+  const variantEl = document.querySelector('input[name="s627Variant"]:checked');
+  if (variantEl) payload.s627Variant = variantEl.value;
+
   const startEl = qs('#startDatum');
   const eindEl = qs('#eindDatum');
   const aanvangEl = qs('#aanvangsDatum');
@@ -96,6 +131,42 @@ function buildPayload() {
   const inputs = [];
   if (payload.documentType === 's627') {
     inputs.push(...collectS627Inputs());
+    // Force duration/end/start consistency for S627
+    const map = {};
+    inputs.forEach((i) => { map[i.name] = i.value; });
+    const startDt = parseDateTime(map.aanvangDatum, map.aanvangUur);
+    const endDt = parseDateTime(map.eindDatum, map.eindUur);
+    let duurStr = map.vermoedelijkeDuur;
+    let duurMin = null;
+    if (duurStr && duurStr.includes(':')) {
+      const [h, m] = duurStr.split(':').map((p) => parseInt(p, 10));
+      if (!isNaN(h) && !isNaN(m)) duurMin = h * 60 + m;
+    }
+
+    if (startDt && endDt) {
+      const diffMin = Math.max(0, Math.round((endDt - startDt) / 60000));
+      duurMin = diffMin;
+    } else if (duurMin !== null) {
+      if (startDt && !endDt) {
+        const newEnd = new Date(startDt.getTime() + duurMin * 60000);
+        map.eindDatum = formatDateDMY(newEnd);
+        map.eindUur = `${pad2(newEnd.getHours())}:${pad2(newEnd.getMinutes())}`;
+      } else if (endDt && !startDt) {
+        const newStart = new Date(endDt.getTime() - duurMin * 60000);
+        map.aanvangDatum = formatDateDMY(newStart);
+        map.aanvangUur = `${pad2(newStart.getHours())}:${pad2(newStart.getMinutes())}`;
+      }
+    }
+    if (duurMin !== null) {
+      map.vermoedelijkeDuur = formatDurationHM(duurMin);
+    }
+    // write back map to inputs array and DOM
+    inputs.length = 0;
+    Object.entries(map).forEach(([name, value]) => {
+      inputs.push({ name, value });
+      const el = qs(`#s627_${name}`);
+      if (el && value !== undefined) el.value = value;
+    });
   }
   if (inputList) {
     inputList.querySelectorAll('.item').forEach((row) => {
@@ -167,6 +238,10 @@ function fillForm(data) {
   if (eindEl) eindEl.value = data.eindDatum || '';
   const aanvangEl = qs('#aanvangsDatum');
   if (aanvangEl) aanvangEl.value = data.aanvangsDatum || '';
+  if (data.s627Variant) {
+    const v = document.querySelector(`input[name="s627Variant"][value="${data.s627Variant}"]`);
+    if (v) v.checked = true;
+  }
 
   if (inputList) {
     inputList.innerHTML = '';
@@ -213,6 +288,14 @@ async function handleGeneratePdf() {
 function toggleSections() {
   const type = docTypeSelect ? docTypeSelect.value : defaultDocType;
   if (s627Section) s627Section.style.display = type === 's627' ? 'block' : 'none';
+}
+
+function openModal() {
+  if (modalEl) modalEl.classList.add('show');
+}
+
+function closeModal() {
+  if (modalEl) modalEl.classList.remove('show');
 }
 
 function collectS627Inputs() {
