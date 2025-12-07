@@ -408,8 +408,10 @@
         const hText = headers[idx] || c.header;
         page.drawRectangle({ x, y: y - headerHeight, width: c.w, height: headerHeight, borderColor: rgb(0, 0, 0), borderWidth: 0.8 });
         const { lines, lineHeight } = wrapText(hText, c.w - pad * 2, bold, headerFontSize);
+        const textBlockHeight = (lines.length || 1) * lineHeight;
+        const baseY = y - ((headerHeight - textBlockHeight) / 2.5) - lineHeight; // center vertical
         lines.forEach((line, i) => {
-          page.drawText(line, { x: x + pad, y: y - pad - (i + 1) * lineHeight + lineHeight, size: headerFontSize, font: bold, color: rgb(0, 0, 0) });
+          page.drawText(line, { x: x + pad, y: baseY - i * lineHeight, size: headerFontSize, font: bold, color: rgb(0, 0, 0) });
         });
         x += c.w;
       });
@@ -488,7 +490,7 @@
           [
             '',
             'Bediende',
-            `Ik vraag de buitenspanningstelling van de bovenleiding van de geval(len)\n${fmt(gevallen)}.\n\nVan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\n\nVoor werken voorzien in BNX nr ${fmt(bnx)}.\nEn in overeenstemming met FBSS nr ${fmt(tpo)}.`,
+            `Ik vraag de buitenspanningstelling van de bovenleiding van de geval(len)\n${fmt(gevallen)}.\nVan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\nVoor werken voorzien in BNX nr ${fmt(bnx)}.\nEn in overeenstemming met FBSS nr ${fmt(tpo)}.`,
             '',
             'Verdeler',
             ''
@@ -498,7 +500,7 @@
           [
             '',
             'Verdeler',
-            `Gevolg uw nr:\n\nDe spanning is verbroken op de bovenleiding (en de tegenfase feeder) van de geval(len)\n${fmt(gevallen)},\nvan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\n\nIk laat het plaatsen van de SSV's/UEG's toe in overeenstemming met FBSS nr ${fmt(tpo)}.\n\nEnkel de SSV's/UEG's, geplaatst conform de FBSS, zorgen voor een bescherming tegen de elektrische gevaren.`,
+            `Gevolg uw nr:\nDe spanning is verbroken op de bovenleiding (en de tegenfase feeder) van de geval(len)\n${fmt(gevallen)},\nvan lijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)}.\nIk laat het plaatsen van de SSV's/UEG's toe in overeenstemming met FBSS nr ${fmt(tpo)}.\nEnkel de SSV's/UEG's, geplaatst conform de FBSS, zorgen voor een bescherming tegen de elektrische gevaren.`,
             '',
             'Bediende',
             ''
@@ -514,7 +516,7 @@
           [
             '',
             'Bediende',
-            `Ik laat toe om de bovenleiding van de geval(len)\n${fmt(gevallen)}\n\nLijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)} terug onder spanning te stellen.\n\nDe SSV's zijn weggenomen, de bovenleiding wordt beschouwd(en) als zijnde onder spanning.`,
+            `Ik laat toe om de bovenleiding van de geval(len)\n${fmt(gevallen)}\nLijn (station) ${fmt(lijn)}, spoor ${fmt(spoor)} terug onder spanning te stellen.\nDe SSV's zijn weggenomen, de bovenleiding wordt beschouwd(en) als zijnde onder spanning.`,
             '',
             'Verdeler',
             ''
@@ -526,7 +528,7 @@
             [
               '',
               'Bediende',
-              `Ik sta af aan de opgeleide bediende.\n\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\n\nIngeschreven onder nr:\n\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
+              `Ik sta af aan de opgeleide bediende.\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\nIngeschreven onder nr:\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
               '',
               'Verdeler',
               ''
@@ -536,7 +538,7 @@
             [
               '',
               'Bediende',
-              `Ik neem over van de opgeleide bediende\n\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\n\nIngeschreven onder nr:\n\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
+              `Ik neem over van de opgeleide bediende\nDe buitenspanningstelling van de bovenleiding van de lijn ${fmt(lijn)} de sporen ${fmt(spoor)}\nDit zijn de gevallen ${fmt(gevallen)}\nIngeschreven onder nr:\nDe spoorstaafverbindingen zijn geplaatst aan de bovenleidingspalen:\n${fmtOptional(geplaatstePalen)}`,
               '',
               'Verdeler',
               ''
