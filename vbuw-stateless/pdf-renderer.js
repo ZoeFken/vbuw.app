@@ -384,12 +384,12 @@
     const pad = 4;
 
     const colDefs = [
-      { header: 'E934', w: mmToPt(18), align: 'center' },
-      { header: 'Herkomst', w: mmToPt(26), align: 'center' },
-      { header: 'Volledige tekst of onderwerp van de mededeling', w: mmToPt(115), align: 'left' },
-      { header: 'Nr. Van de Correspondent', w: mmToPt(32), align: 'center' },
-      { header: 'Bestemming', w: mmToPt(30), align: 'center' },
-      { header: 'Uur', w: mmToPt(18), align: 'center' }
+      { header: 'E934', w: mmToPt(12), align: 'center' },
+      { header: 'Herkomst', w: mmToPt(22), align: 'center' },
+      { header: 'Volledige tekst of onderwerp van de mededeling', w: mmToPt(110), align: 'left' },
+      { header: 'Nr. Van de Correspondent', w: mmToPt(22), align: 'center' },
+      { header: 'Bestemming', w: mmToPt(22), align: 'center' },
+      { header: 'Uur', w: mmToPt(12), align: 'center' }
     ];
     const tableWidth = colDefs.reduce((sum, c) => sum + c.w, 0);
 
@@ -445,7 +445,7 @@
       const page = pdfDoc.addPage(pageSize);
       const { height } = page.getSize();
       const margin = mmToPt(18);
-      const offsetX = Math.max(margin, (pageSize[0] - tableWidth) / 2);
+      const offsetX = Math.max(mmToPt(5), (pageSize[0] - tableWidth) / 2);
       let y = height - margin;
       const dayStart = day === 0 ? startDate : shiftDate(startDate, day);
       const dayEnd = day === 0 ? endDate : shiftDate(endDate, day);
@@ -466,7 +466,7 @@
         { label: 'van', value: fmtOptional(startTime) },
         { label: 'Tot', value: fmtOptional(endTime) }
       ];
-      const colSpacing = mmToPt(55);
+      const colSpacing = tableWidth / 3;
       let infoX = margin;
       const drawInfoRow = (items) => {
         infoX = offsetX;
